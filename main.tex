@@ -1,0 +1,316 @@
+% !TeX document-id = {d42653b9-9ea4-48c2-860b-3d6e6e9d8ab0}
+% !TeX TXS-program:compile = txs:///pdflatex/[--shell-escape]
+\documentclass[12pt]{article} % For LaTeX2e
+%\usepackage{neurips_2021}
+\usepackage[colorlinks, citecolor={blue}]{hyperref}
+\usepackage{url}
+\usepackage{amsfonts,amscd,amssymb}
+\usepackage{amsthm,amsmath,natbib}
+\usepackage{algorithm,algorithmicx,algpseudocode}
+\usepackage{bm}
+\usepackage{bbm} %bb font numbers
+\usepackage[table]{xcolor}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+%\usepackage[nolists]{endfloat}
+\usepackage{listings}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\usepackage{etoolbox}
+\usepackage{appendix}
+\usepackage[format=plain,
+labelfont={it},
+textfont=it]{caption}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{xr}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{authblk}
+\usepackage{mathbbol}
+\usepackage{thmtools}
+
+
+
+\usetikzlibrary{matrix}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{decorations}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{fit}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{shapes.geometric}
+
+\newtoggle{quickdraw}
+%\toggletrue{quickdraw} % Uncomment this to render more quickly (non-random)
+
+
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{darkgreen}{rgb}{0,0.3,0}
+%\definecolor{darkred}{rgb}{0.3,0,0}
+
+\definecolorset{rgb}{}{}{darkred,0.8,0,0;darkgreen,0,0.5,0;darkblue,0,0,0.5}
+
+%\doublespacing
+
+\newtheorem{thm}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}{Corollary}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{mydef}{Definition}
+\newtheorem*{assumption}{Assumption}
+\newtheorem{clm}{Claim}
+
+\newcommand{\argmax}{\operatornamewithlimits{arg\,max}}
+\newcommand{\argmin}{\operatornamewithlimits{arg\,min}}
+\newcommand*{\fplus}{\genfrac{}{}{0pt}{}{}{+}}
+\newcommand*{\fdots}{\genfrac{}{}{0pt}{}{}{\cdots}}
+\newcommand{\mb}{\mathbf}
+\newcommand{\mc}{\mathcal}
+\newcommand{\dx}{\mbox{d}}
+
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\numTaxa}{N}
+\newcommand{\numTraits}{D}
+\newcommand{\numDatasets}{M}
+%\newcommand{\numLatent}{D}
+\newcommand{\taxonIndex}{i}
+\newcommand{\traitIndex}{j}
+\newcommand{\traitData}{\vec{Y}}
+\newcommand{\traitDatum}{y}
+\newcommand{\datasetIndex}{m}
+\newcommand{\exemplar}{\text{e}}
+
+\newcommand{\sequences}{\vec{S}}
+\newcommand{\latentData}{\vec{X}}
+\newcommand{\latentdata}{\vec{x}}
+\newcommand{\latentDatum}{x}
+\newcommand{\phylogeneticParameters}{\boldsymbol{\phi}}
+\newcommand{\phylogeny}{{\cal G}}
+\newcommand{\tree}{\phylogeny}
+%\newcommand{\otherParameters}{\boldsymbol{\
+\newcommand{\transpose}{^{t}}
+
+\newcommand{\distanceMatrix}{\mathbf{Y}}
+\newcommand{\distance}{y}
+\newcommand{\summant}{r}
+
+
+
+\newcommand{\cdensity}[2]{\ensuremath{p(#1 \,|\,#2)}}
+\newcommand{\density}[1]{\ensuremath{p(#1 )}}
+
+\newcommand{\treeNode}{\nu}
+
+\newcommand{\traitVariance}{\mathbf{\Sigma}}
+\newcommand{\nodeIndex}{c}
+
+%\newcommand{\parent}[1]{\mbox{\tiny pa}(#1)}
+\newcommand{\parentBig}[1]{\mbox{pa}(#1)}
+
+\newcommand{\sibling}[1]{\mbox{\tiny sib}(#1)}
+\newcommand{\siblingBig}[1]{\mbox{sib}(#1)}
+
+\newcommand{\rootMean}{\boldsymbol{\mu}_0}
+\newcommand{\rootVarianceScalar}{\tau_0}
+\newcommand{\unsequencedVarianceScalar}{\tau_{\exemplar}}
+\newcommand{\treeVariance}{\vec{V}_{\tree}}
+\newcommand{\hatTreeVariance}{\hat{\vec{V}}_{\tree}}
+\newcommand{\mdsSD}{\sigma}
+\newcommand{\mdsVariance}{\mdsSD^2}
+\newcommand{\residual}{\hat{\traitDatum}}
+\newcommand{\modelDistance}{\delta}
+\newcommand{\cdf}{\phi}
+\newcommand{\normalCDF}[1]{\Phi \left( #1 \right)}
+
+\newcommand{\order}[1]{{\cal O}\hspace{-0.2em}\left( #1 \right)}
+
+\newcommand{\rootNode}{\nu^{\datasetIndex}_{2 \numTaxa_{\datasetIndex} -1 }}
+\newcommand{\pathLength}[1]{d(F, #1 )}
+\newcommand{\pathLengthNew}[2]{
+d_{F}
+(
+{#1}, {#2}
+)
+}
+\newcommand{\J}{\vec{J}}
+\newcommand{\pprime}{^{\prime}}
+\newcommand{\otherIndex}{i \pprime}
+\def\kronecker{\raisebox{1pt}{\ensuremath{\:\otimes\:}}}
+
+\definecolor{trevorblue}{rgb}{0.330, 0.484, 0.828}
+\definecolor{trevoryellow}{rgb}{0.829, 0.680, 0.306}
+
+
+%\makeatletter
+%\def\title@font{\Huge}
+%\let\ltx@maketitle\@maketitle
+%\def\@maketitle{\bgroup%
+%	\let\ltx@title\@title%
+%	\def\@title{\resizebox{\textwidth}{!}{%
+%			\mbox{\title@font\ltx@title}%
+%	}}%
+%	\ltx@maketitle%
+%	\egroup}
+%\makeatother
+
+
+\title{Matrix exponential derivative}
+\date{}
+
+
+
+\author{Andrew J.~Holbrook}
+
+
+\affil{UCLA Biostatistics}
+
+
+
+
+
+\renewcommand\Authands{ and }
+
+
+\graphicspath{{figures/}}
+
+\begin{document}
+
+
+\maketitle
+
+
+
+
+\begin{abstract}
+
+[Abstract]
+
+
+\end{abstract}
+
+
+
+\section{Introduction}\label{sec:intro}
+
+%\newcommand{\x}{\mathbf{x}}
+%\renewcommand{\v}{\mathbf{v}}
+%\newcommand{\TTheta}{\boldsymbol{\theta}}
+%\newcommand{\TTTheta}{\boldsymbol{\Theta}}
+%\newcommand{\tr}{\mbox{tr}}
+%\newcommand{\X}{\mathbf{X}}
+%\renewcommand{\u}{\mathbf{u}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\JJ}{\mathbf{J}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\RR}{\mathbf{R}}
+%\newcommand{\haar}{\mathcal{H}}
+%\newcommand{\orthog}{\mathcal{O}}
+%\newcommand{\SSigma}{\boldsymbol{\Sigma}}
+\newcommand{\Zero}{\boldsymbol{0}}
+
+
+Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  We are interested in quickly approximating the directional derivative of the matrix exponential
+\begin{align*}
+	\exp(t\QQ) = \sum_{k=0}^\infty \frac{t^k\QQ^k}{k!}
+\end{align*}
+for arbitrary $t>0$ using the formula \citep{najfeld1995derivatives}
+\begin{align}\label{eq:deriv}
+	\nabla_{\MM} \exp(t\QQ)  =  \exp(t\QQ)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\MM,\QQ^k\} \, .
+\end{align}
+Here, $\MM$ gives the direction and $\{\MM,\QQ^k\}$ is the matrix commutator series satisfying the recursion
+\begin{align*}
+	\{\MM,\QQ^0\} &= \MM \, , \\ 
+	\{\MM,\QQ^k\} &= [\{\MM,\QQ^{k-1}\} , \QQ]  = \{\MM,\QQ^{k-1}\} \QQ - \QQ \{\MM,\QQ^{k-1}\} \, .
+\end{align*}
+In particular, we are interested in the derivative with respect to the $S(S-1)$ free parameters $q_{ij}, i\neq j$, and these collectively correspond to the derivative in the direction of the hollow matrix
+\begin{align*}
+\JJ - \II =: \begin{bmatrix}
+	1 & 1 &\cdots & 1 \\
+1&	1 &   & \\
+\vdots && \ddots& \\
+	1 & &  & 1 
+	\end{bmatrix} -
+ \begin{bmatrix}
+	1 & 0&\cdots & 0 \\
+	0&	1 &   & \\
+	\vdots && \ddots& \\
+	0 & &  & 1 
+\end{bmatrix}  =
+\begin{bmatrix}
+	0& 1 &\cdots & 1 \\
+	1&	0 &   & \\
+	\vdots && \ddots& \\
+	1 & &  & 0
+\end{bmatrix} \, .
+\end{align*}
+Letting $\Zero$ denote the zero matrix, the identities
+\begin{align*}
+\QQ\JJ&=\Zero \quad \mbox{and}\\
+\exp(t\QQ) \JJ &= \JJ 
+\end{align*}
+lead to fact
+\begin{align*}
+ \exp(t\QQ)	\{\JJ - \II, \QQ^1\} &=  \exp(t\QQ)	\left( \left(\JJ - \II\right) \QQ - \QQ \left(\JJ - \II \right)   \right) \\
+&= \JJ \QQ \, .
+\end{align*} 
+Further, if we assume $ \exp(t\QQ)	\{\JJ - \II, \QQ^{k}\} = \JJ\QQ^{k} $ for $k>0$, we have
+\begin{align*}
+ \exp(t\QQ)	\{\JJ - \II, \QQ^{k+1}\} &= \exp(t\QQ)  \left( 	\{\JJ - \II, \QQ^{k}\} \QQ - \QQ 	\{\JJ - \II, \QQ^{k}\} \right)  \\
+ &= \JJ\QQ^{k} \QQ - \exp(t\QQ) \QQ 	\{\JJ - \II, \QQ^{k}\} \\
+ &= \JJ\QQ^{k+1}  - \QQ \exp(t\QQ)  \{\JJ - \II, \QQ^{k}\} \\ 
+ &= \JJ\QQ^{k+1} - \QQ \JJ \QQ^k \\
+ &= \JJ \QQ^{k+1} \, .
+\end{align*}
+By an inductive argument, we may therefore write the following special case for $\eqref{eq:deriv}$
+\begin{align*}
+	\nabla_{\JJ-\II} \exp(t \QQ)  &=t \exp(t\QQ)  (\JJ-\II) + \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \JJ \QQ^k \\
+	&= t (\JJ - \exp(t\QQ)) + \JJ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
+\end{align*}
+We therefore define the 1st-order approximate derivative
+\begin{align*}
+		\widetilde{\nabla}_{\JJ-\II} \exp(t \QQ)  :=  t (\JJ - \exp(t\QQ)) 
+\end{align*}
+and wish to bound the residual term
+\begin{align*}
+	\RR := \JJ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
+\end{align*}
+
+
+\bibliographystyle{sysbio}
+\bibliography{refs}
+
+%\section{Empirical accuracy of the extra-dimensional simplicial sampler}\label{sec:qqplots}
+%
+%We do not prove that the extra-dimensional sampler leaves the target distribution invariant, but limited simulations suggest it might.  Figure \ref{fig:accuracy} displays quantile-quantile plots for the sampler using a simplex with 101 vertices and targeting 3D Gaussian and mixture of two Gaussian distributions.  
+%
+%\begin{figure}[t!]
+%	\centering
+%	\includegraphics[width=\linewidth]{accuracyFig.png}
+%	\caption{Quantile-quantile plots for the extra-dimensional sampler using a simplex with 101 vertices targeting a 3D Gaussian and mixture of two Gaussian distributions.}\label{fig:accuracy}
+%\end{figure}
+
+%\section{Empirically optimal acceptance rates for multiple-try Metropolis}\label{sec:mtmScaling}
+%
+%\citet{bedard2012scaling}
+%
+%\begin{figure}[t!]
+%	\centering
+%	\includegraphics[width=0.8\linewidth]{mtmScaling.pdf}
+%	\caption{Optimal acceptance rates from 20 independent MCMC runs for each dimensionality of the a standard normal target}\label{fig:accuracy}
+%\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
