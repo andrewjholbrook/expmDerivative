@@ -270,9 +270,9 @@ Further, if we assume $ \exp(t\QQ)	\{\JJ - \II, \QQ^{k}\} = \JJ\QQ^{k} $ for $k>
  &= \JJ\QQ^{k} \QQ - \exp(t\QQ) \QQ 	\{\JJ - \II, \QQ^{k}\} \\
  &= \JJ\QQ^{k+1}  - \QQ \exp(t\QQ)  \{\JJ - \II, \QQ^{k}\} \\ 
  &= \JJ\QQ^{k+1} - \QQ \JJ \QQ^k \\
- &= \JJ \QQ^{k+1} \, .
+ &= \JJ \QQ^{k+1} \, ,
 \end{align*}
-By an inductive argument, we may therefore write the following special case for $\eqref{eq:deriv}$
+where we use the fact that $\exp(t\QQ) \QQ = \QQ \exp(t\QQ)$. By an inductive argument, we may therefore write the following special case for $\eqref{eq:deriv}$:
 \begin{align*}
 	\nabla_{\JJ-\II} \exp(t \QQ)  &=t \exp(t\QQ)  (\JJ-\II) + \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \JJ \QQ^k \\
 	&= t (\JJ - \exp(t\QQ)) + \JJ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
