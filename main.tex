@@ -204,7 +204,7 @@ d_{F}
 
 %\newcommand{\x}{\mathbf{x}}
 %\renewcommand{\v}{\mathbf{v}}
-%\newcommand{\TTheta}{\boldsymbol{\theta}}
+
 %\newcommand{\TTTheta}{\boldsymbol{\Theta}}
 %\newcommand{\tr}{\mbox{tr}}
 %\newcommand{\X}{\mathbf{X}}
@@ -218,6 +218,7 @@ d_{F}
 %\newcommand{\orthog}{\mathcal{O}}
 %\newcommand{\SSigma}{\boldsymbol{\Sigma}}
 \newcommand{\Zero}{\boldsymbol{0}}
+\newcommand{\ttheta}{\boldsymbol{\theta}}
 
 
 Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  We are interested in quickly approximating the directional derivative of the matrix exponential
@@ -297,6 +298,59 @@ and its respective residual
 \begin{align*}
 	\widehat{\RR} := t \sum_{k=1}^\infty  \frac{t^{2k}}{2^{2k}(2k+1)!} \JJ\QQ^{2k}\exp(t\QQ/2) \,.
 \end{align*}
+
+
+
+\section{Gradients and directional derivatives}
+
+\newcommand{\Llambda}{\boldsymbol{\Lambda}}
+
+\citet{najfeld1995derivatives} describe the relationship between the $ij$th directional derivative $\nabla_{\JJ_{ij}} \exp(t\QQ)=:\partial (\exp t\QQ )/ \partial q_{ij}$ and the gradient of the $ij$th entry of $\exp(t\QQ)$ with respect to $\QQ$
+\begin{align*}
+	\frac{\partial \exp(t\QQ)_{ij}}{\partial \QQ} := \begin{bmatrix}
+	 \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{11}} & \dots &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{1S}} \\
+	 \vdots & \ddots & \\
+	  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{S1}} & &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{SS}} 
+	\end{bmatrix} \, .
+\end{align*}
+In particular, they show the following result (Equation 145):
+\begin{align*}
+\frac{	\partial \exp(t\QQ)_{ij}}{\partial \QQ} = \nabla_{\JJ_{ij}} \exp(t\QQ^T) =\exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},(\QQ^T)^k\}
+\end{align*}
+Now, suppose that $\theta$ is a scalar value and $\QQ$ derives from an unstructured matrix $\Llambda$ with elements $\lambda_{kl}>0$ satisfying
+\begin{align*}
+	q_{kl} = \bigg\{ \begin{matrix}
+		\lambda_{kl} \,,& k \neq l \\
+	\lambda_{kl}	-\sum_{l'=1}^S\lambda_{kl'} \, , &  k= l 
+	\end{matrix} \quad .
+\end{align*}
+Then it follows that
+\begin{align*}
+	\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &= \sum_{klmn} \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \frac{\partial q_{kl}}{\partial \lambda_{mn} } \frac{\partial \lambda_{mn}}{\partial \theta} \\
+	&= \sum_{klmn}  \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
+	&= \sum_{klmn} \left[ \exp(t\QQ^T)  \sum_{x=0}^\infty \frac{t^{x+1}}{(x+1)!} \{\JJ_{ij},(\QQ^T)^x\}\right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta}
+\end{align*}
+
+
+
+\section{Plugging in $\QQ^T$}
+
+We wish to evaluate
+\begin{align*}
+	\nabla_\JJ \exp(t\QQ^T) =  \exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,(\QQ^{T})^k\} \, .
+\end{align*}
+As above, we note that for $k=1$
+\begin{align*}
+	\exp(t\QQ^T) \{ \JJ, \QQ^T\} &= \exp(t\QQ^T)  (\JJ \QQ^T - \QQ^T\JJ ) \\ 
+	&= - \exp(t\QQ^T) \QQ^T\JJ \\
+	&= - \QQ^T \exp(t\QQ^T)  \JJ =- \QQ^T \JJ \, .
+\end{align*}
+An inductive argument reveals
+\begin{align*}
+	\nabla_\JJ \exp(t\QQ^T)  =  - \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \JJ  =  - \left( \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \right) \JJ \, .
+\end{align*}
+
+\section{The whole thing}
 
 
 
