@@ -165,13 +165,15 @@ d_{F}
 
 
 \title{Matrix exponential derivative}
-\date{}
+
+
+%\date{}
 
 
 
 \author{Andrew J.~Holbrook}
 
-
+ 
 \affil{UCLA Biostatistics}
 
 
@@ -234,78 +236,78 @@ Here, $\MM$ gives the direction and $\{\MM,\QQ^k\}$ is the matrix commutator ser
 	\{\MM,\QQ^0\} &= \MM \, , \\ 
 	\{\MM,\QQ^k\} &= [\{\MM,\QQ^{k-1}\} , \QQ]  = \{\MM,\QQ^{k-1}\} \QQ - \QQ \{\MM,\QQ^{k-1}\} \, .
 \end{align*}
-In particular, we are interested in the derivative with respect to all $S^2$ $q_{ij}$, and these collectively correspond to the derivative in the direction of the matrix
-\begin{align*}
-\JJ := \begin{bmatrix}
-	1 & 1 &\cdots & 1 \\
-1&	1 &   & \\
-\vdots && \ddots& \\
-	1 & &  & 1 
-	\end{bmatrix}  \, .
-\end{align*}
-Letting $\Zero$ denote the zero matrix, the identities
-\begin{align*}
-\QQ\JJ&=\Zero \quad \mbox{and}\\
-\exp(t\QQ) \JJ &= \JJ 
-\end{align*}
-lead to fact
-\begin{align*}
- \exp(t\QQ)	\{\JJ , \QQ^1\} &=  \exp(t\QQ)	\left( \JJ  \QQ - \QQ \JJ     \right) \\
-&= \JJ \QQ \, .
-\end{align*} 
-Further, if we assume $ \exp(t\QQ)	\{\JJ , \QQ^{k}\} = \JJ\QQ^{k} $ for $k\geq0$, we have
-\begin{align*}
- \exp(t\QQ)	\{\JJ , \QQ^{k+1}\} &= \exp(t\QQ)  \left( 	\{\JJ , \QQ^{k}\} \QQ - \QQ 	\{\JJ , \QQ^{k}\} \right)  \\
- &= \JJ\QQ^{k} \QQ - \exp(t\QQ) \QQ 	\{\JJ , \QQ^{k}\} \\
- &= \JJ\QQ^{k+1}  - \QQ \exp(t\QQ)  \{\JJ , \QQ^{k}\} \\ 
- &= \JJ\QQ^{k+1} - \QQ \JJ \QQ^k \\
- &= \JJ \QQ^{k+1} \, ,
-\end{align*}
-where we use the fact that $\exp(t\QQ) \QQ = \QQ \exp(t\QQ)$. By an inductive argument, we may therefore write the following special case for $\eqref{eq:deriv}$:
-\begin{align}\label{eq:deriv2}
-	\nabla_{\JJ} \exp(t \QQ)  &=  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \JJ \QQ^k  = \JJ  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
-\end{align}
-This formula has an intuitive interpretation.   The derivative of the matrix power $\QQ^k$ in any direction $\MM$ is
-\begin{align}\label{eq:power}
-	\lim_{h\rightarrow 0}  \frac{(\QQ+h\MM)^k - \QQ^k }{h} = \sum_{p=1}^k  \QQ^{k-p} \MM \QQ^{p-1} \, ,
-\end{align}
-and the right-hand side reduces to $\JJ\QQ^{k-1}$ when we set $\MM=\JJ$.  Thus, Formula \eqref{eq:deriv2} naturally follows from the application of Equation \eqref{eq:power} to the individual terms within the series expansion of $\exp(t\QQ)$.
+%In particular, we are interested in the derivative with respect to all $S^2$ $q_{ij}$, and these collectively correspond to the derivative in the direction of the matrix
+%\begin{align*}
+%\JJ := \begin{bmatrix}
+%	1 & 1 &\cdots & 1 \\
+%1&	1 &   & \\
+%\vdots && \ddots& \\
+%	1 & &  & 1 
+%	\end{bmatrix}  \, .
+%\end{align*}
+%Letting $\Zero$ denote the zero matrix, the identities
+%\begin{align*}
+%\QQ\JJ&=\Zero \quad \mbox{and}\\
+%\exp(t\QQ) \JJ &= \JJ 
+%\end{align*}
+%lead to fact
+%\begin{align*}
+% \exp(t\QQ)	\{\JJ , \QQ^1\} &=  \exp(t\QQ)	\left( \JJ  \QQ - \QQ \JJ     \right) \\
+%&= \JJ \QQ \, .
+%\end{align*} 
+%Further, if we assume $ \exp(t\QQ)	\{\JJ , \QQ^{k}\} = \JJ\QQ^{k} $ for $k\geq0$, we have
+%\begin{align*}
+% \exp(t\QQ)	\{\JJ , \QQ^{k+1}\} &= \exp(t\QQ)  \left( 	\{\JJ , \QQ^{k}\} \QQ - \QQ 	\{\JJ , \QQ^{k}\} \right)  \\
+% &= \JJ\QQ^{k} \QQ - \exp(t\QQ) \QQ 	\{\JJ , \QQ^{k}\} \\
+% &= \JJ\QQ^{k+1}  - \QQ \exp(t\QQ)  \{\JJ , \QQ^{k}\} \\ 
+% &= \JJ\QQ^{k+1} - \QQ \JJ \QQ^k \\
+% &= \JJ \QQ^{k+1} \, ,
+%\end{align*}
+%where we use the fact that $\exp(t\QQ) \QQ = \QQ \exp(t\QQ)$. By an inductive argument, we may therefore write the following special case for $\eqref{eq:deriv}$:
+%\begin{align}\label{eq:deriv2}
+%	\nabla_{\JJ} \exp(t \QQ)  &=  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \JJ \QQ^k  = \JJ  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
+%\end{align}
+%This formula has an intuitive interpretation.   The derivative of the matrix power $\QQ^k$ in any direction $\MM$ is
+%\begin{align}\label{eq:power}
+%	\lim_{h\rightarrow 0}  \frac{(\QQ+h\MM)^k - \QQ^k }{h} = \sum_{p=1}^k  \QQ^{k-p} \MM \QQ^{p-1} \, ,
+%\end{align}
+%and the right-hand side reduces to $\JJ\QQ^{k-1}$ when we set $\MM=\JJ$.  Thus, Formula \eqref{eq:deriv2} naturally follows from the application of Equation \eqref{eq:power} to the individual terms within the series expansion of $\exp(t\QQ)$.
+%A second expansion due to \citet{najfeld1995derivatives} achieves faster convergence:
+%\begin{align}
+%	\nabla_{\MM} \exp(t\QQ)  =  t\exp(t\QQ/2)  \sum_{k=0}^\infty \frac{\{\MM,(t\QQ/2)^{2k}\} }{(2k+1)!} \exp(t\QQ/2) \, .
+%\end{align}
+%Similar arguments to those above provide the result
+%\begin{align}\label{eq:deriv3}
+%	\nabla_{\JJ} \exp(t\QQ)  =  t \sum_{k=0}^\infty  \frac{t^{2k}}{2^{2k}(2k+1)!} \JJ\QQ^{2k}\exp(t\QQ/2) \, .
+%\end{align}
 
-A second expansion due to \citet{najfeld1995derivatives} achieves faster convergence:
-\begin{align}
-	\nabla_{\MM} \exp(t\QQ)  =  t\exp(t\QQ/2)  \sum_{k=0}^\infty \frac{\{\MM,(t\QQ/2)^{2k}\} }{(2k+1)!} \exp(t\QQ/2) \, .
-\end{align}
-Similar arguments to those above provide the result
-\begin{align}\label{eq:deriv3}
-	\nabla_{\JJ} \exp(t\QQ)  =  t \sum_{k=0}^\infty  \frac{t^{2k}}{2^{2k}(2k+1)!} \JJ\QQ^{2k}\exp(t\QQ/2) \, .
-\end{align}
-
-\subsection{First-order approximations}
-
-One may use Formula \eqref{eq:deriv2} to define the 1st-order approximation 
-\begin{align*}
-		\widetilde{\nabla}_{\JJ} \exp(t \QQ)  :=  t \JJ  
-\end{align*}
-and residual term
-\begin{align*}
-	\widetilde{\RR} := \JJ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
-\end{align*}
-Alternatively, one may use Formula  \eqref{eq:deriv3} to define the 1st-order approximation
-\begin{align*}
-		\widehat{\nabla}_{\JJ} \exp(t \QQ)  :=  t \JJ  \exp(t\QQ/2)
-\end{align*}
-and its respective residual
-\begin{align*}
-	\widehat{\RR} := t \sum_{k=1}^\infty  \frac{t^{2k}}{2^{2k}(2k+1)!} \JJ\QQ^{2k}\exp(t\QQ/2) \,.
-\end{align*}
-
-
-
-\section{Gradients and directional derivatives}
+%\subsection{First-order approximations}
+%
+%One may use Formula \eqref{eq:deriv2} to define the 1st-order approximation 
+%\begin{align*}
+%		\widetilde{\nabla}_{\JJ} \exp(t \QQ)  :=  t \JJ  
+%\end{align*}
+%and residual term
+%\begin{align*}
+%	\widetilde{\RR} := \JJ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \QQ^k \, .
+%\end{align*}
+%Alternatively, one may use Formula  \eqref{eq:deriv3} to define the 1st-order approximation
+%\begin{align*}
+%		\widehat{\nabla}_{\JJ} \exp(t \QQ)  :=  t \JJ  \exp(t\QQ/2)
+%\end{align*}
+%and its respective residual
+%\begin{align*}
+%	\widehat{\RR} := t \sum_{k=1}^\infty  \frac{t^{2k}}{2^{2k}(2k+1)!} \JJ\QQ^{2k}\exp(t\QQ/2) \,.
+%\end{align*}
+%
+%
+%
+%\section{Gradients and directional derivatives}
 
 \newcommand{\Llambda}{\boldsymbol{\Lambda}}
 
-\citet{najfeld1995derivatives} describe the relationship between the $ij$th directional derivative $\nabla_{\JJ_{ij}} \exp(t\QQ)=:\partial (\exp t\QQ )/ \partial q_{ij}$ and the gradient of the $ij$th entry of $\exp(t\QQ)$ with respect to $\QQ$
+\noindent
+\citet{najfeld1995derivatives} describe the relationship between the $ij$th directional derivative $\nabla_{\JJ_{ij}} \exp(t\QQ)$ and the gradient of the $ij$th entry of $\exp(t\QQ)$ with respect to $\QQ$
 \begin{align*}
 	\frac{\partial \exp(t\QQ)_{ij}}{\partial \QQ} := \begin{bmatrix}
 	 \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{11}} & \dots &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{1S}} \\
@@ -325,32 +327,45 @@ Now, suppose that $\theta$ is a scalar value and $\QQ$ derives from an unstructu
 	\end{matrix} \quad .
 \end{align*}
 Then it follows that
+\begin{align}\label{eq:together}
+	\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &= \sum_{klmn} \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \frac{\partial q_{kl}}{\partial \lambda_{mn} } \frac{\partial \lambda_{mn}}{\partial \theta} \\  \nonumber
+	&= \sum_{klmn}  \left[ \nabla_{\JJ_{ij}} \exp(t\QQ^T) \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta}  \, .
+\end{align}
+A special case of \citet{najfeld1995derivatives} (Equation 142), the identity
 \begin{align*}
-	\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &= \sum_{klmn} \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \frac{\partial q_{kl}}{\partial \lambda_{mn} } \frac{\partial \lambda_{mn}}{\partial \theta} \\
-	&= \sum_{klmn}  \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
-	&= \sum_{klmn} \left[ \exp(t\QQ^T)  \sum_{x=0}^\infty \frac{t^{x+1}}{(x+1)!} \{\JJ_{ij},(\QQ^T)^x\}\right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta}
+\nabla_{\JJ_{ij}} \exp(t\QQ^T) = \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T 
 \end{align*}
-
-
-
-\section{Plugging in $\QQ^T$}
-
-We wish to evaluate
+allows us to write \eqref{eq:together} as
 \begin{align*}
-	\nabla_\JJ \exp(t\QQ^T) =  \exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,(\QQ^{T})^k\} \, .
+		\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &=  \sum_{klmn}  \left[ \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
+		&\approx  \sum_{klmn}  \left[ \left( t \exp(t\QQ) \JJ_{ji} \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
+		&= \sum_{klmn}  \left[  t \JJ_{ij} \exp(t\QQ)^T \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \, ,
 \end{align*}
-As above, we note that for $k=1$
-\begin{align*}
-	\exp(t\QQ^T) \{ \JJ, \QQ^T\} &= \exp(t\QQ^T)  (\JJ \QQ^T - \QQ^T\JJ ) \\ 
-	&= - \exp(t\QQ^T) \QQ^T\JJ \\
-	&= - \QQ^T \exp(t\QQ^T)  \JJ =- \QQ^T \JJ \, .
-\end{align*}
-An inductive argument reveals
-\begin{align*}
-	\nabla_\JJ \exp(t\QQ^T)  =  - \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \JJ  =  - \left( \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \right) \JJ \, .
-\end{align*}
+where we have made use of the first-order approximation of Formula \eqref{eq:deriv}.
 
-\section{The whole thing}
+
+
+
+
+
+%\section{Plugging in $\QQ^T$}
+%
+%We wish to evaluate
+%\begin{align*}
+%	\nabla_\JJ \exp(t\QQ^T) =  \exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,(\QQ^{T})^k\} \, .
+%\end{align*}
+%As above, we note that for $k=1$
+%\begin{align*}
+%	\exp(t\QQ^T) \{ \JJ, \QQ^T\} &= \exp(t\QQ^T)  (\JJ \QQ^T - \QQ^T\JJ ) \\ 
+%	&= - \exp(t\QQ^T) \QQ^T\JJ \\
+%	&= - \QQ^T \exp(t\QQ^T)  \JJ =- \QQ^T \JJ \, .
+%\end{align*}
+%An inductive argument reveals
+%\begin{align*}
+%	\nabla_\JJ \exp(t\QQ^T)  =  - \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \JJ  =  - \left( \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!}( \QQ^T)^k \right) \JJ \, .
+%\end{align*}
+%
+%\section{The whole thing}
 
 
 
