@@ -346,6 +346,49 @@ where we have made use of the first-order approximation of Formula \eqref{eq:der
 
 
 
+\section{Bounding truncation error}
+
+How good is the first order approximation $t \exp(t\QQ)\JJ_{ij}$ to the directional derivative \eqref{eq:deriv}?  In other words, we wish to know the magnitude of
+\begin{align*}
+err_{ij}(\QQ) =	\Vert\nabla_{\JJ_{ij}} \exp(t\QQ) - t \exp(t\QQ)\JJ_{ij} \Vert = \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \, .
+\end{align*}
+
+\subsection{Upper bound 1}
+
+
+
+We use the result \citep{najfeld1995derivatives}\footnote{Where is this?}
+\begin{align*}
+	\Vert \{\MM_1, \MM_2^k \}  \Vert \leq 2^k \Vert \MM_1\Vert \Vert\MM_2 \Vert 
+\end{align*}
+to obtain our first upper bound on $err_{ij}(\QQ)$:
+\begin{align*}
+	err_{ij}(\QQ) &= \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert  \\
+	&\leq \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \left\Vert \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert  \\
+	&=  \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \frac{t \Vert \QQ \Vert}{k+1} \frac{(2t)^k}{k!}\\
+	&= \frac{\Vert \exp(t\QQ) \Vert \Vert\QQ\Vert}{2}   \left(e^{2t} - 2t-1 \right) \, .
+\end{align*}
+
+
+\subsection{Upper bound 2}
+
+We start with another representation of the derivative \citep{al2009computing}:
+\begin{align*}
+	\nabla_{\JJ_{ij}} \exp(t\QQ) = \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \, .
+\end{align*}
+Using this representation, the truncation error may be rewritten
+\begin{align*}
+\nabla_{\JJ_{ij}} \exp(t\QQ) - t\exp(t\QQ) \JJ_{ij}    &= - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \\
+&=\sum_{k=1}^\infty \frac{t^k}{k!} \left( \left( \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \right) - k \QQ^{k-1} \JJ_{ij} \right) \\
+&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij}  \\
+&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij} \\
+&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}\left( \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-p} \JJ_{ij} \right) \\
+&=  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}\left[\JJ_{ij}, \QQ^{k-p}\right]  \, .
+\end{align*}
+We use the fact that, for the Frobenius norm $\Vert \cdot \Vert_F$, we have \citep{wu2010short}
+\begin{align*}
+	\Vert [\MM_1,\MM_2] \Vert_F \leq \sqrt{2} \Vert \MM_1 \Vert_F \Vert \MM_2\Vert_F \, .
+\end{align*}
 
 
 %\section{Plugging in $\QQ^T$}
