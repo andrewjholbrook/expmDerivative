@@ -151,6 +151,8 @@ d_{F}
 \definecolor{trevoryellow}{rgb}{0.829, 0.680, 0.306}
 
 
+\allowdisplaybreaks
+
 %\makeatletter
 %\def\title@font{\Huge}
 %\let\ltx@maketitle\@maketitle
@@ -374,20 +376,24 @@ to obtain our first upper bound on $err_{ij}(\QQ)$:
 
 We start with another representation of the derivative \citep{al2009computing}:
 \begin{align*}
-	\nabla_{\JJ_{ij}} \exp(t\QQ) = \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \, .
+	\nabla_{\JJ_{ij}} \exp(t\QQ) = \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} 
 \end{align*}
-Using this representation, the truncation error may be rewritten
-\begin{align*}
-\nabla_{\JJ_{ij}} \exp(t\QQ) - t\exp(t\QQ) \JJ_{ij}    &= - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \\
-&=\sum_{k=1}^\infty \frac{t^k}{k!} \left( \left( \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \right) - k \QQ^{k-1} \JJ_{ij} \right) \\
-&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij}  \\
-&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij} \\
-&= \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}\left( \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-p} \JJ_{ij} \right) \\
-&=  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}\left[\JJ_{ij}, \QQ^{k-p}\right]  \, .
-\end{align*}
-We use the fact that, for the Frobenius norm $\Vert \cdot \Vert_F$, we have \citep{wu2010short}
+and the fact that
+the fact that, for the Frobenius norm $\Vert \cdot \Vert_F$, we have \citep{wu2010short}
 \begin{align*}
 	\Vert [\MM_1,\MM_2] \Vert_F \leq \sqrt{2} \Vert \MM_1 \Vert_F \Vert \MM_2\Vert_F \, .
+\end{align*}
+Using these results, the truncation error may be rewritten
+\begin{align*}
+err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p}\right\Vert_F \\
+&= \left\Vert \sum_{k=1}^\infty \frac{t^k}{k!} \left( \left( \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p} \right) - k \QQ^{k-1} \JJ_{ij} \right)  \right\Vert_F\\
+&= \left\Vert \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij} \right\Vert_F \\
+&=\left\Vert  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1} \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-1} \JJ_{ij}\right\Vert_F \\
+&=\left\Vert  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}\left( \JJ_{ij} \QQ^{k-p}  -  \QQ^{k-p} \JJ_{ij} \right)\right\Vert_F \\
+&= \left\Vert  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1}[\JJ_{ij}, \QQ^{k-p}] \right\Vert_F  \\
+&\leq  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \Vert \QQ^{p-1} \Vert_F \Vert[\JJ_{ij}, \QQ^{k-p}]\Vert_F 
+\leq \sqrt{2}  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \Vert \QQ^{k-1} \Vert_F  \\
+&= \sqrt{2}  \sum_{k=1}^\infty \frac{t^k}{k!} (k-1) \Vert \QQ \Vert_F^{k-1} = \sqrt{2} \frac{e^{t\Vert \QQ\Vert_F}(t\Vert\QQ\Vert_F - 1) + 1}{\Vert \QQ \Vert_F} \, .
 \end{align*}
 
 
