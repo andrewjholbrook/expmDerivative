@@ -398,11 +398,10 @@ err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t
 
 \section{Upper bound 3}
 
-Assume the elements $q_{ij}$ are $i.i.d.$ with bounded first and second moments.
+When $t$ is small, we can use UB1.  When $t$ is large enough that the CTMC has reached stationarity, we have $t\QQ e^{t\QQ} \JJ_{ij} \approx \Zero$. This implies $t e^{t\QQ}\QQ \JJ_{ij} \approx \Zero$.
 
-\begin{enumerate}
-	\item NTS $t\QQ e^{t\QQ} \JJ_{ij} \approx \Zero$. This implies $t e^{t\QQ}\QQ \JJ_{ij} \approx \Zero$.
-	
+
+\begin{enumerate}	
 	\item  It follows that
 	\begin{align*}
 		err_{ij}(\QQ) &=  \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \\
