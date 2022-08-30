@@ -1,5 +1,26 @@
 setwd("~/expmDerivative/")
 
+# when do we get convergence?
+n       <- 3
+Q       <- matrix(rexp(n^2),n,n)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
+
+drv <- expm::expm(10*Q) #stationarity
+drv%*%Q
+
+# pseudoinverse
+eig.obj <- eigen(Q)
+inv.spctrm <- 1/eig.obj$values
+inv.spctrm[length(inv.spctrm)] <- 0
+pinv    <- eig.obj$vectors %*% diag(inv.spctrm) %*% solve(eig.obj$vectors)
+norm(pinv%*%Q%*%Q-Q) <= 0.00000001
+
+drv%*%Q
+
+drv%*%pinv
+
+norm(pinv%*%Q,type="F")
 #
 ###
 ###### correct approximation to frechet derivative
@@ -9,6 +30,9 @@ n       <- 3
 Q       <- matrix(rexp(n^2),n,n)#rexp(n^2)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
+
+
+############
 
 E        <- matrix(0,n,n)
 E[3,2]   <- 1 

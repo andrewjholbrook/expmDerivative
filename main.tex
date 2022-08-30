@@ -214,6 +214,7 @@ d_{F}
 %\newcommand{\X}{\mathbf{X}}
 %\renewcommand{\u}{\mathbf{u}}
 \newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\DD}{\mathbf{D}}
 \newcommand{\MM}{\mathbf{M}}
 \newcommand{\JJ}{\mathbf{J}}
 \newcommand{\II}{\mathbf{I}}
@@ -359,16 +360,16 @@ err_{ij}(\QQ) =	\Vert\nabla_{\JJ_{ij}} \exp(t\QQ) - t \exp(t\QQ)\JJ_{ij} \Vert =
 
 
 
-We use the result \citep{najfeld1995derivatives}\footnote{Where is this?}
+For a submultiplicative matrix norm, we have
 \begin{align*}
-	\Vert \{\MM_1, \MM_2^k \}  \Vert \leq 2^k \Vert \MM_1\Vert \Vert\MM_2 \Vert 
+	\Vert \{\MM_1, \MM_2^k \}  \Vert \leq 2^k \Vert \MM_1\Vert \Vert\MM_2 \Vert ^k \, .
 \end{align*}
-to obtain our first upper bound on $err_{ij}(\QQ)$:
+We use this to obtain our first upper bound on $err_{ij}(\QQ)$:
 \begin{align*}
 	err_{ij}(\QQ) &= \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert  \\
 	&\leq \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \left\Vert \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert  \\
-	&=  \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \frac{t \Vert \QQ \Vert}{k+1} \frac{(2t)^k}{k!}\\
-	&= \frac{\Vert \exp(t\QQ) \Vert \Vert\QQ\Vert}{2}   \left(e^{2t} - 2t-1 \right) \, .
+	&=  \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \frac{t}{k+1} \frac{(2t \Vert \QQ \Vert)^k}{k!}\\
+	&= \Vert \exp(t\QQ) \Vert   \frac{\exp(2t\Vert \QQ \Vert)-2t\Vert\QQ\Vert-1}{2\Vert \QQ \Vert} 
 \end{align*}
 
 
@@ -398,24 +399,36 @@ err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t
 
 \section{Upper bound 3}
 
-When $t$ is small, we can use UB1.  When $t$ is large enough that the CTMC has reached stationarity, we have $t\QQ e^{t\QQ} \JJ_{ij} \approx \Zero$. This implies $t e^{t\QQ}\QQ \JJ_{ij} \approx \Zero$.
-
-
-\begin{enumerate}	
-	\item  It follows that
+ When $t$ is large enough that the CTMC has reached stationarity, we have 
+ \begin{align*}
+ 	\frac{d}{dt}e^{t\QQ} =  \QQ e^{t\QQ}=e^{t\QQ} \QQ  = \Zero \, .
+ \end{align*}
+ If we further assume $\QQ$ is diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
+ \begin{align*}
+ 	\DD = \begin{Bmatrix}
+ 		d_1& 0 &\dots & & \\
+ 		0  & d_1 &0  & \dots& \\
+ 		\vdots &0 & \ddots & \\
+ 		 & \vdots& & d_{S-1} &0 \\
+ 		 &&&0&0
+ 	\end{Bmatrix} \, ,
+ \end{align*}
+ where $d_1,\dots,d_{S-1}<0$ are unique, then we may define a the generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$. Here, $\DD^+$ is the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.  Using this definition, it follows that
 	\begin{align*}
 		err_{ij}(\QQ) &=  \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \\
-		&=t \left\Vert \exp(t\QQ) \JJ_{ij}  \sum_{k=1}^\infty \frac{t^{k}}{(k+1)!} \QQ^k \right\Vert \\
-		&\stackrel{?}{\leq} t \left\Vert \exp(t\QQ) \JJ_{ij}  \sum_{k=1}^\infty \frac{t^{k}}{k!} \QQ^k \right\Vert \\
-		&= t \left\Vert \exp(t\QQ) \JJ_{ij}  \left( \exp(t\QQ)-\II \right) \right\Vert  \\
-		&\leq t      \left\Vert\exp(t\QQ)\right\Vert \left\Vert\JJ_{ij}\right\Vert \left\Vert\exp(t\QQ)-\II \right\Vert \\
-		&= t      \left\Vert\exp(t\QQ)\right\Vert \left\Vert\exp(t\QQ)-\II \right\Vert \, .
+		&=\left\Vert \exp(t\QQ) \JJ_{ij}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^k \right\Vert \\
+		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1} \right\Vert \\
+		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \exp(t\QQ)-\QQ-\II \right) \right\Vert  \, .
 	\end{align*}
-	\item Using the maximum value norm, we can bound 
-	\begin{align*}
-\left\Vert \exp(t\QQ) \JJ_{ij}  \left( \exp(t\QQ)-\II \right) \right\Vert_{\max}  \leq (\stackrel{?}{\ll}) 1
-	\end{align*}
-\end{enumerate}
+But $\QQ\exp(t\QQ)= \Zero$ implies $\QQ^+\exp(t\QQ)= \Zero$ because $\QQ$ and $\QQ^+$ share the same zero eigenvalue. We therefore have
+\begin{align*}
+err_{ij}(\QQ) &= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \QQ+\II \right) \right\Vert 
+\end{align*}
+
+
+
+
+
 
 %\section{Plugging in $\QQ^T$}
 %
