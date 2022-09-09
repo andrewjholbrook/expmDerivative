@@ -21,6 +21,47 @@ drv%*%Q
 drv%*%pinv
 
 norm(pinv%*%Q,type="F")
+
+# upper bound
+ub <- function(t, Q, Jij) {
+  n <- dim(Q)[1]
+  eig.obj <- eigen(Q)
+  inv.spctrm <- 1/eig.obj$values
+  inv.spctrm[length(inv.spctrm)] <- 0
+  pinv    <- Re(eig.obj$vectors %*% diag(inv.spctrm) %*% solve(eig.obj$vectors))
+  mat <- expm::expm(t*Q)%*%Jij%*%pinv%*%(Q+diag(n))
+  return(norm(mat,type="F"))
+}
+
+n       <- 2
+Q       <- matrix(rexp(n^2),n,n)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
+E        <- matrix(0,n,n)
+E[2,2]   <- 1 
+
+ub(100,Q,E)
+
+
+#
+###
+####### concentration of measure?
+###
+#
+n       <- 10000
+Q       <- matrix(rexp(n^2),n,n)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
+sum(abs(Q[2:n,1]))
+
+head(sort(Mod(eigen(Q)$values)))
+
+n       <- 1000
+Q       <- matrix(exp(rnorm(n=n^2,mean=0,sd=10)),n,n)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
+head(sort(Mod(eigen(Q)$values)))
+
 #
 ###
 ###### correct approximation to frechet derivative
