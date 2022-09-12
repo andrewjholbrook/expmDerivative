@@ -197,7 +197,7 @@ d_{F}
 
 \begin{abstract}
 
-[Abstract]
+I investigate the accuracy of the first-order approximation to the directional derivative of the matrix exponential of CTMC generator matrices.
 
 
 \end{abstract}
@@ -309,49 +309,50 @@ Here, $\MM$ gives the direction and $\{\MM,\QQ^k\}$ is the matrix commutator ser
 
 \newcommand{\Llambda}{\boldsymbol{\Lambda}}
 
+%\noindent
+%\citet{najfeld1995derivatives} describe the relationship between the $ij$th directional derivative $\nabla_{\JJ_{ij}} \exp(t\QQ)$ and the gradient of the $ij$th entry of $\exp(t\QQ)$ with respect to $\QQ$
+%\begin{align*}
+%	\frac{\partial \exp(t\QQ)_{ij}}{\partial \QQ} := \begin{bmatrix}
+%	 \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{11}} & \dots &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{1S}} \\
+%	 \vdots & \ddots & \\
+%	  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{S1}} & &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{SS}} 
+%	\end{bmatrix} \, .
+%\end{align*}
+%In particular, they show the following result (Equation 145):
+%\begin{align*}
+%\frac{	\partial \exp(t\QQ)_{ij}}{\partial \QQ} = \nabla_{\JJ_{ij}} \exp(t\QQ^T) =\exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},(\QQ^T)^k\}
+%\end{align*}
+%Now, suppose that $\theta$ is a scalar value and $\QQ$ derives from an unstructured matrix $\Llambda$ with elements $\lambda_{kl}>0$ satisfying
+%\begin{align*}
+%	q_{kl} = \bigg\{ \begin{matrix}
+%		\lambda_{kl} \,,& k \neq l \\
+%	\lambda_{kl}	-\sum_{l'=1}^S\lambda_{kl'} \, , &  k= l 
+%	\end{matrix} \quad .
+%\end{align*}
+%Then it follows that
+%\begin{align}\label{eq:together}
+%	\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &= \sum_{klmn} \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \frac{\partial q_{kl}}{\partial \lambda_{mn} } \frac{\partial \lambda_{mn}}{\partial \theta} \\  \nonumber
+%	&= \sum_{klmn}  \left[ \nabla_{\JJ_{ij}} \exp(t\QQ^T) \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta}  \, .
+%\end{align}
+%A special case of \citet{najfeld1995derivatives} (Equation 142), the identity
+%\begin{align*}
+%\nabla_{\JJ_{ij}} \exp(t\QQ^T) = \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T 
+%\end{align*}
+%allows us to write \eqref{eq:together} as
+%\begin{align*}
+%		\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &=  \sum_{klmn}  \left[ \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
+%		&\approx  \sum_{klmn}  \left[ \left( t \exp(t\QQ) \JJ_{ji} \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
+%		&= \sum_{klmn}  \left[  t \JJ_{ij} \exp(t\QQ)^T \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \, ,
+%\end{align*}
+%where we have made use of the first-order approximation of Formula \eqref{eq:deriv}.
+%
+
 \noindent
-\citet{najfeld1995derivatives} describe the relationship between the $ij$th directional derivative $\nabla_{\JJ_{ij}} \exp(t\QQ)$ and the gradient of the $ij$th entry of $\exp(t\QQ)$ with respect to $\QQ$
-\begin{align*}
-	\frac{\partial \exp(t\QQ)_{ij}}{\partial \QQ} := \begin{bmatrix}
-	 \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{11}} & \dots &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{1S}} \\
-	 \vdots & \ddots & \\
-	  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{S1}} & &  \frac{\partial \exp(t\QQ)_{ij} }{\partial q_{SS}} 
-	\end{bmatrix} \, .
-\end{align*}
-In particular, they show the following result (Equation 145):
-\begin{align*}
-\frac{	\partial \exp(t\QQ)_{ij}}{\partial \QQ} = \nabla_{\JJ_{ij}} \exp(t\QQ^T) =\exp(t\QQ^T)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},(\QQ^T)^k\}
-\end{align*}
-Now, suppose that $\theta$ is a scalar value and $\QQ$ derives from an unstructured matrix $\Llambda$ with elements $\lambda_{kl}>0$ satisfying
-\begin{align*}
-	q_{kl} = \bigg\{ \begin{matrix}
-		\lambda_{kl} \,,& k \neq l \\
-	\lambda_{kl}	-\sum_{l'=1}^S\lambda_{kl'} \, , &  k= l 
-	\end{matrix} \quad .
-\end{align*}
-Then it follows that
-\begin{align}\label{eq:together}
-	\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &= \sum_{klmn} \frac{\partial \exp(t\QQ)_{ij}}{\partial q_{kl}} \frac{\partial q_{kl}}{\partial \lambda_{mn} } \frac{\partial \lambda_{mn}}{\partial \theta} \\  \nonumber
-	&= \sum_{klmn}  \left[ \nabla_{\JJ_{ij}} \exp(t\QQ^T) \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta}  \, .
-\end{align}
-A special case of \citet{najfeld1995derivatives} (Equation 142), the identity
-\begin{align*}
-\nabla_{\JJ_{ij}} \exp(t\QQ^T) = \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T 
-\end{align*}
-allows us to write \eqref{eq:together} as
-\begin{align*}
-		\frac{\partial \exp(t\QQ)_{ij}}{\partial \theta} &=  \sum_{klmn}  \left[ \left( \nabla_{\JJ_{ji}} \exp(t\QQ) \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
-		&\approx  \sum_{klmn}  \left[ \left( t \exp(t\QQ) \JJ_{ji} \right)^T  \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \\
-		&= \sum_{klmn}  \left[  t \JJ_{ij} \exp(t\QQ)^T \right]_{kl} \Big(\delta_{km} \big( \delta_{kl} \left(\delta_{mn}-1\right) + \delta_{ln}\left(1-\delta_{kl}\right) \big) \Big) \frac{\partial \lambda_{mn}}{\partial \theta} \, ,
-\end{align*}
-where we have made use of the first-order approximation of Formula \eqref{eq:deriv}.
-
-
-
+Let $\JJ_{ij}$ be the matrix $ij$th element equal to 1 and remaining elements equal to 0.  Then the first-order approximation to the derivative in the direction $\JJ_{ij}$ is $t \exp(t\QQ)\JJ_{ij}$.
 
 \section{Bounding truncation error}
 
-How good is the first order approximation $t \exp(t\QQ)\JJ_{ij}$ to the directional derivative \eqref{eq:deriv}?  In other words, we wish to know the magnitude of
+How good is the first order approximation $t \exp(t\QQ)\JJ_{ij}$ to the directional derivative?  In other words, we wish to know the magnitude of
 \begin{align*}
 err_{ij}(\QQ) =	\Vert\nabla_{\JJ_{ij}} \exp(t\QQ) - t \exp(t\QQ)\JJ_{ij} \Vert = \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \, .
 \end{align*}
@@ -397,8 +398,8 @@ err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t
 &= \sqrt{2}  \sum_{k=1}^\infty \frac{t^k}{k!} (k-1) \Vert \QQ \Vert_F^{k-1} = \sqrt{2} \frac{e^{t\Vert \QQ\Vert_F}(t\Vert\QQ\Vert_F - 1) + 1}{\Vert \QQ \Vert_F} \, .
 \end{align*}
 
-\section{Upper bound 3}
-
+\section{An approach useful for large $t$}
+The above bounds appear most useful when $t$ is small.
  When $t$ is large enough that the CTMC has reached stationarity, we have 
  \begin{align*}
  	\frac{d}{dt}e^{t\QQ} =  \QQ e^{t\QQ}=e^{t\QQ} \QQ  = \Zero \, .
@@ -414,8 +415,9 @@ err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t
  	\end{Bmatrix} \, ,
  \end{align*}
  where $d_1,\dots,d_{S-1}<0$ are unique, then we may define a the generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$. Here, $\DD^+$ is the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.  Using this definition, it follows that
-	\begin{align*}
-		err_{ij}(\QQ) &=  \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \\
+
+		\begin{align*}
+			err_{ij}(\QQ) &=	\Vert\nabla_{\JJ_{ij}} \exp(t\QQ) - t \exp(t\QQ)\JJ_{ij} \Vert = \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \\
 		&=\left\Vert \exp(t\QQ) \JJ_{ij}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^k \right\Vert \\
 		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1} \right\Vert \\
 		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \exp(t\QQ)-\QQ-\II \right) \right\Vert  \, .
@@ -424,14 +426,17 @@ But $\QQ\exp(t\QQ)= \Zero$ implies $\QQ^+\exp(t\QQ)= \Zero$ because $\QQ$ and $\
 \begin{align*}
 err_{ij}(\QQ) &= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \QQ+\II \right) \right\Vert 
 \end{align*}
+The matrix argument of this last term is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
 
+\subsection{Is this approach useful in high dimensions?}
 
-\begin{itemize}
-	\item The matrix argument of this last term is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
-	\item TODO: concentration of measure result for high-dimensional matrices.  As $D\rightarrow \infty$, the non-zero eigenvalues go to $-\infty$.
-\end{itemize}
+This approach seems useful in higher dimensions.  In this context, the moduli of the non-zero eigenvalues appear to grow large (Figure \ref{fig:eigenvalues}).  As a result, CTMC for unstructured and high-dimensional $\QQ$ appear to reach stationarity faster.
 
-
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.9\linewidth]{eigenvaluesPlot.png}
+	\caption{Eigenvalues of $\QQ$ for off-diagonal elements generated according to univariate/standard exponential distribution. Eigenvalues move farther leftward for larger dimensions.  Pattern holds for other univariate distributions.}\label{fig:eigenvalues}
+\end{figure}
 
 %\section{Plugging in $\QQ^T$}
 %

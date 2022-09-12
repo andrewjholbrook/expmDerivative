@@ -1,4 +1,5 @@
 setwd("~/expmDerivative/")
+library(ggplot2)
 
 # # when do we get convergence?
 # n       <- 3
@@ -22,7 +23,7 @@ setwd("~/expmDerivative/")
 # 
 # norm(pinv%*%Q,type="F")
 
-# upper bound
+# upper bound TODO: show a lower bound
 ub <- function(t, Q, Jij) {
   n <- dim(Q)[1]
   eig.obj <- eigen(Q)
@@ -38,18 +39,62 @@ nmrclDrvtv <- function(t,Q,E,eps=0.0001) {
   return(out)
 }
 
-n       <- 200
+blockwise <- function(t,Q,E) {
+  B1  <- cbind(Q,E)
+  B2  <- cbind(Q*0,Q)
+  B   <- rbind(B1,B2) 
+  etB <- expm::expm(t*B)
+  return(etB[1:(dim(etB)[1]/2),(dim(etB)[1]/2+1):dim(etB)[1]])
+}
+
+n       <- 50
 Q       <- matrix(rexp(n^2),n,n)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
+eigs    <- eigen(Q)$values
+
+for(n in 100*1:10) {
+  Q       <- matrix(rexp(n^2),n,n)
+  diag(Q) <- 0
+  diag(Q) <- - rowSums(Q)
+  eigs    <- c(eigs,eigen(Q)$values)
+}
+
+df <- data.frame(Real=Re(eigs),
+                 Imaginary=Im(eigs),
+                 Dimension=c(rep(50,50),
+                             rep(100,100),
+                             rep(200,200),
+                             rep(300,300),
+                             rep(400,400),
+                             rep(500,500),
+                             rep(600,600),
+                             rep(700,700),
+                             rep(800,800),
+                             rep(900,900),
+                             rep(1000,1000)))
+df$Dimension <- factor(df$Dimension)
+
+gg <- ggplot(df,aes(x=Real,y=Imaginary,color=Dimension)) +
+  geom_point(size=0.1) +
+  ggtitle("Eigenvalues of random CTMC generators") +
+  theme_bw()
+
+gg
+
+ggsave("eigenvaluesPlot.png",device = "png",width=5,height=3, dpi=320)
+
+
 E        <- matrix(0,n,n)
-E[2,3]   <- 1 
+E[2,2]   <- 1 
+t <- 1
 
-ub(1,Q,E)
+ub(t,Q,E)
 
-drv <- nmrclDrvtv(t=1,Q=Q,E=E,eps=0.00001)
+#drv <- nmrclDrvtv(t=t,Q=Q,E=E,eps=0.00001)
+drv <- blockwise(t=t,Q,E)
 
-frstRdr <- expm::expm(1*Q) %*% E * 1 # correct approx
+frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
 norm(frstRdr-drv,type = "F")
 
 
