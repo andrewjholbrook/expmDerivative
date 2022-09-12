@@ -398,7 +398,7 @@ err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ_{ij}  +  \sum_{k=1}^\infty \frac{t
 &= \sqrt{2}  \sum_{k=1}^\infty \frac{t^k}{k!} (k-1) \Vert \QQ \Vert_F^{k-1} = \sqrt{2} \frac{e^{t\Vert \QQ\Vert_F}(t\Vert\QQ\Vert_F - 1) + 1}{\Vert \QQ \Vert_F} \, .
 \end{align*}
 
-\section{An approach useful for large $t$}
+\section{An approach that assumes convergence}
 The above bounds appear most useful when $t$ is small.
  When $t$ is large enough that the CTMC has reached stationarity, we have 
  \begin{align*}
@@ -420,11 +420,11 @@ The above bounds appear most useful when $t$ is small.
 			err_{ij}(\QQ) &=	\Vert\nabla_{\JJ_{ij}} \exp(t\QQ) - t \exp(t\QQ)\JJ_{ij} \Vert = \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ_{ij},\QQ^k\} \right\Vert \\
 		&=\left\Vert \exp(t\QQ) \JJ_{ij}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^k \right\Vert \\
 		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1} \right\Vert \\
-		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \exp(t\QQ)-\QQ-\II \right) \right\Vert  \, .
+		&= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \exp(t\QQ)-t\QQ-\II \right) \right\Vert  \, .
 	\end{align*}
 But $\QQ\exp(t\QQ)= \Zero$ implies $\QQ^+\exp(t\QQ)= \Zero$ because $\QQ$ and $\QQ^+$ share the same zero eigenvalue. We therefore have
 \begin{align*}
-err_{ij}(\QQ) &= \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \QQ+\II \right) \right\Vert 
+err_{ij}(\QQ) &=t \left\Vert \exp(t\QQ) \JJ_{ij} \QQ^+ \left( \QQ+\II \right) \right\Vert 
 \end{align*}
 The matrix argument of this last term is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
 

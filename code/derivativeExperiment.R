@@ -30,7 +30,7 @@ ub <- function(t, Q, Jij) {
   inv.spctrm <- 1/eig.obj$values
   inv.spctrm[length(inv.spctrm)] <- 0
   pinv    <- Re(eig.obj$vectors %*% diag(inv.spctrm) %*% solve(eig.obj$vectors))
-  mat <- expm::expm(t*Q)%*%Jij%*%pinv%*%(Q+diag(n))
+  mat <- expm::expm(t*Q)%*%Jij%*%pinv%*%(Q*t+diag(n))
   return(norm(mat,type="F"))
 }
 
@@ -47,6 +47,9 @@ blockwise <- function(t,Q,E) {
   return(etB[1:(dim(etB)[1]/2),(dim(etB)[1]/2+1):dim(etB)[1]])
 }
 
+# 
+######## figure
+#
 n       <- 50
 Q       <- matrix(rexp(n^2),n,n)
 diag(Q) <- 0
@@ -79,15 +82,21 @@ gg <- ggplot(df,aes(x=Real,y=Imaginary,color=Dimension)) +
   geom_point(size=0.1) +
   ggtitle("Eigenvalues of random CTMC generators") +
   theme_bw()
-
 gg
 
 ggsave("eigenvaluesPlot.png",device = "png",width=5,height=3, dpi=320)
 
+##########################
 
+n       <- 50
+Q       <- matrix(rexp(n^2),n,n)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,2]   <- 1 
-t <- 1
+t <- 100
+
+max(abs(expm::expm(t*Q)%*%Q))
 
 ub(t,Q,E)
 
