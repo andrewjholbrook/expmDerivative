@@ -88,15 +88,15 @@ ggsave("eigenvaluesPlot.png",device = "png",width=5,height=3, dpi=320)
 
 ##########################
 
-n       <- 50
+n       <- 100
 Q       <- matrix(rexp(n^2),n,n)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,2]   <- 1 
-t <- 100
+t <- 1000000000
 
-max(abs(expm::expm(t*Q)%*%Q))
+#max(abs(expm::expm(t*Q)%*%Q))
 
 ub(t,Q,E)
 
