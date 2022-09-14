@@ -430,12 +430,18 @@ The matrix argument of this last term is nilpotent, so its spectral radius is 0.
 
 \subsection{Is this approach useful in high dimensions?}
 
-This approach seems useful in higher dimensions.  In this context, the moduli of the non-zero eigenvalues appear to grow large (Figure \ref{fig:eigenvalues}).  As a result, CTMC for unstructured and high-dimensional $\QQ$ appear to reach stationarity faster.
+This approach seems useful in higher dimensions.  In this context, the moduli of the non-zero eigenvalues appear to grow large (Figure \ref{fig:eigenvalues}).  As a result, CTMC for unstructured and high-dimensional $\QQ$ appear to reach stationarity faster.  Figure \ref{fig:frob} compares Frobenius norms for the different error estimates with the truth.
 
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=0.9\linewidth]{eigenvaluesPlot.png}
 	\caption{Eigenvalues of $\QQ$ for off-diagonal elements generated according to univariate/standard exponential distribution. Eigenvalues move farther leftward for larger dimensions.  Pattern holds for other univariate distributions.}\label{fig:eigenvalues}
+\end{figure}
+
+\begin{figure}[!p]
+		\centering
+	\includegraphics[width=\linewidth]{frobeniusScaling.pdf}
+	\caption{Anecdotal (single simulation) error profiles with change in time $t$ and dimension. At what point does the convergence assumption based estimate reach its nadir?}\label{fig:frob}
 \end{figure}
 
 %\section{Plugging in $\QQ^T$}
