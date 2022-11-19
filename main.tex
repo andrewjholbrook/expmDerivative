@@ -34,6 +34,7 @@ textfont=it]{caption}
 \usepackage{authblk}
 \usepackage{mathbbol}
 \usepackage{thmtools}
+\usepackage{amsfonts}
 
 
 
@@ -284,51 +285,16 @@ We begin by noting
 	&\leq  \lVert  e^{t\QQ}\JJ  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^k \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
 		&=  \lVert  e^{t\QQ}\JJ \QQ^+  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1} \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
 		&=  \lVert  e^{t\QQ}\JJ \QQ^+ (e^{t\QQ} - t\QQ -\II) \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
-			&\leq \lVert  e^{t\QQ}\JJ \QQ^+ ( t\QQ +\II) \rVert  + \lVert  e^{t\QQ}\JJ \QQ^+ e^{t\QQ} \rVert  +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \, .
+			&\leq \lVert  e^{t\QQ}\JJ \QQ^+ ( t\QQ +\II) \rVert  + \lVert  e^{t\QQ}\JJ \QQ^+ e^{t\QQ} \rVert  +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
+			&=: \mathfrak{a} + \mathfrak{b} + \mathfrak{c} \, .
 \end{align}
 Empirical experiments using the Frobenius and infinity norms (Figures \ref{fig:frob} and \ref{fig:inf}, respectively) show that the first term
 \begin{align}
-	\widetilde{\mbox{err}}(t,\QQ,\JJ) := \left\Vert e^{t\QQ} \JJ \QQ^+(t\QQ+\II)  \right\Vert \, ,
+	 \mathfrak{a} = \left\Vert e^{t\QQ} \JJ \QQ^+(t\QQ+\II)  \right\Vert \, ,
 \end{align}
-although not a strict upper bound, is asymptotically tight for the true error as $t\rightarrow \infty$. We would, therefore, like to show that the second and third terms go to zero as $t$ diverges.
+although not a strict upper bound, is asymptotically tight for the true error as $t\rightarrow \infty$. We would, therefore, like to show that the terms $\mathfrak{b}$ and $\mathfrak{c}$ go to zero as $t$ diverges.
 
-%\section{An instructive informal approach}
-%The naive bounds in Appendix \ref{sec:loose} appear useful when $t$ is very small but explode for moderate values of $t$ (Figure \ref{fig:frob}).
-% When $t$ is large enough that the CTMC has reached stationarity, we have 
-% \begin{align*}
-% 	\frac{d}{dt}e^{t\QQ} =  \QQ e^{t\QQ}=e^{t\QQ} \QQ  = \Zero \, .
-% \end{align*}
-% If we further assume $\QQ$ is diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
-% \begin{align*}
-% 	\DD = \begin{pmatrix}
-% 		d_1& 0 &\dots & & \\
-% 		0  & d_2 &0  & \dots& \\
-% 		\vdots &0 & \ddots & \\
-% 		 & \vdots& & d_{S-1} &0 \\
-% 		 &&&0&0
-% 	\end{pmatrix} \, ,
-% \end{align*}
-% where $d_1<\dots <d_{S-1}<0$ are unique, then we may define a the generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$. Here, $\DD^+$ is the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.  Using this definition, it follows that
-%		\begin{align*}
-%			\mbox{err}(t,\QQ,\JJ)	&=\lVert \nabla_{\JJ} e^{t\QQ} - \widetilde{\nabla}_{\JJ} e^{t\QQ} \rVert	\\
-%			&=\Vert\nabla_{\JJ} e^{t\QQ} - t e^{t\QQ}\JJ \Vert = \left\Vert e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert \\
-%			&=\left\Vert e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^k \JJ \QQ^k}\right\Vert  = \left\Vert e^{t\QQ} \JJ  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \order{ \QQ^k}\right\Vert  \\
-%		&= \left\Vert e^{t\QQ} \JJ \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^{k+1}} \right\Vert = \left\Vert e^{t\QQ} \JJ\QQ^+ \order{ e^{t\QQ}-t\QQ-\II } \right\Vert  \, .
-%	\end{align*}
-%But $\QQ e^{t\QQ}= \Zero$ implies $\QQ^+e^{t\QQ}= \Zero$ because $\QQ$ and $\QQ^+$ share the same zero eigenvalue. We therefore have
-%\begin{align}\label{eq:err3}
-%	\mbox{err}(t,\QQ,\JJ) = \left\Vert e^{t\QQ} \JJ \QQ^+\order{t\QQ+\II } \right\Vert 
-%\end{align}
-%
-%\begin{remark}
-%Ignoring the big-O notation, the matrix $e^{t\QQ} \JJ \QQ^+(t\QQ+\II)$ is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
-%\end{remark}
-%
-%Surprisingly, for the special case of the Frobenius norm, the approximation
-%\begin{align}
-%	\widetilde{\mbox{err}}(t,\QQ,\JJ) := \left\Vert e^{t\QQ} \JJ \QQ^+(t\QQ+\II)  \right\Vert_F
-%\end{align}
-%appears to be asymptotically tight in the limit $t\rightarrow \infty$ although it is not an upper bound (Figure \ref{fig:frob}).  Notably, this pattern does not hold for other matrix norms such as the infinity norm (Figure \ref{fig:inf}).  For this reason, we focus on the Frobenius norm in what follows.
+
 
 
 
@@ -373,47 +339,20 @@ and, by equivalence of norms, we have
 \begin{align}
 	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ \rVert = 	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ^+ \rVert = 0\, ,
 \end{align}
-in general for any matrix norm $\lVert \cdot \rVert$.
+in general for any matrix norm $\lVert \cdot \rVert$. Moreover, the matrix $e^{t\QQ}$ is a stochastic matrix with rows summing to unity. Therefore $\lVert e^{t\QQ}\rVert_\infty = 1$, and, by norm equivalence, $\lVert e^{t\QQ}\rVert = \mathcal{O}(1)$.
+ These results lead to the following fact for term $\mathfrak{b}$ in the upper bound of \eqref{eq:ub1}:
+\begin{align*}
+	\lim_{t\rightarrow \infty} \lVert  e^{t\QQ}\JJ \QQ^+ e^{t\QQ} \rVert \leq  \lim_{t\rightarrow \infty} \lVert  e^{t\QQ} \rVert \lVert \JJ  \rVert \lVert \QQ^+ e^{t\QQ} \rVert = 0 \, .
+\end{align*}
+Thus, we obtain the intermediary result for $t$ large:
+\begin{align*}
+\lim_{t\rightarrow \infty}\mbox{err}(t,\QQ,\JJ) \leq \lim_{t\rightarrow \infty}  \mathfrak{a}+ \mathfrak{c} \, .
+\end{align*}
+It remains to show that $\mathfrak{c}$ goes to zero as $t$ diverges, i.e., 
+\begin{align}
+	\lim_{t\rightarrow \infty} \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert = 0\, .
+\end{align}
 
-
-
-%.  Employing these facts will require us to rewrite the series in $\QQ^k \JJ \QQ^k $ as a matrix exponential, and for this we use the identity
-%\begin{align*}
-%	\vecc \left(\AA \BB \CC \right) = \left( \CC^T \otimes \AA \right) \vecc (\BB) \, .
-%\end{align*}
-%Dropping the big-O notation, we have
-%\begin{align*}
-%	\mbox{err}(t,\QQ,\JJ)&=  \left\Vert \QQ^+ e^{t\QQ} \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right\Vert _F \\
-%	&=  \left\Vert \vecc \left(\QQ^+ e^{t\QQ} \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right) \right\Vert _F \\
-%	&= \left\Vert  (\QQ^{+T} \otimes \QQ^+) (\II \otimes e^{t\QQ}) \vecc \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right)    \right\Vert_F  \\
-%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{T(k+1)} \otimes \QQ^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
-%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} (\QQ^{T} \otimes \QQ)^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
-%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \exp(t\QQ^T\otimes \QQ) - t\QQ^T\otimes \QQ - \II \right)   \vecc(\JJ)  \right\Vert_F  \, .
-%\end{align*}
-%
-%\textcolor{red}{\textbf{Where I'm stuck today:}}  I can bound the terms including $\QQ^T\otimes \QQ$ and $\II$, but I can't figure out how to bound 
-%\begin{align*}
-% (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \exp(t\QQ^T\otimes \QQ) \, .
-%\end{align*}
-%In particular, we can write
-%\begin{align*}
-%	\QQ^T \otimes \QQ &= \MM^{-T} \DD \MM^T \otimes \MM \DD \MM^{-1} \\
-%	&=  (\MM^{-T} \otimes \MM)  ((\DD \MM^T) \otimes  (\DD \MM^{-1})) \\
-%	&= (\MM^{-T} \otimes \MM)  (\DD  \otimes  \DD) (\MM^{T} \otimes \MM^{-1}) \\
-%	&= \GG (\DD  \otimes  \DD) \GG^{-1} 
-%\end{align*}
-%for $\GG = (\MM^{-T} \otimes \MM)$.  From here, it becomes clear that the term $\exp(t\QQ^T\otimes \QQ)$ is particularly problematic since
-%\begin{align*}
-%\exp(t\QQ^T\otimes \QQ) &= \GG \exp(t \DD\otimes \DD) \GG^{-1} \\
-%&= \GG \exp \begin{pmatrix}
-%	 td_1 \DD	& 0 &\dots & & \\
-%	0  & td_2 \DD &0  & \dots& \\
-%	\vdots &0 & \ddots & \\
-%	& \vdots& & td_{S-1} \DD &0 \\
-%	&&&0&0
-%\end{pmatrix}  \GG^{-1} \, .
-%\end{align*}
-%This is bad because $d_s\DD$ have positive values and so the exponential explodes as $t\rightarrow \infty$.
 
 \appendix
 
