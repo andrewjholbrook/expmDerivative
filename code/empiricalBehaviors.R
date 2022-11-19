@@ -341,7 +341,7 @@ cnvrgncBnd <- function(t, Q, Jij) {
 
 nvBnd1 <- function(t, Q, Jij) {
   nrmXptQ <- norm(expm::expm(t*Q),type="i")
-  nrmQ    <- norm(Q,type="F")
+  nrmQ    <- norm(Q,type="i")
   out     <- nrmXptQ / (2*nrmQ) * (exp(2*t*nrmQ) - 2*t*nrmQ - 1)
   return(out)
 }
@@ -361,13 +361,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,
@@ -405,13 +405,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,
@@ -450,13 +450,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,
@@ -494,13 +494,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,
@@ -538,13 +538,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,
@@ -583,13 +583,13 @@ diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
 E[2,1]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=10,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
   
   df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
+              c(norm(frstRdr-drv,type = "i"),
                 "Truth",
                 t))
   df <- rbind(df,

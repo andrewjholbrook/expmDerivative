@@ -231,13 +231,31 @@ We investigate the accuracy of a first-order approximation to the directional de
 \renewcommand{\AA}{\mathbf{A}}
 \newcommand{\GG}{\mathbf{G}}
 
-Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  We are interested in quickly approximating the directional derivative of the matrix exponential
+Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  In our application of interest, $\QQ$ is almost surely diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
 \begin{align*}
-	\exp(t\QQ) = \sum_{k=0}^\infty \frac{t^k\QQ^k}{k!}
+	\DD = \begin{pmatrix}
+		d_1& 0 &\dots & & \\
+		0  & d_2 &0  & \dots& \\
+		\vdots &0 & \ddots & \\
+		& \vdots& & d_{S-1} &0 \\
+		&&&0&0
+	\end{pmatrix} \, ,
+\end{align*}
+where the structure of $\QQ$ implies eigenvalues
+\begin{enumerate}
+	\item $d_s\in \mathbb{C}$ with $\mbox{Re}(d_s)<0$ for $s\in\{1,\dots,S-1\}$, and
+	\item $d_S =0$ corresponding to the eigenvector $\boldsymbol{1}=(1,\dots,1)^T$. 
+\end{enumerate} 
+We may further define a generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$ using $\DD^+$, the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.   Finally, we note that diagonalizability implies $\DD$ and $\DD^+$ commute, i.e., $\DD^+\DD=\DD\DD^+$.
+
+
+ We are interested in efficiently approximating the directional derivative of the matrix exponential
+\begin{align*}
+	e^{t\QQ} = \sum_{k=0}^\infty \frac{t^k\QQ^k}{k!}
 \end{align*}
 for arbitrary $t>0$ using the formula \citep{najfeld1995derivatives}
 \begin{align}\label{eq:deriv}
-	\nabla_{\JJ} \exp(t\QQ)  =  \exp(t\QQ)  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \, .
+	\nabla_{\JJ} e^{t\QQ}  =  e^{t\QQ}  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \, .
 \end{align}
 Here, $\JJ$ gives the direction and $\{\JJ,\QQ^k\}$ is the matrix commutator series satisfying the recursion
 \begin{align*}
@@ -246,71 +264,82 @@ Here, $\JJ$ gives the direction and $\{\JJ,\QQ^k\}$ is the matrix commutator ser
 \end{align*}
 Thus, the first-order approximation to derivative \eqref{eq:deriv} is 
 \begin{align}\label{eq:firstOrder}
-	\widetilde{\nabla}_{\JJ} \exp(t\QQ)= t \exp(t\QQ)\JJ \, .
+	\widetilde{\nabla}_{\JJ} e^{t\QQ}= t e^{t\QQ}\JJ \, .
 \end{align}
 We want to bound the truncation error
 \begin{align*}
-\mbox{err}(t,\QQ,\JJ)	:=\lVert \nabla_{\JJ} \exp(t\QQ) - \widetilde{\nabla}_{\JJ} \exp(t\QQ) \rVert \, ,
+\mbox{err}(t,\QQ,\JJ)	:=\lVert \nabla_{\JJ} e^{t\QQ} - \widetilde{\nabla}_{\JJ} e^{t\QQ} \rVert \, ,
 \end{align*}
  where $\lVert \cdot \rVert$ denotes an appropriate matrix norm.  In this context, we find that naive bounds (Appendix \ref{sec:loose}) that do not exploit the structure of $\QQ$  are rather loose (Figure \ref{fig:frob}).  
  In our efforts to fully leverage the structure of $\QQ$, we will make use of the general formula for the matrix commutator series  \citep{volkin1968iterated}
 \begin{align}\label{eq:commSeries}
-	\{ \JJ, \QQ^k\} = \sum_{r=0}^k (-1)^{k+r}  {k \choose r} \QQ^{k-r} \JJ \QQ^r  = \order{\QQ^k \JJ \QQ^k} \, .
-\end{align}
-Here, $\order{\cdot}$ is the natural extension of big-O notation to matrix valued functions.
-
-\section{An instructive informal approach}
-The naive bounds in Appendix \ref{sec:loose} appear useful when $t$ is very small but explode for moderate values of $t$ (Figure \ref{fig:frob}).
- When $t$ is large enough that the CTMC has reached stationarity, we have 
- \begin{align*}
- 	\frac{d}{dt}e^{t\QQ} =  \QQ e^{t\QQ}=e^{t\QQ} \QQ  = \Zero \, .
- \end{align*}
- If we further assume $\QQ$ is diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
- \begin{align*}
- 	\DD = \begin{pmatrix}
- 		d_1& 0 &\dots & & \\
- 		0  & d_2 &0  & \dots& \\
- 		\vdots &0 & \ddots & \\
- 		 & \vdots& & d_{S-1} &0 \\
- 		 &&&0&0
- 	\end{pmatrix} \, ,
- \end{align*}
- where $d_1<\dots <d_{S-1}<0$ are unique, then we may define a the generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$. Here, $\DD^+$ is the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.  Using this definition, it follows that
-		\begin{align*}
-			\mbox{err}(t,\QQ,\JJ)	&=\lVert \nabla_{\JJ} \exp(t\QQ) - \widetilde{\nabla}_{\JJ} \exp(t\QQ) \rVert	\\
-			&=\Vert\nabla_{\JJ} \exp(t\QQ) - t \exp(t\QQ)\JJ \Vert = \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert \\
-			&=\left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^k \JJ \QQ^k}\right\Vert  = \left\Vert \exp(t\QQ) \JJ  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \order{ \QQ^k}\right\Vert  \\
-		&= \left\Vert \exp(t\QQ) \JJ \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^{k+1}} \right\Vert = \left\Vert \exp(t\QQ) \JJ\QQ^+ \order{ \exp(t\QQ)-t\QQ-\II } \right\Vert  \, .
-	\end{align*}
-But $\QQ\exp(t\QQ)= \Zero$ implies $\QQ^+\exp(t\QQ)= \Zero$ because $\QQ$ and $\QQ^+$ share the same zero eigenvalue. We therefore have
-\begin{align}\label{eq:err3}
-	\mbox{err}(t,\QQ,\JJ) = \left\Vert \exp(t\QQ) \JJ \QQ^+\order{t\QQ+\II } \right\Vert 
+	\{ \JJ, \QQ^k\} = \sum_{r=0}^k (-1)^{k+r}  {k \choose r} \QQ^{k-r} \JJ \QQ^r  \, .
 \end{align}
 
-\begin{remark}
-Ignoring the big-O notation, the matrix $\exp(t\QQ) \JJ \QQ^+(t\QQ+\II)$ is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
-\end{remark}
+\subsection{An empirically tight asymptotic estimate}
 
-Surprisingly, for the special case of the Frobenius norm, the approximation
+We begin by noting
+\begin{align}\label{eq:ub1}
+	\mbox{err}(t,\QQ,\JJ) &=  \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \rVert \\ \nonumber
+	&\leq  \lVert  e^{t\QQ}\JJ  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^k \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
+		&=  \lVert  e^{t\QQ}\JJ \QQ^+  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1} \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
+		&=  \lVert  e^{t\QQ}\JJ \QQ^+ (e^{t\QQ} - t\QQ -\II) \rVert +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \\ \nonumber
+			&\leq \lVert  e^{t\QQ}\JJ \QQ^+ ( t\QQ +\II) \rVert  + \lVert  e^{t\QQ}\JJ \QQ^+ e^{t\QQ} \rVert  +   \lVert  e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} -\JJ\QQ^k\rVert \, .
+\end{align}
+Empirical experiments using the Frobenius and infinity norms (Figures \ref{fig:frob} and \ref{fig:inf}, respectively) show that the first term
 \begin{align}
-	\widetilde{\mbox{err}}(t,\QQ,\JJ) := \left\Vert \exp(t\QQ) \JJ \QQ^+(t\QQ+\II)  \right\Vert_F
+	\widetilde{\mbox{err}}(t,\QQ,\JJ) := \left\Vert e^{t\QQ} \JJ \QQ^+(t\QQ+\II)  \right\Vert \, ,
 \end{align}
-appears to be asymptotically tight in the limit $t\rightarrow \infty$ although it is not an upper bound (Figure \ref{fig:frob}).  Notably, this pattern does not hold for other matrix norms such as the infinity norm (Figure \ref{fig:inf}).  For this reason, we focus on the Frobenius norm in what follows.
+although not a strict upper bound, is asymptotically tight for the true error as $t\rightarrow \infty$. We would, therefore, like to show that the second and third terms go to zero as $t$ diverges.
+
+%\section{An instructive informal approach}
+%The naive bounds in Appendix \ref{sec:loose} appear useful when $t$ is very small but explode for moderate values of $t$ (Figure \ref{fig:frob}).
+% When $t$ is large enough that the CTMC has reached stationarity, we have 
+% \begin{align*}
+% 	\frac{d}{dt}e^{t\QQ} =  \QQ e^{t\QQ}=e^{t\QQ} \QQ  = \Zero \, .
+% \end{align*}
+% If we further assume $\QQ$ is diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
+% \begin{align*}
+% 	\DD = \begin{pmatrix}
+% 		d_1& 0 &\dots & & \\
+% 		0  & d_2 &0  & \dots& \\
+% 		\vdots &0 & \ddots & \\
+% 		 & \vdots& & d_{S-1} &0 \\
+% 		 &&&0&0
+% 	\end{pmatrix} \, ,
+% \end{align*}
+% where $d_1<\dots <d_{S-1}<0$ are unique, then we may define a the generalized inverse $\QQ^+=\MM \DD^{+} \MM^{-1}$ of $\QQ$. Here, $\DD^+$ is the Moore-Penrose pseudoinverse obtained by inverting the non-zero elements of $\DD$.  Using this definition, it follows that
+%		\begin{align*}
+%			\mbox{err}(t,\QQ,\JJ)	&=\lVert \nabla_{\JJ} e^{t\QQ} - \widetilde{\nabla}_{\JJ} e^{t\QQ} \rVert	\\
+%			&=\Vert\nabla_{\JJ} e^{t\QQ} - t e^{t\QQ}\JJ \Vert = \left\Vert e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert \\
+%			&=\left\Vert e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^k \JJ \QQ^k}\right\Vert  = \left\Vert e^{t\QQ} \JJ  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!}  \order{ \QQ^k}\right\Vert  \\
+%		&= \left\Vert e^{t\QQ} \JJ \QQ^+ \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \order{\QQ^{k+1}} \right\Vert = \left\Vert e^{t\QQ} \JJ\QQ^+ \order{ e^{t\QQ}-t\QQ-\II } \right\Vert  \, .
+%	\end{align*}
+%But $\QQ e^{t\QQ}= \Zero$ implies $\QQ^+e^{t\QQ}= \Zero$ because $\QQ$ and $\QQ^+$ share the same zero eigenvalue. We therefore have
+%\begin{align}\label{eq:err3}
+%	\mbox{err}(t,\QQ,\JJ) = \left\Vert e^{t\QQ} \JJ \QQ^+\order{t\QQ+\II } \right\Vert 
+%\end{align}
+%
+%\begin{remark}
+%Ignoring the big-O notation, the matrix $e^{t\QQ} \JJ \QQ^+(t\QQ+\II)$ is nilpotent, so its spectral radius is 0.  Then for any $\epsilon>0$ a norm exists that is less than $\epsilon$ when applied to the matrix argument.
+%\end{remark}
+%
+%Surprisingly, for the special case of the Frobenius norm, the approximation
+%\begin{align}
+%	\widetilde{\mbox{err}}(t,\QQ,\JJ) := \left\Vert e^{t\QQ} \JJ \QQ^+(t\QQ+\II)  \right\Vert_F
+%\end{align}
+%appears to be asymptotically tight in the limit $t\rightarrow \infty$ although it is not an upper bound (Figure \ref{fig:frob}).  Notably, this pattern does not hold for other matrix norms such as the infinity norm (Figure \ref{fig:inf}).  For this reason, we focus on the Frobenius norm in what follows.
 
 
 
-\begin{figure}[!p]
-		\centering
-	\includegraphics[width=\linewidth]{frobeniusScaling.pdf}
-	\caption{Anecdotal (single simulation) error profiles with change in time $t$ and dimension. Errors calculated using Frobenius norm.}\label{fig:frob}
-\end{figure}
 
 
-\section{A more formal approach}
 
-The problem with the above analysis is that it is never true that $\exp(t\QQ)\QQ=\Zero$.  Rather, we have
+\section{Using the structure of $\QQ$}
+
+We use the fact that
 \begin{align*}
-	\exp(t\QQ)\QQ = \MM \exp(t\DD) \DD \MM^{-1} =  \MM \begin{pmatrix}
+	e^{t\QQ}\QQ = \MM \exp(t\DD) \DD \MM^{-1} =  \MM \begin{pmatrix}
 	e^{td_1}	d_1& 0 &\dots & & \\
 		0  & e^{td_2}d_2 &0  & \dots& \\
 		\vdots &0 & \ddots & \\
@@ -318,57 +347,73 @@ The problem with the above analysis is that it is never true that $\exp(t\QQ)\QQ
 		&&&0&0
 	\end{pmatrix} \MM^{-1} \, .
 \end{align*}
-Thus, sub-multiplicativity of the Frobenius norm leads to the result
+Thus, assuming use of a submultiplicative norm leads to the result
 \begin{align*}
-	\lVert \exp(t\QQ)\QQ \rVert_F \leq \left\Vert  \begin{pmatrix}
+	\lVert e^{t\QQ}\QQ \rVert &\leq \left\Vert  \begin{pmatrix}
 		e^{td_1}	d_1& 0 &\dots & & \\
 		0  & e^{td_2}d_2 &0  & \dots& \\
 		\vdots &0 & \ddots & \\
 		& \vdots& & e^{td_{S-1}}d_{S-1} &0 \\
 		&&&0&0
-	\end{pmatrix}  \right\Vert_F \leq \sqrt{S-1} \max_s \{e^{td_{s}} |d_{s}| \} \, ,
+	\end{pmatrix}  \right\Vert  \lVert \MM\rVert   \lVert \MM^{-1}\rVert  \, .
 \end{align*}
-where we  use the fact that $\lVert \cdot \rVert_F \leq \sqrt{r} \lVert \cdot \rVert_2$ for any rank $r$ matrix.  We therefore write
+For, e.g., the Frobenius norm, we have
+\begin{align*}
+\lVert e^{t\QQ}\QQ \rVert_F	\leq \sqrt{S-1} \max_s \{|e^{td_{s}} d_{s}| \}  \lVert \MM\rVert_F   \lVert \MM^{-1}\rVert_F  \, ,
+\end{align*}
+where we  use the fact that $\lVert \cdot \rVert_F \leq \sqrt{r} \lVert \cdot \rVert_2$ for any rank $r$ matrix and $\lVert \cdot \rVert_2$ the spectral norm.  We therefore write
 \begin{align}
-	\lVert \exp(t\QQ)\QQ \rVert_F = \order{\max_s \left\{e^{td_{s}} |d_{s}| \right\}} \,,  \quad 	\lVert \exp(t\QQ)\QQ^+ \rVert_F = \order{\max_s \left\{e^{td_{s}} \frac{1}{|d_{s}|} \right\}} \, .
+	\lVert e^{t\QQ}\QQ \rVert_F = \order{\max_s \left\{|e^{td_{s}} d_{s}| \right\}} \,,  \quad 	\lVert e^{t\QQ}\QQ^+ \rVert_F = \order{\max_s \left\{ \left| e^{td_{s}} \frac{1}{d_{s}}\right| \right\}} \, .
 \end{align}
-As $t\rightarrow \infty$ both simplify to $\order{e^{td_{S-1}}}\rightarrow 0$.  Employing these facts will require us to rewrite the series in $\QQ^k \JJ \QQ^k $ as a matrix exponential, and for this we use the identity
-\begin{align*}
-	\vecc \left(\AA \BB \CC \right) = \left( \CC^T \otimes \AA \right) \vecc (\BB) \, .
-\end{align*}
-Dropping the big-O notation, we have
-\begin{align*}
-	\mbox{err}(t,\QQ,\JJ)&=  \left\Vert \QQ^+ \exp(t\QQ) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right\Vert _F \\
-	&=  \left\Vert \vecc \left(\QQ^+ \exp(t\QQ) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right) \right\Vert _F \\
-	&= \left\Vert  (\QQ^{+T} \otimes \QQ^+) (\II \otimes \exp(t\QQ)) \vecc \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right)    \right\Vert_F  \\
-	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes \exp(t\QQ)) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{T(k+1)} \otimes \QQ^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
-	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes \exp(t\QQ)) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} (\QQ^{T} \otimes \QQ)^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
-	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes \exp(t\QQ)) \left( \exp(t\QQ^T\otimes \QQ) - t\QQ^T\otimes \QQ - \II \right)   \vecc(\JJ)  \right\Vert_F  \, .
-\end{align*}
+Because $\mbox{Re}(d_s)<0$ for $s\in \{1,\dots,S-1\}$, we have
+\begin{align}
+	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ \rVert_F = 	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ^+ \rVert_F = 0\, ,
+\end{align}
+and, by equivalence of norms, we have
+\begin{align}
+	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ \rVert = 	\lim_{t\rightarrow \infty}  	\lVert e^{t\QQ}\QQ^+ \rVert = 0\, ,
+\end{align}
+in general for any matrix norm $\lVert \cdot \rVert$.
 
-\textcolor{red}{\textbf{Where I'm stuck today:}}  I can bound the terms including $\QQ^T\otimes \QQ$ and $\II$, but I can't figure out how to bound 
-\begin{align*}
- (\QQ^T \otimes \QQ)^+ (\II \otimes \exp(t\QQ)) \exp(t\QQ^T\otimes \QQ) \, .
-\end{align*}
-In particular, we can write
-\begin{align*}
-	\QQ^T \otimes \QQ &= \MM^{-T} \DD \MM^T \otimes \MM \DD \MM^{-1} \\
-	&=  (\MM^{-T} \otimes \MM)  ((\DD \MM^T) \otimes  (\DD \MM^{-1})) \\
-	&= (\MM^{-T} \otimes \MM)  (\DD  \otimes  \DD) (\MM^{T} \otimes \MM^{-1}) \\
-	&= \GG (\DD  \otimes  \DD) \GG^{-1} 
-\end{align*}
-for $\GG = (\MM^{-T} \otimes \MM)$.  From here, it becomes clear that the term $\exp(t\QQ^T\otimes \QQ)$ is particularly problematic since
-\begin{align*}
-\exp(t\QQ^T\otimes \QQ) &= \GG \exp(t \DD\otimes \DD) \GG^{-1} \\
-&= \GG \exp \begin{pmatrix}
-	 td_1 \DD	& 0 &\dots & & \\
-	0  & td_2 \DD &0  & \dots& \\
-	\vdots &0 & \ddots & \\
-	& \vdots& & td_{S-1} \DD &0 \\
-	&&&0&0
-\end{pmatrix}  \GG^{-1} \, .
-\end{align*}
-This is bad because $d_s\DD$ have positive values and so the exponential explodes as $t\rightarrow \infty$.
+
+
+%.  Employing these facts will require us to rewrite the series in $\QQ^k \JJ \QQ^k $ as a matrix exponential, and for this we use the identity
+%\begin{align*}
+%	\vecc \left(\AA \BB \CC \right) = \left( \CC^T \otimes \AA \right) \vecc (\BB) \, .
+%\end{align*}
+%Dropping the big-O notation, we have
+%\begin{align*}
+%	\mbox{err}(t,\QQ,\JJ)&=  \left\Vert \QQ^+ e^{t\QQ} \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right\Vert _F \\
+%	&=  \left\Vert \vecc \left(\QQ^+ e^{t\QQ} \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right) \QQ^+ \right) \right\Vert _F \\
+%	&= \left\Vert  (\QQ^{+T} \otimes \QQ^+) (\II \otimes e^{t\QQ}) \vecc \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{k+1}\JJ\QQ^{k+1} \right)    \right\Vert_F  \\
+%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \QQ^{T(k+1)} \otimes \QQ^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
+%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} (\QQ^{T} \otimes \QQ)^{k+1}  \right)   \vecc(\JJ)  \right\Vert_F  \\
+%	&= \left\Vert  (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \left( \exp(t\QQ^T\otimes \QQ) - t\QQ^T\otimes \QQ - \II \right)   \vecc(\JJ)  \right\Vert_F  \, .
+%\end{align*}
+%
+%\textcolor{red}{\textbf{Where I'm stuck today:}}  I can bound the terms including $\QQ^T\otimes \QQ$ and $\II$, but I can't figure out how to bound 
+%\begin{align*}
+% (\QQ^T \otimes \QQ)^+ (\II \otimes e^{t\QQ}) \exp(t\QQ^T\otimes \QQ) \, .
+%\end{align*}
+%In particular, we can write
+%\begin{align*}
+%	\QQ^T \otimes \QQ &= \MM^{-T} \DD \MM^T \otimes \MM \DD \MM^{-1} \\
+%	&=  (\MM^{-T} \otimes \MM)  ((\DD \MM^T) \otimes  (\DD \MM^{-1})) \\
+%	&= (\MM^{-T} \otimes \MM)  (\DD  \otimes  \DD) (\MM^{T} \otimes \MM^{-1}) \\
+%	&= \GG (\DD  \otimes  \DD) \GG^{-1} 
+%\end{align*}
+%for $\GG = (\MM^{-T} \otimes \MM)$.  From here, it becomes clear that the term $\exp(t\QQ^T\otimes \QQ)$ is particularly problematic since
+%\begin{align*}
+%\exp(t\QQ^T\otimes \QQ) &= \GG \exp(t \DD\otimes \DD) \GG^{-1} \\
+%&= \GG \exp \begin{pmatrix}
+%	 td_1 \DD	& 0 &\dots & & \\
+%	0  & td_2 \DD &0  & \dots& \\
+%	\vdots &0 & \ddots & \\
+%	& \vdots& & td_{S-1} \DD &0 \\
+%	&&&0&0
+%\end{pmatrix}  \GG^{-1} \, .
+%\end{align*}
+%This is bad because $d_s\DD$ have positive values and so the exponential explodes as $t\rightarrow \infty$.
 
 \appendix
 
@@ -386,10 +431,10 @@ For a submultiplicative matrix norm, we have
 \end{align*}
 We use this to obtain our first upper bound on $err_{ij}(\QQ)$:
 \begin{align*}
-	err_{ij}(\QQ) &= \left\Vert \exp(t\QQ)  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert  \\
-	&\leq \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \left\Vert \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert  \\
-	&=  \Vert \exp(t\QQ) \Vert \sum_{k=1}^\infty \frac{t}{k+1} \frac{(2t \Vert \QQ \Vert)^k}{k!}\\
-	&= \Vert \exp(t\QQ) \Vert   \frac{\exp(2t\Vert \QQ \Vert)-2t\Vert\QQ\Vert-1}{2\Vert \QQ \Vert} 
+	err_{ij}(\QQ) &= \left\Vert e^{t\QQ}  \sum_{k=1}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert  \\
+	&\leq \Vert e^{t\QQ} \Vert \sum_{k=1}^\infty \left\Vert \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \right\Vert  \\
+	&=  \Vert e^{t\QQ} \Vert \sum_{k=1}^\infty \frac{t}{k+1} \frac{(2t \Vert \QQ \Vert)^k}{k!}\\
+	&= \Vert e^{t\QQ} \Vert   \frac{\exp(2t\Vert \QQ \Vert)-2t\Vert\QQ\Vert-1}{2\Vert \QQ \Vert} 
 \end{align*}
 
 
@@ -397,7 +442,7 @@ We use this to obtain our first upper bound on $err_{ij}(\QQ)$:
 
 We start with another representation of the derivative \citep{al2009computing}:
 \begin{align*}
-	\nabla_{\JJ} \exp(t\QQ) = \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p} 
+	\nabla_{\JJ} e^{t\QQ} = \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p} 
 \end{align*}
 and the fact that
 the fact that, for the Frobenius norm $\Vert \cdot \Vert_F$, we have \citep{wu2010short}
@@ -406,7 +451,7 @@ the fact that, for the Frobenius norm $\Vert \cdot \Vert_F$, we have \citep{wu20
 \end{align*}
 Using these results, the truncation error may be rewritten
 \begin{align*}
-	err_{ij}(\QQ)  &=\left\Vert - t\exp(t\QQ) \JJ  +  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p}\right\Vert_F \\
+	err_{ij}(\QQ)  &=\left\Vert - te^{t\QQ} \JJ  +  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p}\right\Vert_F \\
 	&= \left\Vert \sum_{k=1}^\infty \frac{t^k}{k!} \left( \left( \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p} \right) - k \QQ^{k-1} \JJ \right)  \right\Vert_F\\
 	&= \left\Vert \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^k \QQ^{p-1} \JJ \QQ^{k-p}  -  \QQ^{k-1} \JJ \right\Vert_F \\
 	&=\left\Vert  \sum_{k=1}^\infty \frac{t^k}{k!} \sum_{p=1}^{k-1} \QQ^{p-1} \JJ \QQ^{k-p}  -  \QQ^{k-1} \JJ\right\Vert_F \\
@@ -417,6 +462,12 @@ Using these results, the truncation error may be rewritten
 	&= \sqrt{2}  \sum_{k=1}^\infty \frac{t^k}{k!} (k-1) \Vert \QQ \Vert_F^{k-1} = \sqrt{2} \frac{e^{t\Vert \QQ\Vert_F}(t\Vert\QQ\Vert_F - 1) + 1}{\Vert \QQ \Vert_F} \, .
 \end{align*}
 
+
+\begin{figure}[!p]
+	\centering
+	\includegraphics[width=\linewidth]{frobeniusScaling.pdf}
+	\caption{Anecdotal (single simulation) error profiles with change in time $t$ and dimension. Errors calculated using Frobenius norm.}\label{fig:frob}
+\end{figure}
 
 \begin{figure}[!p]
 	\centering
