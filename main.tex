@@ -354,6 +354,37 @@ It remains to show that $\mathfrak{c}$ goes to zero as $t$ diverges, i.e.,
 \end{align}
 
 
+
+\section{Random thoughts}
+
+\subsection{Another form}
+
+\newcommand{\PPsi}{\boldsymbol{\Psi}}
+
+\citet{najfeld1995derivatives} use the integral representation to prove the interesting result
+\begin{align*}
+	\nabla_{\JJ} e^{t\QQ} = \MM \left(  \left(\MM^{-1} \JJ \MM\right) \circ \PPsi(t)  \right) \MM^{-1} \, ,
+\end{align*}
+where $\PPsi(t)$ has elements
+\begin{align*}
+		[\PPsi(t)]_{ij} = \bigg\{ \begin{array}{cc}
+		t e^{td_i}\, ,	&  d_i = d_j \\
+		\frac{e^{td_i}-e^{td_j}}{d_i-d_j} \, ,& d_i \neq d_j 
+	\end{array} \, .
+\end{align*}
+For our application, the eigenvalues equal one another with measure zero.  Taking $t$ large, we have
+\begin{align*}
+	[\PPsi(t)]_{ij} = \bigg\{ \begin{array}{cc}
+		t e^{td_i}\, ,	&  i = j \\
+		0 \, ,& i \neq j 
+	\end{array} \, .
+\end{align*}
+It follows that, again for $t$ large,
+\begin{align*}
+	\mbox{err}(t,\QQ,\JJ) &\approx \lVert   \MM \left(  \left(\MM^{-1} \JJ \MM\right) \circ t e^{t\DD}  \right) \MM^{-1}       -  t e^{t\QQ} \JJ            \rVert \\
+	&= t\lVert   \MM \rVert \lVert \left(  \left(\MM^{-1} \JJ \MM\right) \circ  e^{t\DD}  \right) \MM^{-1}       -   e^{t\DD}\MM^{-1} \JJ            \rVert \, .
+\end{align*}
+
 \appendix
 
 \section{Loose bounds}\label{sec:loose}
