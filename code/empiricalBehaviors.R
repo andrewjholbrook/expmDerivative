@@ -34,67 +34,67 @@ nvBnd2 <- function(t, Q, Jij) {
 
 ################################################################################
 
+# something wrong with commented block
+# df      <- data.frame(Error=numeric(),Type=character(),t=numeric())
+# n       <- 10
+# Q       <- matrix(1,n,n)
+# diag(Q) <- 0
+# diag(Q) <- - rowSums(Q)
+# E        <- matrix(0,n,n)
+# E[2,1]   <- 1 
+# vals <- diag(1/eigen(Q)$values)
+# vals[1,1] <- 0
+# vecs <- eigen(Q)$vectors
+# #max(abs(vecs%*%vals%*%solve(vecs)-Q))
+# Qplus <- vecs%*%vals%*%solve(vecs)
+# norm(Qplus)
+# 
+# for (t in seq(from=10^(-10),to=10,length.out=100)) {
+#   
+#   drv <- blockwise(t=t,Q,E)
+#   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
+#   
+#   df <- rbind(df,
+#               c(norm(frstRdr-drv,type = "F"),
+#                 "Truth",
+#                 t))
+#   df <- rbind(df,
+#               c(cnvrgncBnd(t,Q,E),
+#                 "CnvgAssumption",
+#                 t))
+#   df <- rbind(df,
+#               c(nvBnd1(t,Q,E),
+#                 "Bound1",
+#                 t))
+#   df <- rbind(df,
+#               c(nvBnd2(t,Q,E),
+#                 "Bound2",
+#                 t))
+# }
+# 
+# colnames(df) <- c("Error","Type","t")
+# df$Type <- factor(df$Type)
+# df$Error <- as.numeric(df$Error)
+# df$t     <- as.numeric(df$t)
+# 
+# gg <- ggplot(df,aes(x=t,y=Error,color=Type)) +
+#   geom_line(size=1.5) +
+#   geom_hline(yintercept = 10*norm(Qplus,type="2")) +
+#   scale_y_log10() +
+#   coord_cartesian(ylim=c(1e-4,1e+4)) +
+#   ggtitle("Dimension = 5") +
+#   theme_bw()
+# gg
 
 df      <- data.frame(Error=numeric(),Type=character(),t=numeric())
-n       <- 100
-Q       <- matrix(1,n,n)
-diag(Q) <- 0
-diag(Q) <- - rowSums(Q)
-E        <- matrix(0,n,n)
-E[2,1]   <- 1 
-vals <- diag(1/eigen(Q)$values)
-vals[1,1] <- 0
-vecs <- eigen(Q)$vectors
-#max(abs(vecs%*%vals%*%solve(vecs)-Q))
-Qplus <- vecs%*%vals%*%solve(vecs)
-norm(Qplus)
-
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
-  
-  drv <- blockwise(t=t,Q,E)
-  frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
-  
-  df <- rbind(df,
-              c(norm(frstRdr-drv,type = "F"),
-                "Truth",
-                t))
-  df <- rbind(df,
-              c(cnvrgncBnd(t,Q,E),
-                "CnvgAssumption",
-                t))
-  df <- rbind(df,
-              c(nvBnd1(t,Q,E),
-                "Bound1",
-                t))
-  df <- rbind(df,
-              c(nvBnd2(t,Q,E),
-                "Bound2",
-                t))
-}
-
-colnames(df) <- c("Error","Type","t")
-df$Type <- factor(df$Type)
-df$Error <- as.numeric(df$Error)
-df$t     <- as.numeric(df$t)
-
-gg <- ggplot(df,aes(x=t,y=Error,color=Type)) +
-  geom_line(size=1.5) +
-  geom_hline(yintercept = 10*norm(Qplus,type="2")) +
-  scale_y_log10() +
-  coord_cartesian(ylim=c(1e-4,1e+4)) +
-  ggtitle("Dimension = 5") +
-  theme_bw()
-gg
-
-df      <- data.frame(Error=numeric(),Type=character(),t=numeric())
-n       <- 10
+n       <- 5
 Q       <- matrix(rexp(n^2),n,n)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 E        <- matrix(0,n,n)
-E[1,1]   <- 1 
+E[1,2]   <- 1 
 
-for (t in seq(from=10^(-10),to=1,length.out=100)) {
+for (t in seq(from=10^(-10),to=1000,length.out=100)) {
   
   drv <- blockwise(t=t,Q,E)
   frstRdr <- expm::expm(t*Q) %*% E *t # correct approx
@@ -121,6 +121,7 @@ colnames(df) <- c("Error","Type","t")
 df$Type <- factor(df$Type)
 df$Error <- as.numeric(df$Error)
 df$t     <- as.numeric(df$t)
+tail(df)
 
 gg2 <- ggplot(df,aes(x=t,y=Error,color=Type)) +
   geom_line(size=1.5) +
