@@ -1,0 +1,378 @@
+\documentclass[twoside]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage[section]{placeins}
+
+\title{Some Remarks on Computing Gradients of a Matrix Exponential}
+\date{\today}
+%\author{Nathan E. Glatt-Holtz, Andrew J. Holbrook\\
+%\scriptsize{emails: negh@tulane.edu, aholbroo@g.ucla.edu}}
+
+\usepackage{amsfonts, amssymb, amsmath, amsthm,esint,multicol}
+\usepackage[colorlinks=true, pdfstartview=FitV, linkcolor=blue,
+            citecolor=blue, urlcolor=blue]{hyperref}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+\definecolor{Red}{rgb}{0.7,0,0.1}
+\definecolor{Green}{rgb}{0,0.7,0}
+\usepackage{accents}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage[capitalize,nameinlink,noabbrev]{cleveref}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{natbib}
+
+
+\providecommand*\showkeyslabelformat[1]{{\normalfont \tiny#1}}
+\usepackage[notref,notcite,color]{showkeys}
+\definecolor{labelkey}{rgb}{0,0,1}
+\usepackage{bbm}
+\usepackage{mathtools} %for coloneqq
+
+
+
+\usepackage{tabularx}
+
+
+% \usepackage{enumitem}
+\usepackage{listings}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\usepackage{etoolbox}
+\usepackage{appendix}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{xr}
+\usepackage{booktabs}
+
+
+
+\pagestyle{myheadings}
+\numberwithin{equation}{section}
+
+
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Proposition}[Theorem]{Proposition}
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Corollary}[Theorem]{Corollary}
+\newtheorem{Example}[Theorem]{Example}
+\newtheorem{Definition}[Theorem]{Definition}
+\newtheorem{Remark}[Theorem]{Remark}
+\newtheorem{Question}[Theorem]{Question}
+\newtheorem{Assumption}[Theorem]{Assumption}
+
+\usepackage[section]{algorithm}      %for algorithms
+\usepackage[noend]{algpseudocode}    %for algorithms
+
+\newtheorem{Not}{Notation}[section]
+\newtheorem*{LemNoNum}{Lemma}
+
+%%%%%% MACROS %%%%%%%%%%
+
+%Number Systems
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+
+\newcommand{\tr}{\mbox{Tr}}
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+
+%
+%\begin{abstract}
+%
+%
+%\end{abstract}
+
+%{\noindent \small {\it {\bf Keywords: }  Bias Estimation,  Metropolis-Hastings Kernel, Parallel (Multiproposal) MCMC.}} \\
+%
+%\begin{footnotesize}
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\end{footnotesize}
+
+
+
+%\newpage
+
+
+\section{The Dynamical Systems View}
+We are interested in computing 
+\begin{align}
+\label{eq:grad:def}
+	\nabla_J \exp(t Q) = \lim_{\epsilon \to 0} \frac{\exp(t (Q+ \epsilon J) - \exp(tQ) }{\epsilon}
+\end{align}
+matrices  $J, Q \in \RR^{d\times d}$.
+Noting that $X(t) := \exp(t Q)$ obeys the (matrix valued) ordinary differential equation
+\begin{align}
+	\label{eq:exptQ}
+	\frac{dX}{dt} = Q X, \quad X(0) = I,
+\end{align}
+and taking $X^\epsilon =  \exp(t Q+ \epsilon J)$, $Y^\epsilon = \epsilon^{-1} ( X^\epsilon- X)$
+we have 
+\begin{align*}
+	\frac{dY^\epsilon}{dt}  = Q Y^\epsilon + J X^\epsilon, \quad Y^\epsilon(0) = 0.
+\end{align*}
+Hence taking a limit as $\epsilon \to 0$ we find that $Y = \nabla_J \exp(t Q)$ obeys
+\begin{align}
+	\frac{dY}{dt}  = Q Y + J X, \quad Y^\epsilon(0) = 0,
+	\label{eq:sen:eq}
+\end{align}
+and so variation of constants yields that, for any $t \geq 0$, 
+\begin{align}
+	Y(t) &= \exp(t Q) \int_0^t \exp(-sQ) J \exp(sQ) ds
+	= \exp(t Q) \sum_{k,m = 0}^\infty \int_0^t \frac{(-s)^{k} Q^k J s^{m}Q^m}{k!m!}ds
+		\label{eq:var:const:1}\\
+	&=  \exp(t Q) \sum_{k,m = 0}^\infty (-1)^k \frac{Q^k J Q^m}{m! k!(m+k+1)} t^{k+m+1}
+	=  \exp(t Q) \sum_{k,m = 0}^\infty (-1)^k \frac{(m+k)!}{m! k!} \frac{Q^k J Q^m}{(m+k+1)!} t^{k+m+1}
+	\notag\\
+	&=  \exp(t Q) \sum_{n = 0}^\infty \frac{t^{n+1}}{(n+1)!}  
+	\left( \sum_{l = 0}^n (-1)^l \binom{n}{l} Q^l J Q^{n -l}\right)
+	\label{eq:var:const:2}
+\end{align}
+Note that the last line corresponds to the identity from \cite{najfeld1995derivatives}.  Taking the  first order
+approximation in \eqref{eq:var:const:2} gives
+\begin{align}
+	\tilde{\nabla}_J \exp(t Q) = t  \exp(t Q) J,
+\end{align}
+which we see from \eqref{eq:var:const:1} is evidently exact in the case when $J$ and $Q$ commute. 
+
+
+
+Next notice that if we differentiate $\tilde{Y} =  t  \exp(t Q) J$ we find that $\tilde{Y}$ obeys
+\begin{align}
+	\frac{d \tilde{Y}}{dt} = Q \tilde{Y} +  \exp(t Q) J, \quad \tilde{Y}(0) = 0.
+\end{align}
+Taking 
+\begin{align}
+Z(t) = Y(t) - \tilde{Y}(t) = \nabla_J \exp(t Q) - t  \exp(t Q) J
+\label{eq:true:diff}
+\end{align}
+and comparing with \eqref{eq:sen:eq} yields
+\begin{align}
+\label{eq:Z:dym}
+	\frac{dZ}{dt} = Q Z + J \exp(t Q) -  \exp(t Q) J, \quad Z(0) = 0.
+\end{align}
+and hence
+\begin{align}
+	\label{eq:ass:procs}
+	Z(t) = \exp(t Q) \int_0^t (\exp(-sQ) J \exp(s Q) - J) ds
+	=  \exp(t Q) \sum_{n = 1}^\infty \frac{t^{n+1}}{(n+1)!}  
+	\left( \sum_{l = 0}^n (-1)^l \binom{n}{l} Q^l J Q^{n -l}\right)
+\end{align}
+as could also be directly deduced from \eqref{eq:var:const:1}, \eqref{eq:var:const:2}.
+
+
+\section{Time Asymptotic Approximation Error}
+
+We would like to deduce the time asymptotic behavior of $Z(t) := \nabla_J \exp(t Q) - t  \exp(t Q) J$.    Evidently we need some further
+structure for $Q$.   Consider the class of (irreducible) rate matrices 
+\begin{align}
+	\mathcal{R} = \{ Q \in \RR^{d\times d} | Q_{i,j} > 0 \text{ for } j \not= i \text{ and } \sum_{j =1}^d Q_{i,j} = 0
+	\text{ for each } i\}
+\end{align}
+and subclass of diagonalizable matrices 
+\begin{align}
+	\mathcal{D}  =  \{ Q \in \mathcal{R} |& Q \text{ is diagonalizable and for a suitable diagonalizing matrix } M, D = M Q M^{-1} \\
+		& \Re D_{i,i} < 0, \text{ for } i = 1, \ldots, d-1, D_{d,d} = 0\}.
+\end{align}
+Notice that, for $Q \in \mathcal{D}$, 
+\begin{align*}
+Q \exp(t Q) = M^{-1} D M M^{-1} \exp(t D) M = M^{-1} D \exp(t D) M
+\end{align*}
+ and hence
+\begin{align}
+	\| Q e^{tQ} \| \leq  \| M^{-1}\| \|M\| \left( \sum_{j =1}^{d-1} | D_{i,i} \exp( t D_{i,i}) |^2 \right)^{1/2}
+	\leq  \sqrt{d-1}\| M^{-1}\| \|M\| e_m \exp(-t e_M)
+	\label{eq:decay:est:1}
+\end{align}
+where here and below $\| \cdot \|$ denotes the standard Frobenius norm on $\CC^{d \times d}$
+and 
+\begin{align}
+	e_m = \min_{i = 1, \ldots, d-1} |D_{i,i}|, \quad e_M = \max_{i = 1, \ldots, d-1} |D_{i,i}|.
+	\label{eq:max:min:D}
+\end{align}
+Thus $\| Q e^{tQ} \|$ decays with an exponential rate and so with \eqref{eq:exptQ} so does
+$de^{-tQ} /dt$
+
+Building on this observation and \eqref{eq:ass:procs} we might expect, for $t$ large, that
+\begin{align}
+	Z(t) \approx& \exp(t Q)  \sum_{n = 1}^\infty \frac{t^{n+1}Q^n}{(n+1)!}  
+	= \exp(t Q) J Q^+  \sum_{n = 1}^\infty \frac{t^{n+1}Q^{n+1}}{(n+1)!}  
+	= \exp(t Q) J Q^+  (e^{tQ} - I - t Q)\\
+	\approx& -\exp(t Q) J Q^+  ( I + t Q)
+	\label{eq:ass:procs:der}
+\end{align}
+where $Q^+$ is the pseudo-inverse $Q$. 
+Notice that
+\begin{align}
+ \tilde{Z}(t) := -\exp(t Q) J Q^+  ( I + t Q)
+ \label{eq:t:ass:diff}
+\end{align}
+obeys 
+\begin{align}
+\label{eq:tZ:dym}
+	\frac{d \tilde{Z}}{dt} = Q \tilde{Z} -\exp(t Q) J Q^+Q, \quad \tilde{Z}(0) =- J Q^+.
+\end{align}
+Here in our heuristic \eqref{eq:ass:procs:der} we used our structural assumptions on $Q \in \mathcal{D}$ 
+to infer that 
+\begin{align*}
+Q = Q Q^+ Q = Q^+ Q^2.
+\end{align*}
+To justify dropping $\exp(t Q) J Q^+ e^{tQ}$
+as small for large $t$ we observe analogously to \eqref{eq:decay:est:1}
+\begin{align}
+	\| Q^+ e^{tQ} \| \leq  \| M^{-1}\| \|M\| \left( \sum_{j =1}^{d-1} | D_{i,i}^{-1} \exp( t D_{i,i}) |^2 \right)^{1/2}
+	\leq  \sqrt{d-1}\| M^{-1}\| \|M\| e_M^{-1} \exp(-t e_M).
+	\label{eq:decay:est:2}
+\end{align}
+with $e_M$ defined as in \eqref{eq:max:min:D}.
+
+
+
+Let us now prove that indeed  $ -\exp(t Q) J Q^+  ( I + t Q) \approx \nabla_J \exp(t Q) - t  \exp(t Q) J$ with an error decaying at an exponential rate as $t \to \infty$.  
+More precisely we have the following
+\begin{Theorem}
+For any $Q \in \mathcal{D}$ and any $J \in \CC^{d \times d}$
+\begin{align}
+   \| -\exp(t Q) J Q^+  ( I + t Q)  - (\nabla_J \exp(t Q) - t  \exp(t Q) J)\| \leq Ce^{-\kappa t}
+\end{align}
+for constants $C, \kappa > 0$ depending on $Q$ and $J$ explicitly as
+\begin{align}
+	C :=  \quad
+	\kappa := 
+\end{align}
+\end{Theorem}
+\begin{proof}
+Take $W(t) =  \tilde{Z}(t) - Z(t)$ where are defined as in \eqref{eq:t:ass:diff}, \eqref{eq:true:diff} respectively.
+Notice that $W$ follows the dynamic, cf. \eqref{eq:Z:dym}, \eqref{eq:tZ:dym}
+\begin{align}
+ 	\frac{d W}{dt} = Q W +  \exp(t Q) J (I - Q^+Q) -  J \exp(t Q) \quad W(0) =- J Q^+
+\end{align}
+With variation of constants we arrive at the expression
+\begin{align*}
+W(t) =& - \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) J \exp(s Q) - J (I - Q^+Q)) ds\right)
+\end{align*}
+But we observe the following for expression inside of the integral 
+\begin{align*}
+	\exp(-sQ)& J \exp(s Q) - J (I - Q^+Q)\\
+	=& \exp(-sQ) Q Q^+ J \exp(s Q) + \exp(-sQ) (I - Q Q^+ )J \exp(s Q) - J (I - Q^+Q)\\
+	=&\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J \exp(s Q) - J (I - Q^+Q)\\
+ 	=&\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) \\
+	    &+ (I - Q Q^+ )J( I - QQ^+) \exp(s Q) - J (I - Q^+Q))\\
+	=&\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) \\
+	    &+ (I - Q Q^+ )J( I - QQ^+)  - J (I - Q^+Q))\\
+	=&  \exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) 
+\end{align*}
+Hence combining the above we find
+\begin{align*}
+	W(t) =& - \exp(tQ)\biggl(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) ds\biggr)\\
+	       =& -\exp(tQ)\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q) ds\biggr)\\
+	          & - \exp(tQ) Q^+ Q\int_0^t \exp(-sQ)   J \exp(s Q)ds +t \exp(tQ) Q^+ Q J( I - QQ^+) \\
+	        :=& T_1(t) + T_2(t) + T_3(t)
+\end{align*}
+%\begin{align*}
+%	W(t) =& - \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) J \exp(s Q) - J (I - Q^+Q)) ds\right)\\
+%	=& - \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + \exp(-sQ) (I - Q Q^+ )J \exp(s Q) - J (I - Q^+Q)) ds\right)\\
+%	=&- \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J \exp(s Q) - J (I - Q^+Q)) ds\right)\\
+%	=&- \exp(tQ)\biggl(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) \\
+%		                          &\qquad \qquad \qquad \qquad + (I - Q Q^+ )J( I - QQ^+) \exp(s Q) - J (I - Q^+Q)) ds\biggr)\\
+%	=&- \exp(tQ)\biggl(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) ds\biggr)
+%\end{align*}
+Regarding $T_1(t)$ observe that
+\begin{align*}
+T_1(t)-\exp(tQ)&\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q) ds\biggr) \\
+&= -\exp(tQ)\biggl(J Q^+ +  \int_0^t \frac{d}{ds}(I - Q Q^+ )J Q^+ \exp(s Q) ds\biggr)\\
+&= -\exp(tQ)\biggl(J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) - (I - Q Q^+ )J Q^+)\\
+&= -\exp(tQ)\biggl(Q Q^+J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) \biggr)\\
+&=  -\exp(tQ)\biggl(Q^+Q J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) \biggr)
+\end{align*}
+Turning to $T_2(t)$ observe that, using the characterization of the Frobenius norm
+as $\| A\| = \sqrt{\tr(AA^*)}$ and some elementary properties of the trace operator
+\begin{align*}
+   \| \exp(-sQ)   J \exp(s Q)\| 
+   =& \sqrt{\tr( \exp(-sQ)   J \exp(s Q) \exp(sQ^*)   J^* \exp(-s Q^*) )}\\
+      =&\sqrt{\tr(    J \exp(s Q) \exp(sQ^*)  J^* \exp(-s Q^*) \exp(-sQ) )}
+\end{align*}
+[FINISH]
+%and hence with \eqref{eq:decay:est:2} we find
+%\begin{align}
+%\|T_1(t)\| \leq 2  \sqrt{d-1}\| M^{-1}\| \|M\| ( \|J \| \|Q^+\| )e_M^{-1} \exp(-t e_M)
+%\end{align}
+%Combining these identities we obtain
+%\begin{align*}
+% W(t) = \exp(tQ)\left(Q^+Q J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ)
+% -Q^+ \int_0^t (\exp(-sQ) Q  J \exp(s Q) - QJ( I - QQ^+) ds \right)
+%\end{align*}
+%Thus the desired result follows from the fact that 
+%$Q^+ \exp(tQ)$ decays with an exponential rate and that 
+%$\sup_{t \geq 0} \| \exp(-sQ) Q  J \exp(s Q)\| < \infty$.
+\end{proof}
+
+\section{Questions and Clarifications}
+
+%\section*{Acknowledgements}
+%
+%Our efforts are supported under the grants DMS-1816551, NSF-DMS-2108790 (NEGH) 
+% NSF-DMS-2108791 (JAK), NSF-DMS-2108791 (AJH) and DMS-2009859 (CFM).
+
+
+
+
+
+%% References
+
+\begin{footnotesize}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{alpha}
+\bibliography{refs}
+\end{footnotesize}
+ 
+%\bibliographystyle{sysbio}
+%\bibliography{refs}
+%
+%
+%
+%\newpage
+%\begin{multicols}{2}
+%\noindent
+%Nathan E. Glatt-Holtz\\ {\footnotesize
+%Department of Mathematics\\
+%Tulane University\\
+%Web: \url{http://www.math.tulane.edu/~negh/}\\
+%Email: \url{negh@tulane.edu}} \\[.2cm]
+%
+%
+%\columnbreak
+%
+%\noindent Andrew J. Holbrook\\  {\footnotesize
+%Department of Biostatistics\\
+%University of California, Los Angeles\\
+%Web: \url{https://andrewjholbrook.github.io}\\
+%Email: \url{aholbroo@g.ucla.edu}}
+%
+%
+% \end{multicols}
+
+
+
+\end{document}
+
