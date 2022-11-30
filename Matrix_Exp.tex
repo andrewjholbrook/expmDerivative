@@ -80,6 +80,8 @@
 
 
 \newcommand{\tr}{\mbox{Tr}}
+\newcommand{\bfU}{\mathbf{u}}
+\newcommand{\bfV}{\mathbf{v}}
 
 
 
@@ -191,8 +193,9 @@ structure for $Q$.   Consider the class of (irreducible) rate matrices
 \end{align}
 and subclass of diagonalizable matrices 
 \begin{align}
-	\mathcal{D}  =  \{ Q \in \mathcal{R} |& Q \text{ is diagonalizable and for a suitable diagonalizing matrix } M, D = M Q M^{-1} \\
+	\mathcal{D}  =  \{ Q \in \mathcal{R} |& Q \text{ is diagonalizable and for a suitable diagonalizing matrix } M, D = M Q M^{-1} \notag\\
 		& \Re D_{i,i} < 0, \text{ for } i = 1, \ldots, d-1, D_{d,d} = 0\}.
+		\label{eq:Q:spc}
 \end{align}
 Notice that, for $Q \in \mathcal{D}$, 
 \begin{align*}
@@ -215,9 +218,9 @@ $de^{-tQ} /dt$
 
 Building on this observation and \eqref{eq:ass:procs} we might expect, for $t$ large, that
 \begin{align}
-	Z(t) \approx& \exp(t Q)  \sum_{n = 1}^\infty \frac{t^{n+1}Q^n}{(n+1)!}  
+	Z(t) \approx& \exp(t Q) J  \sum_{n = 1}^\infty \frac{t^{n+1}Q^n}{(n+1)!}  
 	= \exp(t Q) J Q^+  \sum_{n = 1}^\infty \frac{t^{n+1}Q^{n+1}}{(n+1)!}  
-	= \exp(t Q) J Q^+  (e^{tQ} - I - t Q)\\
+	= \exp(t Q) J Q^+  (\exp(tQ) - I - t Q)\\
 	\approx& -\exp(t Q) J Q^+  ( I + t Q)
 	\label{eq:ass:procs:der}
 \end{align}
@@ -250,10 +253,10 @@ with $e_M$ defined as in \eqref{eq:max:min:D}.
 
 Let us now prove that indeed  $ -\exp(t Q) J Q^+  ( I + t Q) \approx \nabla_J \exp(t Q) - t  \exp(t Q) J$ with an error decaying at an exponential rate as $t \to \infty$.  
 More precisely we have the following
-\begin{Theorem}
+\begin{Theorem}\label{thm:ass:error}
 For any $Q \in \mathcal{D}$ and any $J \in \CC^{d \times d}$
 \begin{align}
-   \| -\exp(t Q) J Q^+  ( I + t Q)  - (\nabla_J \exp(t Q) - t  \exp(t Q) J)\| \leq Ce^{-\kappa t}
+   \| -\exp(t Q) J Q^+  ( I + t Q) + Q^+ J (I- Q Q^+)  - (\nabla_J \exp(t Q) - t  \exp(t Q) J)\| \leq Ce^{-\kappa t}
 \end{align}
 for constants $C, \kappa > 0$ depending on $Q$ and $J$ explicitly as
 \begin{align}
@@ -266,11 +269,13 @@ Take $W(t) =  \tilde{Z}(t) - Z(t)$ where are defined as in \eqref{eq:t:ass:diff}
 Notice that $W$ follows the dynamic, cf. \eqref{eq:Z:dym}, \eqref{eq:tZ:dym}
 \begin{align}
  	\frac{d W}{dt} = Q W +  \exp(t Q) J (I - Q^+Q) -  J \exp(t Q) \quad W(0) =- J Q^+
+	\label{eq:ass:err:eq}
 \end{align}
 With variation of constants we arrive at the expression
-\begin{align*}
-W(t) =& - \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) J \exp(s Q) - J (I - Q^+Q)) ds\right)
-\end{align*}
+\begin{align}
+W(t) = - \exp(tQ)\left(J Q^+ + \int_0^t (\exp(-sQ) J \exp(s Q) - J (I - Q^+Q)) ds\right)
+	\label{eq:ass:err:sol}
+\end{align}
 But we observe the following for expression inside of the integral 
 \begin{align*}
 	\exp(-sQ)& J \exp(s Q) - J (I - Q^+Q)\\
@@ -280,13 +285,22 @@ But we observe the following for expression inside of the integral
 	    &+ (I - Q Q^+ )J( I - QQ^+) \exp(s Q) - J (I - Q^+Q))\\
 	=&\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) \\
 	    &+ (I - Q Q^+ )J( I - QQ^+)  - J (I - Q^+Q))\\
-	=&  \exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) 
+	=&  \exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) \\
+	=&  \exp(-sQ) Q Q^+ J  Q Q^+ \exp(s Q) +  \exp(-sQ) Q Q^+ J (I- Q Q^+)  \\
+	  &+ (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) 
+\end{align*}
+In deriving the above identity we have repeatedly used that 
+\begin{align*}
+	(I - Q Q^+ ) \exp(s Q)  
+	&= M^{-1} M (I - Q Q^+ ) \exp(s Q) M^{-1} M
+	= M^{-1} M (I - Q Q^+ )M^{-1} M \exp(s Q) M^{-1} M\\
+	&= M^{-1} (I - D D^{+})   \exp(s D) M = I - Q Q^+
 \end{align*}
 Hence combining the above we find
 \begin{align*}
-	W(t) =& - \exp(tQ)\biggl(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) ds\biggr)\\
-	       =& -\exp(tQ)\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q) ds\biggr)\\
-	          & - \exp(tQ) Q^+ Q\int_0^t \exp(-sQ)   J \exp(s Q)ds +t \exp(tQ) Q^+ Q J( I - QQ^+) \\
+	W(t)% =& - \exp(tQ)\biggl(J Q^+ + \int_0^t (\exp(-sQ) Q Q^+ J \exp(s Q) + (I - Q Q^+ )J QQ^+ \exp(s Q) - Q Q^+ J( I - QQ^+) ds\biggr)\\
+	       =& -\exp(tQ)\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q) + \exp(-sQ) Q Q^+ J (I- Q Q^+) ) ds\biggr)\\
+	          & - \int_0^t \exp((t-s)Q)  Q^+ Q J Q^+ Q\exp(s Q)ds +t \exp(tQ) Q^+ Q J( I - QQ^+) \\
 	        :=& T_1(t) + T_2(t) + T_3(t)
 \end{align*}
 %\begin{align*}
@@ -299,19 +313,21 @@ Hence combining the above we find
 %\end{align*}
 Regarding $T_1(t)$ observe that
 \begin{align*}
-T_1(t)-\exp(tQ)&\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q) ds\biggr) \\
-&= -\exp(tQ)\biggl(J Q^+ +  \int_0^t \frac{d}{ds}(I - Q Q^+ )J Q^+ \exp(s Q) ds\biggr)\\
-&= -\exp(tQ)\biggl(J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) - (I - Q Q^+ )J Q^+)\\
-&= -\exp(tQ)\biggl(Q Q^+J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) \biggr)\\
-&=  -\exp(tQ)\biggl(Q^+Q J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) \biggr)
+T_1(t)= -\exp(tQ)&\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q)  +\exp(-sQ) Q Q^+ J (I- Q Q^+))ds\biggr) \\
+=& -\exp(tQ)\biggl(J Q^+ +  \int_0^t \frac{d}{ds}[ (I - Q Q^+ )J Q^+ \exp(s Q)  - \exp(-sQ) Q^+ J (I- Q Q^+) ]ds\biggr)\\
+=& -\exp(tQ)\biggl(J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ) - \exp(-tQ) Q^+ J (I- Q Q^+)  \\
+      &\qquad \qquad  \quad - (I - Q Q^+ )J Q^+
+     +  Q^+ J (I- Q Q^+) \biggr)\\
+&= -\exp(tQ)\biggl(Q Q^+J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ)  +Q^+ J (I- Q Q^+)  \biggr)
+     - Q^+ J (I- Q Q^+)
 \end{align*}
 Turning to $T_2(t)$ observe that, using the characterization of the Frobenius norm
-as $\| A\| = \sqrt{\tr(AA^*)}$ and some elementary properties of the trace operator
-\begin{align*}
-   \| \exp(-sQ)   J \exp(s Q)\| 
-   =& \sqrt{\tr( \exp(-sQ)   J \exp(s Q) \exp(sQ^*)   J^* \exp(-s Q^*) )}\\
-      =&\sqrt{\tr(    J \exp(s Q) \exp(sQ^*)  J^* \exp(-s Q^*) \exp(-sQ) )}
-\end{align*}
+%as $\| A\| = \sqrt{\tr(AA^*)}$ and some elementary properties of the trace operator
+%\begin{align*}
+%   \| \exp(-sQ)   J \exp(s Q)\| 
+%   =& \sqrt{\tr( \exp(-sQ)   J \exp(s Q) \exp(sQ^*)   J^* \exp(-s Q^*) )}\\
+%      =&\sqrt{\tr(    J \exp(s Q) \exp(sQ^*)  J^* \exp(-s Q^*) \exp(-sQ) )}
+%\end{align*}
 [FINISH]
 %and hence with \eqref{eq:decay:est:2} we find
 %\begin{align}
@@ -327,8 +343,57 @@ as $\| A\| = \sqrt{\tr(AA^*)}$ and some elementary properties of the trace opera
 %$\sup_{t \geq 0} \| \exp(-sQ) Q  J \exp(s Q)\| < \infty$.
 \end{proof}
 
-\section{Questions and Clarifications}
+\section{Questions, Comments and Clarifications}
 
+\begin{itemize}
+\item[(i)] Where does the extra correction term $-Q^+ J (I- Q Q^+)$ come from?
+\item[(ii)] $\mathcal{D}$ defined as \eqref{eq:Q:spc} where $Q$ lives is not a linear space?  How does HMC work here?  What is the underlying target distribution on $\mathcal{D}$?
+\item[(iii)] How does the surrogate trajectory method implied by $\tilde{\nabla}_J \exp(t Q) = t  \exp(t Q) J$ perform relative to 
+e.g. an adjoint method which exactly computes $\nabla_J \exp(t Q)$?
+\item[(iv)] Why not use a `higher order' approximation of $\nabla_J \exp(t Q)$?  For example we could take
+\begin{align}
+	\nabla_J \exp(t Q) \approx \exp(t Q) \int_0^t (I - sQ) J (I + sQ)ds = \exp(tQ) \left(tJ + \frac{t^2}{2} (JQ - QJ) -\frac{t^3}{3} QJ Q\right).
+\end{align}
+Why is this a big deal to compute?
+\item[(v)] Maybe we should try to prove a higher order version of \eqref{thm:ass:error} in any case.
+\item[(vi)] The formula \eqref{eq:var:const:2}, \eqref{eq:var:const:1} may be useful for developing surrogate trajectory methods for other Matrix coefficient estimation problems.
+\end{itemize}
+
+\subsection{Estimation Problem 1: Determining the `Potential' in a Toy QM Model.}
+
+Suppose we observe (some component of) $x(t) \in \CC^d$ from the solution of
+\begin{align}
+	\frac{d x}{dt} = A x, \quad x(0) = x_0,
+\end{align}
+where $A \in \{ A \in \CC^{d\times d} | A^* = -A\}$.  If $|x_0| =1$ then $|x(t)|$  can be interpreted as a discrete probability distribution on $\{1, \ldots, d\}$ for any $t \geq 0$.
+
+\subsection{Estimation Problem 2: Back to the Advection Diffusion model.} 
+
+Consider the advection-diffusion model
+\begin{align}
+	\partial_t \theta = (\kappa \Delta- \bfU \cdot \nabla) \theta \quad \theta(0) = \theta_0
+\end{align}
+Denote
+\begin{align}
+	S_\bfU(t) \theta_0 := \theta(t; \theta_0, \bfU).
+\end{align}
+Then taking 
+\begin{align}
+  \rho =  \nabla_\bfV S_\bfU(t) \theta_0 := \lim_{\epsilon \to 0} \epsilon^{-1} ( S_{\bfU+ \epsilon \bfV}(t) \theta_0 -  S_{\bfU}(t) \theta_0 )
+\end{align}
+we have the $\rho$ obeys
+\begin{align}
+\partial_t \rho = (\kappa \Delta- \bfU \cdot \nabla) +  \bfV \cdot \nabla \theta \quad \rho(0) = 0.
+\end{align}
+Here we still have the variation of constants formula
+\begin{align}
+	\rho(t) = \int_0^t S_\bfU(t-s) \bfV \cdot \nabla \theta(s) ds =  \int_0^t S_\bfU(t-s) \bfV \cdot \nabla S_\bfU(s) \theta_0 ds.
+\end{align}
+%Suppose we observe (some component of) $x(t) \in \CC^d$ from the solution of
+%\begin{align}
+%	\frac{d x}{dt} = A x \quad x(0) = x_0
+%\end{align}
+%where $A \in \{ A \in \CC^{d\times d} | A^* = -A\}$.  If $|x_0| =1$ then $|x(t)|$  can be interpreted as a discrete probability distribution on $\{1, \ldots, d\}$ for any $t \geq 0$.
 %\section*{Acknowledgements}
 %
 %Our efforts are supported under the grants DMS-1816551, NSF-DMS-2108790 (NEGH) 
