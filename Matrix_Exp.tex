@@ -321,7 +321,45 @@ T_1(t)= -\exp(tQ)&\biggl(J Q^+ +  \int_0^t (I - Q Q^+ )J QQ^+ \exp(s Q)  +\exp(-
 &= -\exp(tQ)\biggl(Q Q^+J Q^+ + (I - Q Q^+ )J Q^+\exp(tQ)  +Q^+ J (I- Q Q^+)  \biggr)
      - Q^+ J (I- Q Q^+)
 \end{align*}
-Turning to $T_2(t)$ observe that, using the characterization of the Frobenius norm
+Turning to $T_2(t)$ and letting $\bar{J}=M^{-1} J M$ and $I_{-d}$ be the identity matrix with final diagonal element set to 0, we have
+\begin{align*}
+	 T_2(t)  &=  \int_0^t \exp((t-s)Q)  Q^+ Q J Q^+ Q\exp(s Q)ds  \\
+	&= M  \left(\int_0^t (\exp((t-s)D) I_{-d} )  \bar{J} (I_{-d} \exp(s D))ds \right) M^{-1} \\
+	&= M  \left(\int_0^t   \bar{J} \circ \Psi(t,s)  ds \right) M^{-1}  = M  \left(\bar{J} \circ \int_0^t    \Psi(t,s)  ds \right) M^{-1} \\
+	&= M  \left(\bar{J} \circ    \Phi(t)   \right) M^{-1} \, 
+\end{align*}
+where the elements of $\Psi(t,s)$ satisfy
+\begin{align*}
+	\Psi_{ij}(t,s) = \Bigg \{ \begin{array}{cc}
+		e^{(t-s) D_{j,j} + sD_{i,i}}  \, , & i,j < d ,\, i\neq j \\
+		e^{tD_{j,j}} \, , &  i,j < d ,\, i= j  \\
+		0          \, , & o/w  
+	\end{array} \, ,
+\end{align*}
+and
+\begin{align*}
+ 	\Phi_{ij}(t) = \int^t_0 \Psi_{ij}(t,s) ds = \Bigg\{ \begin{array}{cc}
+ 		\frac{e^{tD_{i,i}}-e^{tD_{j,j}}}{D_{i,i}-D_{j,j}}  \, , & i,j < d ,\, i\neq j \\
+ 		te^{tD_{j,j}} \, , &  i,j < d ,\, i= j  \\
+ 		0          \, , & o/w  
+ 	\end{array}   \, .
+\end{align*}
+Then, by the definition of the Frobenius norm
+\begin{align*}
+	\lVert T_2(t)  \rVert &= \lVert M  \left(\bar{J} \circ    \Phi(t)   \right) M^{-1}  \rVert  \leq  \lVert \bar{J} \circ    \Phi(t) \rVert    \lVert M \rVert \lVert M^{-1}  \rVert  \\
+	&=  \left(\sum_{i,j} |\bar{J}_{ij}|^{2} |\Phi_{ij}(t) |^2 \right)^{1/2}  \lVert M \rVert \lVert M^{-1}  \rVert\\
+	&\leq \left(\sum_{i,j} |\Phi_{ij}(t)|^4 \right)^{1/4} \left( \sum_{i,j} |\bar{J}_{ij}|^{4} \right)^{1/4}   \lVert M \rVert \lVert M^{-1}  \rVert \\
+	&\leq \left( (D-1)^2 \max_{i,j} |\Phi_{ij}(t)|^4 \right)^{1/4}   \lVert \bar{J}^{\circ 2} \rVert^{1/2}   \lVert M \rVert \lVert M^{-1}  \rVert  \\
+	&= \left( \max_{i,j} |\Phi_{ij}(t)| \right)\sqrt{D-1} \lVert \bar{J}^{\circ 2} \rVert^{1/2}   \lVert M \rVert \lVert M^{-1}  \rVert  \, .
+\end{align*}
+Since $\max |\Phi_{ij}|$ goes to 0 at an exponential rate, we have $\lVert T_2(t)\rVert \rightarrow 0$ as $t\rightarrow \infty$.  Finally,
+\begin{align*}
+	\lVert T_3(t) \rVert &= \lVert t \exp(tQ) Q^+ Q J( I - QQ^+)  \rVert \\
+	&\leq \left(t \max_{i<d} e^{tD_{i,i}} \right) \lVert J \rVert  \rVert \lVert M \rVert^2 \lVert M^{-1} \rVert^2 \, .
+\end{align*}
+ 
+
+
 %as $\| A\| = \sqrt{\tr(AA^*)}$ and some elementary properties of the trace operator
 %\begin{align*}
 %   \| \exp(-sQ)   J \exp(s Q)\| 
