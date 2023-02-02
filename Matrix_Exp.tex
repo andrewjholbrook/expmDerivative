@@ -381,6 +381,23 @@ Since $\max |\Phi_{ij}|$ goes to 0 at an exponential rate, we have $\lVert T_2(t
 %$\sup_{t \geq 0} \| \exp(-sQ) Q  J \exp(s Q)\| < \infty$.
 \end{proof}
 
+\section{High-dimensional Asymptotics}
+
+
+Given the above result, it would be interesting to characterize the behavior of 
+\begin{align*}
+\lVert	Q^+ J (I-QQ^+)  \rVert &= \lVert M^{-1}D^+M J M^{-1} (I-I_{-d}) M \rVert \\
+&\leq \lVert D^+ \rVert \lVert M\rVert^2 \lVert M^{-1}\rVert^2 \lVert J \rVert  \\
+&\leq \frac{1}{e_m}\lVert M\rVert^2 \lVert M^{-1}\rVert^2 \lVert J \rVert  
+\end{align*}
+for random $Q$ as $d\rightarrow \infty$.  We are therefore interested in the complex modulus of the non-zero eigenvalue closest to the origin on the complex plain. 
+
+Questions/Comments:
+\begin{itemize}
+	\item Empirically, $\lVert I-Q^+Q\rVert$ appears to go to 1 as $d$ gets large.   In which case, one can remove the exponents from $\lVert M \rVert$ and $\lVert M^{-1} \rVert$.
+	\item Empirically, $e_m \rightarrow \infty$ as $d \rightarrow \infty$.
+\end{itemize}
+
 \section{Questions, Comments and Clarifications}
 
 \begin{itemize}
