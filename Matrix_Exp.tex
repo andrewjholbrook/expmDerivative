@@ -388,15 +388,14 @@ Since $\max |\Phi_{ij}|$ goes to 0 at an exponential rate, we have $\lVert T_2(t
 
 Given the above result, it would be interesting to characterize the behavior of 
 \begin{align*}
-\lVert	Q^+ J (I-QQ^+)  \rVert &= \lVert M^{-1}D^+M J M^{-1} (I-I_{-d}) M \rVert \\
-&\leq \lVert D^+ \rVert \lVert M\rVert^2 \lVert M^{-1}\rVert^2 \lVert J \rVert  \\
-&\leq \frac{1}{e_m}\lVert M\rVert^2 \lVert M^{-1}\rVert^2 \lVert J \rVert  
+\lVert	Q^+ J (I-QQ^+)  \rVert_F &\leq \lVert M^{-1}D^+M \rVert_F \lVert J\rVert_F \lVert O^T (I-I_{-d}) O \rVert_F \\
+&\leq \lVert D^+ \rVert_F \lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  \\
+&= \frac{1}{e_m}\lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  
 \end{align*}
-for random $Q$ as $d\rightarrow \infty$.  We are therefore interested in the complex modulus of the non-zero eigenvalue closest to the origin on the complex plain. 
+for random $Q$ as $d\rightarrow \infty$.  Here, $O$ is the orthogonal matrix obtained by diagonalizing $QQ^+$, and we have used the rotation invariance of the Frobenius norm. We are therefore interested in the complex modulus of the non-zero eigenvalue closest to the origin on the complex plain. 
 
 Questions/Comments:
 \begin{itemize}
-	\item Empirically, $\lVert I-Q^+Q\rVert$ appears to go to 1 as $d$ gets large.   In which case, one can remove the exponents from $\lVert M \rVert$ and $\lVert M^{-1} \rVert$.
 	\item Empirically, $e_m \rightarrow \infty$ as $d \rightarrow \infty$.
 \end{itemize}
 
