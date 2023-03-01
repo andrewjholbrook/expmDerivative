@@ -1,0 +1,1 @@
+java -jar -Djava.library.path=/usr/lib/jvm -Dhph.library.path=/Users/homefolder/hawkes/build -Dhph.required.flags=20 -Dhph.resource=3 /Users/homefolder/beast-mcmc/build/dist/beast.jar -beagle_gpu -beagle_order 1  -seed 666 -save_state checkpoint.state.burnin -save_every 100000  -overwrite /Users/homefolder/EBOVPhyloHawkes/xml/BurnIn.xml
