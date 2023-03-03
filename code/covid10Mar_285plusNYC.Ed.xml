@@ -5170,7 +5170,7 @@
 
 
 		<!-- Efficient Gibbs sampler on Bayesian Bridge prior for random effects  -->
-		<bayesianBridgeGibbsOperator weight="10">
+		<bayesianBridgeGibbsOperator weight="1">
 			<bayesianBridge idref="randomEffects.prior"/>
 			<gammaPrior idref="glmRandCoefficientsGlobalScalePrior"/>
 		</bayesianBridgeGibbsOperator>
@@ -5184,7 +5184,7 @@
 
 	<!-- Define MCMC                                                             -->
 	<!-- <mcmc id="mcmc" chainLength="150000000" autoOptimize="true" operatorAnalysis="covid10Mar_285plusNYC.Ed.ops"> -->
-	<mcmc id="mcmc" chainLength="3000000" autoOptimize="true" operatorAnalysis="covid10Mar_285plusNYC.Ed.ops">
+	<mcmc id="mcmc" chainLength="10000000" autoOptimize="true" operatorAnalysis="covid10Mar_285plusNYC.Ed.ops">
 		<joint id="joint">
 			<prior id="prior">
 				<bayesianBridge idref="randomEffects.prior"/>
