@@ -5163,9 +5163,11 @@
  -->
 
 		<!-- A little MH makes things run smoother -->
+<!-- 
 		<randomWalkOperator windowSize="0.0025" weight="0.05">
         	<parameter idref="glmRandCoefficients"/>
     	</randomWalkOperator>
+ -->
         <randomWalkOperator windowSize="2" weight="0.025">
             <parameter idref="glmCoefficients"/>
         </randomWalkOperator>
