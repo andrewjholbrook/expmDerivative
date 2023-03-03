@@ -5170,7 +5170,7 @@
 
 
 		<!-- Efficient Gibbs sampler on Bayesian Bridge prior for random effects  -->
-		<bayesianBridgeGibbsOperator weight="1">
+		<bayesianBridgeGibbsOperator weight="0.25">
 			<bayesianBridge idref="randomEffects.prior"/>
 			<gammaPrior idref="glmRandCoefficientsGlobalScalePrior"/>
 		</bayesianBridgeGibbsOperator>
