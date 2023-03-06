@@ -1,0 +1,8 @@
+
+Operator analysis
+Operator                                          Tuning   Count      Time     Time/Op  Pr(accept) Smoothed_Pr(accept)
+VanillaHMC(glmCoefficients)                       0.029   107901     6804524  63.06    0.4497      0.37        
+randomWalkOperator(glmCoefficients)               0.682   10937      748949   68.48    0.2371      0.25        
+glmCoefficients                                   4.5     10672      731263   68.52    0.2338      0.27        
+scale(sampleLoc.clock.rate)                       0.531   860490     58628609 68.13    0.2335      0.18        
+
