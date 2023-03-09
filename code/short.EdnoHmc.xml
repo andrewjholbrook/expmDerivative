@@ -5162,7 +5162,7 @@
 		<randomWalkOperator windowSize="0.0025" weight="0.25">
         	<parameter idref="glmRandCoefficients"/>
     	</randomWalkOperator>
-    	<adaptableVarianceMultivariateNormalOperator scaleFactor="0.0001" weight="0.25" formXtXInverse="true" updateEvery="100" burnin="1000">
+    	<adaptableVarianceMultivariateNormalOperator scaleFactor="0.0001" weight="0.25" formXtXInverse="true" updateEvery="100" burnin="100" beta="0.0001" initial="1000" coefficient="0.0001">
         	<parameter idref="glmRandCoefficients"/>
 <!-- 
         	<varMatrix>
