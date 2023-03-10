@@ -145,7 +145,7 @@ gg4 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=`Values`)) +
   geom_tile() +
   guides(x =  guide_axis(angle = 90)) +
   xlab(NULL) + ylab(NULL) +
-  ggtitle("Hubei asymmetric proximity") +
+  ggtitle("Hubei asymmetry") +
   scale_fill_gradientn(breaks=c(-1,0,1),
     colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
   theme(plot.title = element_text(vjust = -1),
@@ -176,18 +176,24 @@ system2(command = "pdfcrop",
 df <- read_table2("output/covid10Mar_285plusNYC.Ed.log", skip = 3)
 
 df2 <- df[,9:11]
-df2 <- reshape2::melt(df2)
-df2$Predictor <- "cat"
-df2$Predictor[which(df2$variable=="glmCoefficients1")] <- "IntraContinental"
-df2$Predictor[which(df2$variable=="glmCoefficients2")] <- "AirTraffic"
-df2$Predictor[which(df2$variable=="glmCoefficients3")] <- "HubeiAsymmetry"
+nSamps <- dim(df2)[1]
+df2 <- df2[ceiling(nSamps/10):nSamps,]
 
-gg <- ggplot(df2,aes(x=value,color=Predictor)) +
-  geom_density(adjust=2) +
+df2 <- reshape2::melt(df2)
+df2$`Fixed effects` <- "cat"
+df2$`Fixed effects`[which(df2$variable=="glmCoefficients1")] <- "Intracontinental\nproximity"
+df2$`Fixed effects`[which(df2$variable=="glmCoefficients2")] <- "Air traffic\nproximity"
+df2$`Fixed effects`[which(df2$variable=="glmCoefficients3")] <- "Hubei asymmetry"
+
+gg <- ggplot(df2,aes(x=value,color=`Fixed effects`)) +
+  geom_density(adjust=2,size=1.5) +
   xlab("Coefficient value") +
   ylab("Density") +
-  ggtitle("Fixed-effects for infinitesimal rates between locations") +
-  theme_bw()
+  scale_color_manual(values = stata_pal("s2color")(15)[c(4,7,3)]) +
+  ggtitle("Posteriors for infinitesimal rates regression") +
+  theme_bw() +
+  theme(legend.margin=margin(0,0,0,0),
+    legend.box.spacing = unit(5, "pt"))
 gg
 
 #
@@ -217,6 +223,7 @@ for(n in 1:nSamps) {
   randCoeffs[[n]] <- rcMat
 }
 
+
 totalCoeffs <- list()
 for (n in 1:nSamps) {
   totCoeffMat <- randCoeffs[[n]] +
@@ -228,8 +235,34 @@ for (n in 1:nSamps) {
   diag(totalCoeffs[[n]]) <- 0
 }
 
-tC <- reshape2::melt(totalCoeffs[[n-5]])
-gg2 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=value)) + 
-  geom_tile()
+meanMat <- matrix(0,44,44)
+for (n in ceiling(nSamps/10):nSamps) {
+  meanMat <- meanMat + totalCoeffs[[n]]
+}
+meanMat <- meanMat/length(ceiling(nSamps/10):nSamps)
+
+tC <- reshape2::melt(meanMat)
+colnames(tC) <- c("Var1","Var2","Rate")
+gg2 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=Rate)) + 
+  geom_tile() +
+  guides(x =  guide_axis(angle = 45)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Posterior mean infinitesimal generator matrix") +
+  scale_fill_gradientn(#breaks=c(-1,0,1),
+                       colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
+  theme(plot.title = element_text(vjust = -1),
+        axis.text = element_text(size = 5),
+        legend.text = element_text(),
+        legend.margin=margin(0,0,0,0),
+        legend.box.spacing = unit(5, "pt"))
 gg2
   
+ggsave(ggpubr::ggarrange(gg,gg2,nrow = 1,
+                         labels=c("a","b"),
+                         widths = c(1,0.9)),
+       width = 12,height = 4,
+       file="figures/postViz.pdf")
+system2(command = "pdfcrop",
+        args    = c("~/expmDerivative/figures/postViz.pdf",
+                    "~/expmDerivative/figures/postViz.pdf")
+)
