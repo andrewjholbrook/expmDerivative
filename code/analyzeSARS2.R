@@ -1,6 +1,9 @@
 setwd("~/expmDerivative/")
 library(ggplot2)
 library(readr)
+library(ggthemes)
+library(scales)
+
 
 #
 ####
@@ -11,12 +14,16 @@ df <- read_table2("data/airTravel.txt", col_names = FALSE)
 airTravs <- unlist(df)
 atMat <- matrix(0,44,44)
 k <- 1
-for(i in 1:44) {
-  for(j in 1:44) {
-    if(i!=j){
-      atMat[i,j] <- airTravs[k]
-      k <- k+1
-    }
+for(i in 1:43) {
+  for(j in (i+1):44) {
+    atMat[i,j] <- airTravs[k]
+    k <- k+1
+  }
+}
+for(i in 1:43) {
+  for(j in (i+1):44) {
+    atMat[j,i] <- airTravs[k]
+    k <- k+1
   }
 }
 
@@ -24,12 +31,16 @@ df <- read_table2("data/continentalDists.txt", col_names = FALSE)
 airTravs <- unlist(df)
 contMat <- matrix(0,44,44)
 k <- 1
-for(i in 1:44) {
-  for(j in 1:44) {
-    if(i!=j){
+for(i in 1:43) {
+  for(j in (i+1):44) {
       contMat[i,j] <- airTravs[k]
       k <- k+1
-    }
+  }
+}
+for(i in 1:43) {
+  for(j in (i+1):44) {
+    contMat[j,i] <- airTravs[k]
+    k <- k+1
   }
 }
 
@@ -37,21 +48,41 @@ df <- read_table2("data/hubeiAsymm.txt", col_names = FALSE)
 airTravs <- unlist(df)
 hubMat <- matrix(0,44,44)
 k <- 1
-for(i in 1:44) {
-  for(j in 1:44) {
-    if(i!=j){
-      hubMat[i,j] <- airTravs[k]
-      k <- k+1
-    }
+for(i in 1:43) {
+  for(j in (i+1):44) {
+    hubMat[i,j] <- airTravs[k]
+    k <- k+1
+  }
+}
+for(i in 1:43) {
+  for(j in (i+1):44) {
+    hubMat[j,i] <- airTravs[k]
+    k <- k+1
   }
 }
 
 #
 ###
-###### get locations (incorrect)
+###### get locations 
 ###
 #
 locations <- read_table2("data/locations.txt", col_names = FALSE)
+locations[[1]][6] <- "Anhui,CN"
+locations[[1]][7] <- "Beijing,CN"
+locations[[1]][8] <- "Chongqing,CN"
+locations[[1]][9] <- "Fujian,CN"
+locations[[1]][10] <- "Guangdong,CN"
+locations[[1]][11] <- "Henan,CN"
+locations[[1]][12] <- "HK,CN"
+locations[[1]][13] <- "Hubei,CN"
+locations[[1]][14] <- "Hunan,CN"
+locations[[1]][15] <- "Jiangsu,CN"
+locations[[1]][16] <- "Jiangxi,CN"
+locations[[1]][17] <- "Shandong,CN"
+locations[[1]][18] <- "Sichuan,CN"
+locations[[1]][19] <- "Yunnan,CN"
+locations[[1]][20] <- "Zhejiang,CN"
+
 
 colnames(atMat) <- unlist(locations)
 rownames(atMat) <- unlist(locations)
@@ -61,6 +92,76 @@ rownames(contMat) <- unlist(locations)
 
 colnames(hubMat) <- unlist(locations)
 rownames(hubMat) <- unlist(locations)
+
+#
+###
+###### visualize fixed-effects
+###
+#
+df <- reshape2::melt(atMat)
+#df$value <- exp(df$value)
+colnames(df) <- c("Var1","Var2","Values")
+df$Values <- df$Values - (max(df$Values)-abs(min(df$Values)))/2
+df$Values <- df$Values / max(df$Values)
+
+gg2 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=Values)) + 
+  geom_tile() +
+  guides(x =  guide_axis(angle = 90)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Air traffic proximity") +
+  scale_fill_gradientn(breaks=c(-1,0,1),
+                       colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
+  theme(plot.title = element_text(vjust = -1),
+        axis.text = element_text(size = 5),
+        legend.title = element_blank(),
+        legend.text = element_text())
+gg2
+
+df <- reshape2::melt(contMat)
+colnames(df) <- c("Var1","Var2","Values")
+df$Values <- df$Values - (max(df$Values)-abs(min(df$Values)))/2
+df$Values <- df$Values / max(df$Values)
+gg3 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=`Values`)) + 
+  geom_tile() +
+  guides(x =  guide_axis(angle = 90)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Intracontinental proximity") +
+  scale_fill_gradientn(breaks=c(-1,0,1),
+                       colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
+  theme(plot.title = element_text(vjust = -1),
+        axis.text = element_text(size = 5),
+        legend.title = element_blank(),
+        legend.text = element_text())
+gg3
+
+df <- reshape2::melt(hubMat)
+colnames(df) <- c("Var1","Var2","Values")
+gg4 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=`Values`)) + 
+  geom_tile() +
+  guides(x =  guide_axis(angle = 90)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Hubei asymmetric proximity") +
+  scale_fill_gradientn(breaks=c(-1,0,1),
+    colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
+  theme(plot.title = element_text(vjust = -1),
+        axis.text = element_text(size = 5),
+        legend.title = element_blank(),
+        legend.text = element_text())
+gg4
+
+library(ggpubr)
+ggsave(ggpubr::ggarrange(gg2,NULL,gg3,NULL,gg4,NULL,nrow = 1,
+                         common.legend=TRUE,
+                         legend="right",
+                         labels=c("a","","b","","c",""),
+                         widths = c(1, -0.02, 1,-0.02,1,-0.02)),
+       width = 12,height = 4,
+       file="figures/fixedEffects.pdf")
+system2(command = "pdfcrop",
+        args    = c("~/expmDerivative/figures/fixedEffects.pdf",
+                    "~/expmDerivative/figures/fixedEffects.pdf")
+)
+
 
 #
 ###
@@ -118,6 +219,9 @@ for (n in 1:nSamps) {
   totalCoeffs[[n]] <- exp(totCoeffMat)
   diag(totalCoeffs[[n]]) <- 0
 }
-  
-  
+
+tC <- reshape2::melt(totalCoeffs[[n-3]])
+gg2 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile()
+gg2
   
