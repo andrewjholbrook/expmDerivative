@@ -98,11 +98,14 @@ rownames(hubMat) <- unlist(locations)
 ###### visualize fixed-effects
 ###
 #
+atMat <- atMat- (max(atMat)-abs(min(atMat)))/2
+atMat <- atMat/max(atMat)
+diag(atMat) <- 0
 df <- reshape2::melt(atMat)
 #df$value <- exp(df$value)
 colnames(df) <- c("Var1","Var2","Values")
-df$Values <- df$Values - (max(df$Values)-abs(min(df$Values)))/2
-df$Values <- df$Values / max(df$Values)
+# df$Values <- df$Values - (max(df$Values)-abs(min(df$Values)))/2
+# df$Values <- df$Values / max(df$Values)
 
 gg2 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=Values)) + 
   geom_tile() +
@@ -117,10 +120,12 @@ gg2 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=Values)) +
         legend.text = element_text())
 gg2
 
+
+contMat <- contMat- (max(contMat)-abs(min(contMat)))/2
+contMat <- contMat/max(contMat)
+diag(contMat) <- 0
 df <- reshape2::melt(contMat)
 colnames(df) <- c("Var1","Var2","Values")
-df$Values <- df$Values - (max(df$Values)-abs(min(df$Values)))/2
-df$Values <- df$Values / max(df$Values)
 gg3 <- ggplot(data = df, aes(x=Var1, y=Var2, fill=`Values`)) + 
   geom_tile() +
   guides(x =  guide_axis(angle = 90)) +
@@ -194,16 +199,19 @@ df2 <- df[,12:1903]
 nSamps <- dim(df2)[1]
 randCoeffs <- list()
 
-
 for(n in 1:nSamps) {
   k <- 1
   rcMat <- matrix(0,44,44)
-  for(i in 1:44) {
-    for(j in 1:44) {
-      if(i!=j){
+  for(i in 1:43) {
+    for(j in (i+1):44) {
         rcMat[i,j] <- unlist(df2[n,k])
         k <- k+1
-      }
+    }
+  }
+  for(i in 1:43) {
+    for(j in (i+1):44) {
+      rcMat[j,i] <- unlist(df2[n,k])
+      k <- k+1
     }
   }
   randCoeffs[[n]] <- rcMat
@@ -212,15 +220,15 @@ for(n in 1:nSamps) {
 totalCoeffs <- list()
 for (n in 1:nSamps) {
   totCoeffMat <- randCoeffs[[n]] +
-    atMat * unlist(df[n,10]) +
-    hubMat * unlist(df[n,11]) +
-    contMat * unlist(df[n,9])
+   atMat * unlist(df[n,10]) +
+   hubMat * unlist(df[n,11]) +
+   contMat * unlist(df[n,9])
   
   totalCoeffs[[n]] <- exp(totCoeffMat)
   diag(totalCoeffs[[n]]) <- 0
 }
 
-tC <- reshape2::melt(totalCoeffs[[n-3]])
+tC <- reshape2::melt(totalCoeffs[[n-5]])
 gg2 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=value)) + 
   geom_tile()
 gg2
