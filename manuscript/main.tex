@@ -215,6 +215,7 @@ We investigate the accuracy of a first-order approximation to the directional de
 %\newcommand{\tr}{\mbox{tr}}
 %\newcommand{\X}{\mathbf{X}}
 %\renewcommand{\u}{\mathbf{u}}
+\newcommand{\Y}{\mathbf{Y}}
 \newcommand{\QQ}{\mathbf{Q}}
 \newcommand{\DD}{\mathbf{D}}
 \newcommand{\MM}{\mathbf{M}}
@@ -232,25 +233,35 @@ We investigate the accuracy of a first-order approximation to the directional de
 \newcommand{\BB}{\mathbf{B}}
 \renewcommand{\AA}{\mathbf{A}}
 \newcommand{\GG}{\mathbf{G}}
+\newcommand{\mom}{\boldsymbol{\xi}}
 
 
 \section{Global spread of SARS-CoV-2}
 
 
-\begin{figure}[!p]
+\begin{figure}[!t]
 	\centering
 	\includegraphics[width=\linewidth]{fixedEffects.pdf}
 	\caption{Fixed effects.}\label{fig:FE}
 \end{figure}
 
-\begin{figure}[!p]
+\begin{figure}[!t]
 	\centering
 	\includegraphics[width=\linewidth]{postViz.pdf}
 	\caption{Posteriors.}\label{fig:FE}
 \end{figure}
 
 
-Hamiltonian Monte Carlo \citep{neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, the numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.  
+Hamiltonian Monte Carlo (HMC) \citep{neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate Metropolis-type \citep{metropolis1953equation} proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.   Using HMC for Bayesian inference, the potential energy takes the form $u(\ttheta)=-\log \pi(\ttheta)$, where $\pi(\cdot)$ is the posterior density function $\pi(\ttheta):=p(\ttheta|\Y)$ of parameter $\ttheta\in\mathbb{R}^D$ given observed data $\Y$.  In this context, a single iteration of the the St\"{o}rmer-Verlet (velocity Verlet) or leapfrog integrator \citep{leimkuhler2004simulating}, beginning at time $\tau$ and with $\epsilon>0$ small, takes the form
+\begin{align}\label{eq:leap}
+	\mom\left(\tau + \frac{\epsilon}{2}\right) &= \mom(\tau) + \frac{\epsilon}{2} \nabla \log \pi(\ttheta(\tau))  \\  \nonumber
+	\ttheta(\tau+\epsilon) &= \ttheta(\tau) + \epsilon \, \MM^{-1}\mom(\tau+\frac{\epsilon}{2}) \\ \nonumber
+	\mom(\tau + \epsilon) &= \mom\left(\tau+\frac{\epsilon}{2}\right) + \frac{\epsilon}{2} \nabla \log \pi(\ttheta(\tau+\epsilon))  \, ,
+\end{align}
+where $\mom \sim \mbox{N}_D(\Zero,\MM)$ is the Hamiltonian system's Gaussian-distributed momentum variable.  
+Different strategies aim to speed up the leapfrog integrator's many log-posterior gradient evaluations $\nabla \log \pi (\ttheta)$ in different ways, as these numerical routines often represent the algorithm's computational bottleneck.  In model-specific contexts, \citet{holbrook2021massive,holbrook2022bayesian,holbrook2022viral} develop parallelization strategies, and \citet{ji2020gradients} develop dynamic programming techniques, to accelerate $\nabla \log \pi (\ttheta)$.
+
+A small body of literature considers another approach by recognizing 
 
 
 
