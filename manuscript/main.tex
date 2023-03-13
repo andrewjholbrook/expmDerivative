@@ -249,6 +249,19 @@ We investigate the accuracy of a first-order approximation to the directional de
 	\caption{Posteriors.}\label{fig:FE}
 \end{figure}
 
+
+Hamiltonian Monte Carlo \citep{neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, the numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.  
+
+
+
+
+
+
+
+
+
+
+
 %Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  In our application of interest, $\QQ$ is almost surely diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
 %\begin{align*}
 %	\DD = \begin{pmatrix}
