@@ -235,6 +235,24 @@ We investigate the accuracy of a first-order approximation to the directional de
 \newcommand{\GG}{\mathbf{G}}
 \newcommand{\mom}{\boldsymbol{\xi}}
 
+ We are interested in efficiently approximating the directional derivative of the matrix exponential
+\begin{align*}
+	e^{t\QQ} = \sum_{k=0}^\infty \frac{t^k\QQ^k}{k!}
+\end{align*}
+for arbitrary $t>0$ using the formula \citep{najfeld1995derivatives}
+\begin{align}\label{eq:deriv}
+	\nabla_{\JJ} e^{t\QQ}  =  e^{t\QQ}  \sum_{k=0}^\infty \frac{t^{k+1}}{(k+1)!} \{\JJ,\QQ^k\} \, .
+\end{align}
+Here, $\JJ$ gives the direction and $\{\JJ,\QQ^k\}$ is the matrix commutator series satisfying the recursion
+\begin{align*}
+	\{\JJ,\QQ^0\} &= \JJ \, , \\ 
+	\{\JJ,\QQ^k\} &= [\{\JJ,\QQ^{k-1}\} , \QQ]  = \{\JJ,\QQ^{k-1}\} \QQ - \QQ \{\JJ,\QQ^{k-1}\} \, .
+\end{align*}
+Thus, the first-order approximation to derivative \eqref{eq:deriv} is 
+\begin{align}\label{eq:firstOrder}
+	\widetilde{\nabla}_{\JJ} e^{t\QQ}= t e^{t\QQ}\JJ \, .
+\end{align}
+
 
 \section{Global spread of SARS-CoV-2}
 
@@ -261,7 +279,7 @@ Hamiltonian Monte Carlo (HMC) \citep{duane1987hybrid,neal2011mcmc} is an advance
 where $\mom \sim \mbox{N}_D(\Zero,\MM)$ is the Hamiltonian system's Gaussian-distributed momentum variable.  
 Different strategies aim to speed up the leapfrog integrator's many log-posterior gradient evaluations $\nabla \log \pi (\ttheta)$ in different ways, as these numerical routines often represent the algorithm's computational bottleneck.  In model-specific contexts, \citet{holbrook2021massive,holbrook2022bayesian,holbrook2022viral} develop parallelization strategies, and \citet{ji2020gradients} develop dynamic programming techniques, to accelerate $\nabla \log \pi (\ttheta)$.
 
-A small body of work considers another approach by replacing $\nabla \log \pi (\ttheta)$ with a suitable approximation $\widehat{\nabla} \log \pi (\ttheta)$ and recognizing that the analogue of \eqref{eq:leap} continues to satisfy path reversibility and volume preservation, two essential ingredients for well-specified HMC. It follows immediately that the resulting`surrogate trajectory HMC' continues to sample the correct target distribution $\pi(\cdot)$.   The majority of surrogate HMC methods first obtain a small sample of exact gradient evaluations and then use some model to interpolate: \citet{zhang2017precomputing} assume the approximate gradient follows a piecewise constant form across a grid; \citet{rasmussen2003gaussian,lan2016emulation} find approximations using Gaussian processes; and \citet{zhang2017hamiltonian,li2019neural} use neural networks.  Recently \textcolor{red}{MAGEE}
+A small body of work considers another approach by replacing $\nabla \log \pi (\ttheta)$ with a suitable approximation $\widehat{\nabla} \log \pi (\ttheta)$ and recognizing that the modified \eqref{eq:leap} continues to satisfy path reversibility and volume preservation, two essential ingredients for well-specified HMC. It follows immediately that the resulting `surrogate trajectory HMC' continues to sample the correct target distribution $\pi(\cdot)$.  Nonetheless, the acceptance rates and overall efficiency of such samplers may suffer when approximations are poor.   The majority of surrogate HMC methods first obtain a small sample of exact gradient evaluations and then use some model to interpolate: \citet{zhang2017precomputing} assume the approximate gradient follows a piecewise constant form across a grid; \citet{rasmussen2003gaussian,lan2016emulation} construct approximations using Gaussian processes; and \citet{zhang2017hamiltonian,li2019neural} do the same using neural networks.  But an even simpler approach to surrogate HMC may be appropriate when gradients have series representations.   \textcolor{red}{MAGEE} consider phylogenetic models that involve CTMC priors and show that the first-order approximation \eqref{eq:firstOrder} of the matrix exponential derivative \eqref{eq:deriv} performs remarkably well within surrogate HMC, achieving an over 30-fold efficiency gain compared to random-walk Metropolis for a 14-state model with over 180 model parameters.  Here, we demonstrate similar strong performance of the first-order approximation within surrogate HMC for a 44-state model with almost 1900 model parameters.
 
 
 
