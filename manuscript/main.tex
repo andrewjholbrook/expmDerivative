@@ -269,6 +269,8 @@ Thus, the first-order approximation to derivative \eqref{eq:deriv} is
 	\caption{Posteriors.}\label{fig:FE}
 \end{figure}
 
+\subsection{Surrogate trajectory HMC}
+
 
 Hamiltonian Monte Carlo (HMC) \citep{duane1987hybrid,neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate Metropolis-type \citep{metropolis1953equation} proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.   Using HMC for Bayesian inference, the potential energy takes the form $u(\ttheta)=-\log \pi(\ttheta)$, where $\pi(\cdot)$ is the posterior density function $\pi(\ttheta):=p(\ttheta|\Y)$ of parameter $\ttheta\in\mathbb{R}^D$ given observed data $\Y$.  In this context, a single iteration of the the St\"{o}rmer-Verlet (velocity Verlet) or leapfrog integrator \citep{leimkuhler2004simulating}, beginning at time $\tau$ and with $\epsilon>0$ small, takes the form
 \begin{align}\label{eq:leap}
@@ -283,13 +285,18 @@ A small body of work considers another approach by replacing $\nabla \log \pi (\
 
 
 
+\subsection{Phylogeographic CTMC model}
 
 
+\subsection{Bayesian analysis of SARS-CoV-2}
 
 
+\section{Discussion}
 
 
+\section*{Acknowledgments}
 
+AJH is supported by a gift from the Karen Toffler Charitable Trust and by grants NIH K25 AI153816, NSF DMS 2152774 and NSF DMS 2236854.
 
 %Let $\QQ=[q_{ij}]$ be the rate matrix for an $S$-dimensional continuous time Markov chain, where $q_{ij}>0$ for $i\neq j$, and $q_{ii} = -\sum_{j\neq i} q_{ij}$.  In our application of interest, $\QQ$ is almost surely diagonalizable, i.e., $\QQ=\MM \DD \MM^{-1}$ for 
 %\begin{align*}
