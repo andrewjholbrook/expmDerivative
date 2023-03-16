@@ -305,8 +305,10 @@ where $\p_v$ and $\q_v$ are the post-order and pre-order partial likelihood vect
 \end{align}
 Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may write the likelihood's derivative with respect to a single parameter $\theta_d$ thus:
 \begin{align}\label{eq:phyloGrad}
-	\frac{\partial}{\partial \theta_d}  p(\y|\ttheta)  &=   \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial p(\y|\ttheta)}{\partial \P_v} \frac{\partial \P_v}{\partial \theta_d} \right) = \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial p(\y|\ttheta)}{\partial \P_v} \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d} \right)  \\
-	&=\sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial p(\y|\ttheta)}{\partial \P_v} \sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right)  \, .
+	\frac{\partial}{\partial \theta_d}  p(\y|\ttheta) 
+	&=   \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial (\p_v^T\q_v)}{\partial \P_v} \frac{\partial \P^T_v}{\partial \theta_d} \right)
+	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T \frac{\partial e^{\gamma t_v \QQ^T}}{\partial \theta_d}\right)  \\ \nonumber
+	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ^T}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right) (\q_u\circ \P_w\p_w)  \, .
 \end{align}
 Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
 \begin{align}
@@ -315,6 +317,8 @@ Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood compu
 Here, the fixed-effects $b_{ss'}$ are elements of some non-random matrix $\B$, and the random-effects $\epsilon_{ss'}$ are mutually independent \emph{a priori} and inferred as model parameters.  The dimension $D$ of $\ttheta$ in this model is $\mathcal{O}(S^2)$, so the usual $\mathcal{O}(DNS^5)$ cost of the matrix expoential derivative becomes a massive $\mathcal{O}(NS^7)$.  In this context, \textcolor{red}{MAGEE} show that the first-approximation \eqref{eq:firstOrder} achieves a considerable speedup over the exact derivative, while facilitating high-quality proposals in the context of surrogate HMC.  In the following section, we use this method to analyze the global spread of SARS-CoV-2 and show that the first-order approximation maintains its performance for an even higher-dimensional problem than previously considered.
 
 \subsection{Bayesian analysis of SARS-CoV-2 contagion}\label{sec:sars}
+
+
 
 
 \section{Discussion}
