@@ -298,8 +298,8 @@ Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may
 \begin{align}\label{eq:phyloGrad}
 	\frac{\partial}{\partial \theta_d}  p(\y|\ttheta) 
 	&=   \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial (\p_v^T\q_v)}{\partial \P_v} \frac{\partial \P^T_v}{\partial \theta_d} \right)
-	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T\left( \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d}\right)^T\right)  \\ \nonumber
-	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right)^T (\q_u\circ \P_w\p_w)  \, .
+	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T\bigg( \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d}\bigg)^{\!T}\right)  \\ \nonumber
+	&=\sum_{v=1}^{2N-2} \p_v^T \Biggl(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \Biggr)^{\!T} (\q_u\circ \P_w\p_w)  \, .
 \end{align}
 Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
 \begin{align}\label{eq:mixed}
