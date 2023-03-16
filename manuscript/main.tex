@@ -298,8 +298,8 @@ Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may
 \begin{align}\label{eq:phyloGrad}
 	\frac{\partial}{\partial \theta_d}  p(\y|\ttheta) 
 	&=   \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial (\p_v^T\q_v)}{\partial \P_v} \frac{\partial \P^T_v}{\partial \theta_d} \right)
-	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T \frac{\partial e^{\gamma t_v \QQ^T}}{\partial \theta_d}\right)  \\ \nonumber
-	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ^T}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right) (\q_u\circ \P_w\p_w)  \, .
+	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T\left( \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d}\right)^T\right)  \\ \nonumber
+	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right)^T (\q_u\circ \P_w\p_w)  \, .
 \end{align}
 Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
 \begin{align}\label{eq:mixed}
@@ -326,6 +326,21 @@ We use the phylogenetic CTMC framework to model the early spread of SARS-CoV-2--
 	\B = \theta_1 \X_1 + \theta_2  \X_2 + \theta_3 \X_3 \, ,
 \end{align*} 
 for each $\X$ a fixed $44\times 44$ matrix predictor and each $\theta$ a real-valued regression coefficient. Figure \ref{fig:FE} presents the three predictors of interest: $\X_1$ contains air travel proximities between locations as measured by annualized air passenger counts between airports contained within a region \citep{holbrook2021massive};  $\X_2$ contains intracontinental proximities arising from physical distances when two regions inhabit the same continent and fixed at the minimum otherwise; finally, $\X_3$ describes the Hubei asymmetry, i.e., the fact that people could enter, but not leave, the Chinese province of Hubei during the early pandemic.
+
+In the context of a Bayesian analysis, we specify independent normal priors on $\theta_1$, $\theta_2$ and $\theta_3$ with means of 0 and variances of 2.  We also assume that the 1,892 random-effects $\epsilon_{ss'}$ follow sparsity inducing Bayesian bridge priors with global scale parameter $\tau$ and exponent $\alpha=0.25$.  Here, we follow \citet{nishimura2022shrinkage} and specify a Gamma prior on $\tau^{-\alpha}$ with a shape parameter of 1 and a rate parameter of 2. Finally, we place a flat prior on the rate scalar $\gamma$.  Inferring the posterior distribution of all 1,897 model parameters requires an advanced MCMC strategy. Namely, we adopt an HMC-within-Gibbs approach, updating the scalars $\gamma$ and $\tau$ independently but updating all 1,895 regression parameters (both fixed- and random-effects) using surrogate HMC accomplished with the first-order approximation
+\begin{align*}
+  \gamma t_v  e^{\gamma t_v \QQ} \JJ_{ss'}    \approx \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} 
+\end{align*}
+within \eqref{eq:phyloGrad}.
+
+We generate 10 million MCMC samples in this manner, saving 1 in 10,000 Markov chain states in order to conserve memory.  
+\begin{itemize}
+	\item ESS
+	\item Figure 2
+	\item Tree
+\end{itemize}
+
+In addition to these scientific questions of interest, we are interested in the performance of the first-order approximation as a surrogate gradient for HMC in such a high-dimensional setting. To do isolate this performance, we temporarily fix the Bayesian bridge global-scale $\tau$ at 2.5$\times10^{-5}$.  We generate 
 
 
 \section{Discussion}
