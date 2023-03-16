@@ -239,6 +239,7 @@ We investigate the accuracy of a first-order approximation to the directional de
 \newcommand{\p}{\mathbf{p}}
 \newcommand{\q}{\mathbf{q}}
 \newcommand{\B}{\mathbf{B}}
+\newcommand{\X}{\mathbf{X}}
 
  We are interested in efficiently approximating the directional derivative of the matrix exponential
 \begin{align*}
@@ -262,17 +263,7 @@ Thus, the first-order approximation to derivative \eqref{eq:deriv} is
 \section{Global spread of SARS-CoV-2}
 
 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=\linewidth]{fixedEffects.pdf}
-	\caption{Fixed effects.}\label{fig:FE}
-\end{figure}
 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=\linewidth]{postViz.pdf}
-	\caption{Posteriors.}\label{fig:FE}
-\end{figure}
 
 \subsection{Surrogate trajectory HMC}\label{sec:surrHmc}
 
@@ -311,14 +302,30 @@ Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may
 	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ^T}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right) (\q_u\circ \P_w\p_w)  \, .
 \end{align}
 Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
-\begin{align}
+\begin{align}\label{eq:mixed}
 \log q_{ss'} = b_{ss'} + \epsilon_{ss'} \,, \quad s\neq s'\, .
 \end{align} 
 Here, the fixed-effects $b_{ss'}$ are elements of some non-random matrix $\B$, and the random-effects $\epsilon_{ss'}$ are mutually independent \emph{a priori} and inferred as model parameters.  The dimension $D$ of $\ttheta$ in this model is $\mathcal{O}(S^2)$, so the usual $\mathcal{O}(DNS^5)$ cost of the matrix expoential derivative becomes a massive $\mathcal{O}(NS^7)$.  In this context, \textcolor{red}{MAGEE} show that the first-approximation \eqref{eq:firstOrder} achieves a considerable speedup over the exact derivative, while facilitating high-quality proposals in the context of surrogate HMC.  In the following section, we use this method to analyze the global spread of SARS-CoV-2 and show that the first-order approximation maintains its performance for an even higher-dimensional problem than previously considered.
 
 \subsection{Bayesian analysis of SARS-CoV-2 contagion}\label{sec:sars}
 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{fixedEffects.pdf}
+	\caption{Fixed effects.}\label{fig:FE}
+\end{figure}
 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{postViz.pdf}
+	\caption{Posteriors.}\label{fig:post}
+\end{figure}
+
+We use the phylogenetic CTMC framework to model the early spread of SARS-CoV-2---the virus responsible for the ongoing COVID-19 pandemic---based on 285 observed viral samples collected from $S=44$ regions worldwide. These regions comprise 15 provinces within China and 29 countries without.  Understanding the manner in which viruses travel between human populations is an object of ongoing study, and phylogeographic analyses point to the central role of travel networks including those measured by airline passenger counts \citep{holbrook2021massive} or google mobility data \citep{worobey2020emergence}.  Here, we include three such predictors of travel in our CTMC model by expanding the fixed-effects in regression model \eqref{eq:mixed} to take the form
+\begin{align*}
+	\B = \theta_1 \X_1 + \theta_2  \X_2 + \theta_3 \X_3 \, ,
+\end{align*} 
+for each $\X$ a fixed $44\times 44$ matrix predictor and each $\theta$ a real-valued regression coefficient. Figure \ref{fig:FE} presents the three predictors of interest: $\X_1$ contains air travel proximities between locations as measured by annualized air passenger counts between airports contained within a region \citep{holbrook2021massive};  $\X_2$ contains intracontinental proximities arising from physical distances when two regions inhabit the same continent and fixed at the minimum otherwise; finally, $\X_3$ describes the Hubei asymmetry, i.e., the fact that people could enter, but not leave, the Chinese province of Hubei during the early pandemic.
 
 
 \section{Discussion}
