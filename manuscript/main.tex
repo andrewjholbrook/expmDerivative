@@ -215,7 +215,7 @@ We investigate the accuracy of a first-order approximation to the directional de
 %\newcommand{\tr}{\mbox{tr}}
 %\newcommand{\X}{\mathbf{X}}
 %\renewcommand{\u}{\mathbf{u}}
-\newcommand{\Y}{\mathbf{Y}}
+\newcommand{\y}{\mathbf{y}}
 \newcommand{\QQ}{\mathbf{Q}}
 \newcommand{\DD}{\mathbf{D}}
 \newcommand{\MM}{\mathbf{M}}
@@ -236,6 +236,10 @@ We investigate the accuracy of a first-order approximation to the directional de
 \newcommand{\mom}{\boldsymbol{\xi}}
 \newcommand{\ppi}{\boldsymbol{\pi}}
 \renewcommand{\P}{\mathbf{P}}
+\newcommand{\p}{\mathbf{p}}
+\newcommand{\q}{\mathbf{q}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\X}{\mathbf{X}}
 
  We are interested in efficiently approximating the directional derivative of the matrix exponential
 \begin{align*}
@@ -259,22 +263,12 @@ Thus, the first-order approximation to derivative \eqref{eq:deriv} is
 \section{Global spread of SARS-CoV-2}
 
 
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=\linewidth]{fixedEffects.pdf}
-	\caption{Fixed effects.}\label{fig:FE}
-\end{figure}
-
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=\linewidth]{postViz.pdf}
-	\caption{Posteriors.}\label{fig:FE}
-\end{figure}
-
-\subsection{Surrogate trajectory HMC}
 
 
-Hamiltonian Monte Carlo (HMC) \citep{duane1987hybrid,neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate Metropolis-type \citep{metropolis1953equation} proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.   Using HMC for Bayesian inference, the potential energy takes the form $u(\ttheta)=-\log \pi(\ttheta)$, where $\pi(\cdot)$ is the posterior density function $\pi(\ttheta):=p(\ttheta|\Y)$ of parameter $\ttheta\in\mathbb{R}^D$ given observed data $\Y$.  In this context, a single iteration of the the St\"{o}rmer-Verlet (velocity Verlet) or leapfrog integrator \citep{leimkuhler2004simulating}, beginning at time $\tau$ and with $\epsilon>0$ small, takes the form
+\subsection{Surrogate trajectory HMC}\label{sec:surrHmc}
+
+
+Hamiltonian Monte Carlo (HMC) \citep{duane1987hybrid,neal2011mcmc} is an advanced MCMC procedure that uses numerical approximations to Hamiltonian trajectories to generate Metropolis-type \citep{metropolis1953equation} proposals far away from the current Markov chain state.  On the one hand, this approach to proposal generation helps reduce autocorrelation between chain states and is particularly helpful within higher-dimensional state spaces.  On the other hand, numerical integration of Hamilton's equations requires repeated evaluation of the Hamiltonian potential energy's gradient, and these repeated floating-point operations may become computationally burdensome.   Using HMC for Bayesian inference, the potential energy takes the form $u(\ttheta)=-\log \pi(\ttheta)$, where $\pi(\cdot)$ is the posterior density function $\pi(\ttheta):=p(\ttheta|\y)$ of parameter $\ttheta\in\mathbb{R}^D$ given observed data $\y$.  In this context, a single iteration of the the St\"{o}rmer-Verlet (velocity Verlet) or leapfrog integrator \citep{leimkuhler2004simulating}, beginning at time $\tau$ and with $\epsilon>0$ small, takes the form
 \begin{align}\label{eq:leap}
 	\mom\left(\tau + \frac{\epsilon}{2}\right) &= \mom(\tau) + \frac{\epsilon}{2} \nabla \log \pi(\ttheta(\tau))  \\  \nonumber
 	\ttheta(\tau+\epsilon) &= \ttheta(\tau) + \epsilon \, \MM^{-1}\mom(\tau+\frac{\epsilon}{2}) \\ \nonumber
@@ -287,15 +281,66 @@ A small body of work considers another approach by replacing $\nabla \log \pi (\
 
 
 
-\subsection{Phylogeographic CTMC model}
+\subsection{Phylogenetic CTMC model}
 
 Start with a (possibly unknown) rooted and bifurcating phylogenetic tree $\phylogeny$ consisting of $N$ leaf nodes that correspond to observed biological specimens and $N-1$ internal nodes that correspond to unobserved ancestors.  The tree also contains $2N-2$ branches of length $t_v$ connecting each child node $v$ to its parent $u$.  
- Given $\phylogeny$, we model the evolution of $S$ characters along each branch of the tree according to a CTMC model with $S\times S$ generator matrix $\QQ$ and stationary distribution $\ppi=(\pi_1,\dots,\pi_S)=\lim_{t\rightarrow \infty}e^{t\QQ}\widetilde{\ppi}$, for $\widetilde{\ppi}$ for any arbitrary probability vector.   Examples of characters are the $S=4$ nucleotides within a set of aligned genome sequences  \citep{jukes1969evolution} and the set of $S=15$ geographic regions visited by an influenza subtype \citep{lemey2014unifying}.   Depending on the given problem, we may scale $t_v$ to be raw time (e.g., years in Section \ref{sec:sars}) or the expected number of substitutions with respect to $\ppi$.   In the former case, one may augment the model with a rate scalar $\gamma$ that modulates the expected number of substitutions across all branches, and the finite-time transition probability matrix along branch $v$ becomes $\P_v:=e^{\gamma t_v \QQ}$.
-
-
-
+ Given $\phylogeny$, we model the evolution of $S$ characters along each branch of the tree according to a CTMC model with $S\times S$ generator matrix $\QQ$ and stationary distribution $\ppi=(\pi_1,\dots,\pi_S)=\lim_{t\rightarrow \infty}e^{t\QQ}\widetilde{\ppi}$, for $\widetilde{\ppi}$ for any arbitrary probability vector.   Examples of characters are the $S=4$ nucleotides within a set of aligned genome sequences  \citep{jukes1969evolution} and the set of $S=15$ geographic regions visited by an influenza subtype \citep{lemey2014unifying}.   We may scale $t_v$ to be raw time (e.g., years in Section \ref{sec:sars}) or the expected number of substitutions with respect to $\ppi$ depending on the given problem.   In the former case, one may augment the model with a rate scalar $\gamma$ that modulates the expected number of substitutions across all branches, and the finite-time transition probability matrix along branch $v$ becomes $\P_v:=e^{\gamma t_v \QQ}$.  In the following, we further posit $\QQ=\QQ(\ttheta)$ for $\ttheta$ a vector of parameters.
+ 
+ Let data $\y$ be the $N$-vector with elements $y_n\in \{1,\dots,S\}$, the observed states of each observed biological specimen $n \in \{1,\dots,N\}$.  At any node $v$, the likelihood takes the form \citep{ji2020gradients}
+ \begin{align}
+p(\y|\ttheta) = \p_v^T \q_v \, ,
+ \end{align}
+where $\p_v$ and $\q_v$ are the post-order and pre-order partial likelihood vectors, respectively.  The former describes the probability of the observed states for all observed specimens (i.e., leaf nodes) that descend from node $v$, conditioned on the state at node $v$. The latter describes analogous probabilities for all observed specimens not descending from node $v$.  If we suppose that node $u$ gives rise to two child nodes, $v$ and $w$, then 
+\begin{align}\label{eq:recursions}
+	\p_u = \P_v \p_v \circ \P_w \p_w\, ,  \quad \q_v= \P_v^T \left( \q_u \circ  \P_w \p_w\right) \, .
+\end{align}
+Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may write the likelihood's derivative with respect to a single parameter $\theta_d$ thus:
+\begin{align}\label{eq:phyloGrad}
+	\frac{\partial}{\partial \theta_d}  p(\y|\ttheta) 
+	&=   \sum_{v=1}^{2N-2} \mbox{tr} \left( \frac{\partial (\p_v^T\q_v)}{\partial \P_v} \frac{\partial \P^T_v}{\partial \theta_d} \right)
+	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T\left( \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d}\right)^T\right)  \\ \nonumber
+	&=\sum_{v=1}^{2N-2} \p_v^T \left(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \right)^T (\q_u\circ \P_w\p_w)  \, .
+\end{align}
+Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
+\begin{align}\label{eq:mixed}
+\log q_{ss'} = b_{ss'} + \epsilon_{ss'} \,, \quad s\neq s'\, .
+\end{align} 
+Here, the fixed-effects $b_{ss'}$ are elements of some non-random matrix $\B$, and the random-effects $\epsilon_{ss'}$ are mutually independent \emph{a priori} and inferred as model parameters.  The dimension $D$ of $\ttheta$ in this model is $\mathcal{O}(S^2)$, so the usual $\mathcal{O}(DNS^5)$ cost of the matrix expoential derivative becomes a massive $\mathcal{O}(NS^7)$.  In this context, \textcolor{red}{MAGEE} show that the first-approximation \eqref{eq:firstOrder} achieves a considerable speedup over the exact derivative, while facilitating high-quality proposals in the context of surrogate HMC.  In the following section, we use this method to analyze the global spread of SARS-CoV-2 and show that the first-order approximation maintains its performance for an even higher-dimensional problem than previously considered.
 
 \subsection{Bayesian analysis of SARS-CoV-2 contagion}\label{sec:sars}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{fixedEffects.pdf}
+	\caption{Fixed effects.}\label{fig:FE}
+\end{figure}
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{postViz.pdf}
+	\caption{Posteriors.}\label{fig:post}
+\end{figure}
+
+We use the phylogenetic CTMC framework to model the early spread of SARS-CoV-2---the virus responsible for the ongoing COVID-19 pandemic---based on 285 observed viral samples collected from $S=44$ regions worldwide. These regions comprise 15 provinces within China and 29 countries without.  Understanding the manner in which viruses travel between human populations is an object of ongoing study, and phylogeographic analyses point to the central role of travel networks including those measured by airline passenger counts \citep{holbrook2021massive} or google mobility data \citep{worobey2020emergence}.  Here, we include three such predictors of travel in our CTMC model by expanding the fixed-effects in regression model \eqref{eq:mixed} to take the form
+\begin{align*}
+	\B = \theta_1 \X_1 + \theta_2  \X_2 + \theta_3 \X_3 \, ,
+\end{align*} 
+for each $\X$ a fixed $44\times 44$ matrix predictor and each $\theta$ a real-valued regression coefficient. Figure \ref{fig:FE} presents the three predictors of interest: $\X_1$ contains air travel proximities between locations as measured by annualized air passenger counts between airports contained within a region \citep{holbrook2021massive};  $\X_2$ contains intracontinental proximities arising from physical distances when two regions inhabit the same continent and fixed at the minimum otherwise; finally, $\X_3$ describes the Hubei asymmetry, i.e., the fact that people could enter, but not leave, the Chinese province of Hubei during the early pandemic.
+
+In the context of a Bayesian analysis, we specify independent normal priors on $\theta_1$, $\theta_2$ and $\theta_3$ with means of 0 and variances of 2.  We also assume that the 1,892 random-effects $\epsilon_{ss'}$ follow sparsity inducing Bayesian bridge priors with global scale parameter $\tau$ and exponent $\alpha=0.25$.  Here, we follow \citet{nishimura2022shrinkage} and specify a Gamma prior on $\tau^{-\alpha}$ with a shape parameter of 1 and a rate parameter of 2. Finally, we place a flat prior on the rate scalar $\gamma$.  Inferring the posterior distribution of all 1,897 model parameters requires an advanced MCMC strategy. Namely, we adopt an HMC-within-Gibbs approach, updating the scalars $\gamma$ and $\tau$ independently but updating all 1,895 regression parameters (both fixed- and random-effects) using surrogate HMC accomplished with the first-order approximation
+\begin{align*}
+  \gamma t_v  e^{\gamma t_v \QQ} \JJ_{ss'}    \approx \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} 
+\end{align*}
+within \eqref{eq:phyloGrad}.
+
+We generate 10 million MCMC samples in this manner, saving 1 in 10,000 Markov chain states in order to conserve memory.  
+\begin{itemize}
+	\item ESS
+	\item Figure 2
+	\item Tree
+\end{itemize}
+
+In addition to these scientific questions of interest, we are interested in the performance of the first-order approximation as a surrogate gradient for HMC in such a high-dimensional setting. To isolate this performance, we fix the Bayesian bridge global-scale $\tau$ at 2.5$\times10^{-5}$.  We generate a Markov chain with 80,000 states, saving every tenth state and removing the first 1000 states as burn-in.  Despite the relatively small number of iterations, we observe large ESS that suggest satisfactory accuracy of the first-order approximation within the context of high-dimensional surrogate HMC.  The ESS for the three fixed-effects regression coefficients $\theta_1$, $\theta_2$ and $\theta_3$ are 1,053, 1,343 and 498, respectively.  The median and minimum ESS for the 1,892 random-effects are 1,514 and 1,161, respectively.
 
 
 \section{Discussion}
