@@ -24,5 +24,6 @@ effectiveSize(df[,9:11])
 # random effects
 summary(effectiveSize(df[,12:1903]))
 
-
+colMeans(df[,9:11])
+coda::HPDinterval(coda::as.mcmc(df[,9:11]))
 
