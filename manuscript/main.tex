@@ -321,6 +321,12 @@ Here, the fixed-effects $b_{ss'}$ are elements of some non-random matrix $\B$, a
 	\caption{Posteriors.}\label{fig:post}
 \end{figure}
 
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.8\linewidth]{summary.tree.pdf}
+	\caption{a tree.}\label{fig:tree}
+\end{figure}
+
 We use the phylogenetic CTMC framework to model the early spread of SARS-CoV-2---the virus responsible for the ongoing COVID-19 pandemic---based on 285 observed viral samples collected from $S=44$ regions worldwide. These regions comprise 15 provinces within China and 29 countries without.  Understanding the manner in which viruses travel between human populations is an object of ongoing study, and phylogeographic analyses point to the central role of travel networks including those measured by airline passenger counts \citep{holbrook2021massive} or google mobility data \citep{worobey2020emergence}.  Here, we include three such predictors of travel in our CTMC model by expanding the fixed-effects in regression model \eqref{eq:mixed} to take the form
 \begin{align*}
 	\B = \theta_1 \X_1 + \theta_2  \X_2 + \theta_3 \X_3 \, ,
