@@ -202,9 +202,10 @@ Notice that, for $Q \in \mathcal{D}$,
 Q \exp(t Q) = M^{-1} D M M^{-1} \exp(t D) M = M^{-1} D \exp(t D) M
 \end{align*}
  and hence
+ \todo{Flipped.}
 \begin{align}
 	\| Q e^{tQ} \| \leq  \| M^{-1}\| \|M\| \left( \sum_{j =1}^{d-1} | D_{i,i} \exp( t D_{i,i}) |^2 \right)^{1/2}
-	\leq  \sqrt{d-1}\| M^{-1}\| \|M\| e_m \exp(-t e_M)
+	\leq  \sqrt{d-1}\| M^{-1}\| \|M\| e_M \exp(-t e_m)
 	\label{eq:decay:est:1}
 \end{align}
 where here and below $\| \cdot \|$ denotes the standard Frobenius norm on $\CC^{d \times d}$
@@ -381,22 +382,45 @@ Since $\max |\Phi_{ij}|$ goes to 0 at an exponential rate, we have $\lVert T_2(t
 %$\sup_{t \geq 0} \| \exp(-sQ) Q  J \exp(s Q)\| < \infty$.
 \end{proof}
 
-\todo{Get angle between approx and truth.}
+
 
 \section{High-dimensional Asymptotics}
 
 
+
+\subsection{Eigenvalues}
+
 Given the above result, it would be interesting to characterize the behavior of 
 \begin{align*}
-\lVert	Q^+ J (I-QQ^+)  \rVert_F &\leq \lVert M^{-1}D^+M \rVert_F \lVert J\rVert_F \lVert O^T (I-I_{-d}) O \rVert_F \\
-&\leq \lVert D^+ \rVert_F \lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  \\
-&= \frac{1}{e_m}\lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  
+	\lVert	Q^+ J (I-QQ^+)  \rVert_F &\leq \lVert M^{-1}D^+M \rVert_F \lVert J\rVert_F \lVert O^T (I-I_{-d}) O \rVert_F \\
+	&\leq \lVert D^+ \rVert_F \lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  \\
+	&= \frac{\sqrt{d-1}}{e_m}\lVert M\rVert_F \lVert M^{-1}\rVert_F \lVert J \rVert_F  
 \end{align*}
 for random $Q$ as $d\rightarrow \infty$.  Here, $O$ is the orthogonal matrix obtained by diagonalizing $QQ^+$, and we have used the rotation invariance of the Frobenius norm. We are therefore interested in the complex modulus of the non-zero eigenvalue closest to the origin on the complex plain. 
 
+
+\subsection{Singular values}
+
+Let $U\Sigma V^T:=Q$ be the SVD of $Q$.  Then $Q^+=V\Sigma^+U^T$, and the spectral norm satisfies
+\begin{align*}
+	\lVert Q\rVert_2 = \sigma_M \, , \quad \lVert Q^+ \rVert_2 = \frac{1}{\sigma_m} \, ,
+\end{align*}
+where $\sigma_M$ is the maximal entry in the diagonal matrix $\Sigma$ and $\sigma_m$ is the minimal non-zero value of the same. Then
+\begin{align*}
+	\lVert	Q^+ J (I-QQ^+)  \rVert_2 &\leq \lVert Q^+ \rVert_2 \lVert J\rVert_2 \lVert U (I-I_{-d}) U^T \rVert_2 
+	= \frac{\lVert J\rVert_2}{\sigma_m} \, .
+\end{align*}
+When $J$ is a matrix with a single non-zero value equal to 1, then $\lVert J\rVert_2=1$, and we have
+\begin{align*}
+	\lVert	Q^+ J (I-QQ^+)  \rVert_2 &\leq \frac{1}{\sigma_m}.
+\end{align*}
+
+
+%for random $Q$ as $d\rightarrow \infty$.   We are therefore interested in the complex modulus of the non-zero eigenvalue closest to the origin on the complex plain. 
+
 Questions/Comments:
 \begin{itemize}
-	\item Empirically, $e_m \rightarrow \infty$ as $d \rightarrow \infty$.
+	\item Empirically, $e_m, \sigma_m \rightarrow \infty$ as $d \rightarrow \infty$.
 \end{itemize}
 
 \section{Questions, Comments and Clarifications}
