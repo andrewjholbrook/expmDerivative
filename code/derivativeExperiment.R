@@ -52,12 +52,14 @@ blockwise <- function(t,Q,E) {
 #
 n       <- 50
 Q       <- matrix(rexp(n^2),n,n)
+Q       <- (Q + t(Q))/2
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 eigs    <- eigen(Q)$values
 
 for(n in 100*1:10) {
   Q       <- matrix(rexp(n^2),n,n)
+  Q       <- (Q + t(Q))/2
   diag(Q) <- 0
   diag(Q) <- - rowSums(Q)
   eigs    <- c(eigs,eigen(Q)$values)

@@ -172,19 +172,20 @@ d_{F}
 
 %\date{}
 
+\author[1]{Gustavo Didier}
+\author[1]{Nathan E.~Glatt-Holtz}
+\author[2]{Andrew J.~Holbrook\thanks{Corresponding author: \url{aholbroo@g.ucla.edu}.}}
+\author[2]{\\Andrew F.~Magee}
+\author[2,3,4]{Marc A.~Suchard}
 
 
-\author[1]{Andrew J.~Holbrook}
-\author[1]{Andrew F.~Magee}
-\author[2]{Nathan E.~Glatt-Holtz}
-\author[1,3,4]{Marc A.~Suchard}
-
- \affil[1]{Department of Biostatistics, University of California, Los Angeles}
- \affil[2]{Department of Mathematics, Tulane University}
+ \affil[1]{Department of Mathematics, Tulane University}
+  \affil[2]{Department of Biostatistics, University of California, Los Angeles}
  \affil[3]{Department of Biomathematics, University of California, Los Angeles}
  \affil[4]{Department of Human Genetics, University of California, Los Angeles}
  
  \renewcommand\Authands{ and }
+
 
 
 \graphicspath{{figures/}}
@@ -277,7 +278,7 @@ Hamiltonian Monte Carlo (HMC) \citep{duane1987hybrid,neal2011mcmc} is an advance
 where $\mom \sim \mbox{N}_D(\Zero,\MM)$ is the Hamiltonian system's Gaussian-distributed momentum variable.  
 Different strategies aim to speed up the leapfrog integrator's many log-posterior gradient evaluations $\nabla \log \pi (\ttheta)$ in different ways, as these numerical routines often represent the algorithm's computational bottleneck.  In model-specific contexts, \citet{holbrook2021massive,holbrook2022bayesian,holbrook2022viral} develop parallelization strategies, and \citet{ji2020gradients} develop dynamic programming techniques, to accelerate $\nabla \log \pi (\ttheta)$.
 
-A small body of work considers another approach by replacing $\nabla \log \pi (\ttheta)$ with a suitable approximation $\widehat{\nabla} \log \pi (\ttheta)$ and recognizing that the modified \eqref{eq:leap} continues to satisfy path reversibility and volume preservation, two essential ingredients for well-specified HMC. It follows immediately that the resulting `surrogate trajectory HMC' continues to sample the correct target distribution $\pi(\cdot)$.  Nonetheless, the acceptance rates and overall efficiency of such samplers may suffer when approximations are poor.   The majority of surrogate HMC methods first obtain a small sample of exact gradient evaluations and then use some model to interpolate: \citet{zhang2017precomputing} assume the approximate gradient follows a piecewise constant form across a grid; \citet{rasmussen2003gaussian,lan2016emulation} construct approximations using Gaussian processes; and \citet{zhang2017hamiltonian,li2019neural} do the same using neural networks.  But an even simpler approach to surrogate HMC may be appropriate when gradients have series representations.   \textcolor{red}{MAGEE} consider phylogenetic models that involve CTMC priors and show that the first-order approximation \eqref{eq:firstOrder} of the matrix exponential derivative \eqref{eq:deriv} performs remarkably well within surrogate HMC, achieving an over 30-fold efficiency gain compared to random-walk Metropolis for a 14-state model with over 180 model parameters.  Here, we demonstrate similar strong performance of the first-order approximation within surrogate HMC for a 44-state model with almost 1,900 model parameters.  
+A small body of work considers another approach by replacing $\nabla \log \pi (\ttheta)$ with a suitable approximation $\widehat{\nabla} \log \pi (\ttheta)$ and recognizing that the modified \eqref{eq:leap} continues to satisfy path reversibility and volume preservation, two essential ingredients for well-specified HMC. It follows immediately that the resulting `surrogate trajectory HMC' continues to sample the correct target distribution $\pi(\cdot)$.  Nonetheless, the acceptance rates and overall efficiency of such samplers may suffer when approximations are poor.   The majority of surrogate HMC methods first obtain a small sample of exact gradient evaluations and then use some model to interpolate: \citet{zhang2017precomputing} assume the approximate gradient follows a piecewise constant form across a grid; \citet{rasmussen2003gaussian,lan2016emulation} construct approximations using Gaussian processes; and \citet{zhang2017hamiltonian,li2019neural} do the same using neural networks.  But an even simpler approach to surrogate HMC may be appropriate when gradients have series representations.   \citet{magee2023random} consider phylogenetic models that involve CTMC priors and show that the first-order approximation \eqref{eq:firstOrder} of the matrix exponential derivative \eqref{eq:deriv} performs remarkably well within surrogate HMC, achieving an over 30-fold efficiency gain compared to random-walk Metropolis for a 14-state model with over 180 model parameters.  Here, we demonstrate similar strong performance of the first-order approximation within surrogate HMC for a 44-state model with almost 1,900 model parameters.  
 
 
 
@@ -301,11 +302,11 @@ Using the chain rule and the fact that $\p_v$ does not depend on $\P_v$, one may
 	= \sum_{v=1}^{2N-2} \mbox{tr} \left(  (\q_u\circ \P_w\p_w) \p_v^T\bigg( \frac{\partial e^{\gamma t_v \QQ}}{\partial \theta_d}\bigg)^{\!T}\right)  \\ \nonumber
 	&=\sum_{v=1}^{2N-2} \p_v^T \Biggl(\sum_{s=1}^S \sum_{s'=1}^S \frac{\partial e^{\gamma t_v \QQ}}{\partial q_{ss'}} \frac{\partial q_{ss'}}{\partial \theta_d} \Biggr)^{\!T} (\q_u\circ \P_w\p_w)  \, .
 \end{align}
-Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \textcolor{red}{(MAGEE)} and specifies
+Whereas the recursions of \eqref{eq:recursions} facilitate fast likelihood computation, inferring $\ttheta$ using gradient-based approaches such as HMC (Section \ref{sec:surrHmc}) requires a large number of repeated evaluations of the matrix exponential derivative.  These computations become particularly onerous when one opts for a gold-standard mixed-effect model \citep{magee2023random} and specifies
 \begin{align}\label{eq:mixed}
 \log q_{ss'} = b_{ss'} + \epsilon_{ss'} \,, \quad s\neq s'\, .
 \end{align} 
-Here, the fixed effects $b_{ss'}$ are elements of some non-random matrix $\B$, and the random effects $\epsilon_{ss'}$ are mutually independent \emph{a priori} and inferred as model parameters.  The dimension $D$ of $\ttheta$ in this model is $\mathcal{O}(S^2)$, so the usual $\mathcal{O}(DNS^5)$ cost of the matrix expoential derivative becomes a massive $\mathcal{O}(NS^7)$.  In this context, \textcolor{red}{MAGEE} show that the first-approximation \eqref{eq:firstOrder} achieves a considerable speedup over the exact derivative, while facilitating high-quality proposals in the context of surrogate HMC.  In the following section, we use this method to analyze the global spread of SARS-CoV-2 and show that the first-order approximation maintains its performance for an even higher-dimensional problem than previously considered.
+Here, the fixed effects $b_{ss'}$ are elements of some non-random matrix $\B$, and the random effects $\epsilon_{ss'}$ are mutually independent \emph{a priori} and inferred as model parameters.  The dimension $D$ of $\ttheta$ in this model is $\mathcal{O}(S^2)$, so the usual $\mathcal{O}(DNS^5)$ cost of the matrix expoential derivative becomes a massive $\mathcal{O}(NS^7)$.  In this context, \citet{magee2023random} show that the first-approximation \eqref{eq:firstOrder} achieves a considerable speedup over the exact derivative, while facilitating high-quality proposals in the context of surrogate HMC.  In the following section, we use this method to analyze the global spread of SARS-CoV-2 and show that the first-order approximation maintains its performance for an even higher-dimensional problem than previously considered.
 
 \subsection{Bayesian analysis of SARS-CoV-2 contagion}\label{sec:sars}
 
