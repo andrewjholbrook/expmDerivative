@@ -167,10 +167,10 @@ d_{F}
 %\makeatother
 
 
-\title{Approximating the matrix exponential derivative of the CTMC generator matrix, with application to global SARS-CoV-2}
+\title{Approximating the matrix exponential derivative with respect to the CTMC generator matrix, with application to global SARS-CoV-2}
 
 
-%\date{}
+\date{}
 
 \author[1]{Gustavo Didier}
 \author[1]{Nathan E.~Glatt-Holtz}
@@ -200,8 +200,7 @@ d_{F}
 
 \begin{abstract}
 
-We investigate the accuracy of a first-order approximation to the directional derivative of the matrix exponential evaluated on continuous-time Markov chain (CTMC) generator matrices.
-
+The continuous-time Markov chain (CTMC) is the workhorse model of evolutionary biology.  Learning CTMC model parameters using modern, gradient-based methods requires the derivative of the matrix exponential evaluated at the CTMC's infinitesimal generator (rate) matrix.  Motivated by the derivative's extreme computational complexity as a function of state space cardinality, recent work demonstrates the surprising effectiveness of a fast, first-order approximation for a host of problems in computational biology.  We obtain rigorous bounds for the error accrued by such an approach and establish a ``blessing of dimensionality'' result stemming from the novel insight that, in a certain sense, high-dimensional CTMC quickly converge to stationarity.  Finally, we apply the first-order approximation within surrogate-trajectory Hamiltonian Monte Carlo to the analysis of the early spread of SARS-CoV-2 across 44 geographic regions that comprise a state space of unprecedented dimensionality within evolutionary biology.
 
 \end{abstract}
 
