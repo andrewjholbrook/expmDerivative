@@ -66,7 +66,7 @@ gg <- ggplot(df,aes(x=t,y=Error,color=Dimension,linetype=Type)) +
   theme_bw() +
   ggtitle("Asymmetric and iid") +
   theme(legend.text = element_text(colour="black"))+
-  coord_cartesian(ylim=c(0,0.4))
+  coord_cartesian(ylim=c(0,0.35))
 
 gg
 
@@ -119,7 +119,7 @@ gg2 <- ggplot(df,aes(x=t,y=Error,color=Dimension,linetype=Type)) +
   theme_bw() +
   ggtitle("Asymmetric and independent") +
   theme(legend.text = element_text(colour="black"))+
-  coord_cartesian(ylim=c(0,0.4))
+  coord_cartesian(ylim=c(0,0.35))
 gg2
 
 
@@ -171,8 +171,8 @@ gg3 <- ggplot(df,aes(x=t,y=Error,color=Dimension,linetype=Type)) +
   scale_color_manual(values = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))[c(1,7,13,19,25)])+
   theme_bw() +
   ggtitle("Asymmetric, iid and heavy-tailed") +
-  theme(legend.text = element_text(colour="black"))#+
-  #coord_cartesian(ylim=c(0,0.4))
+  theme(legend.text = element_text(colour="black"))+
+  coord_cartesian(ylim=c(0,0.35))
 gg3
 
 library(ggpubr)
