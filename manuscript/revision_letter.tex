@@ -167,8 +167,8 @@ textfont=it]{caption}
 \def\pubAddressOne{732 North Washington Street}
 \def\pubAddressTwo{Alexandria, VA 22314-1943}
 
-\def\paperTitle{A quantum parallel Markov chain Monte Carlo}
-\def\paperID{JCGS-22-275}
+\def\paperTitle{On the surprising effectiveness of a simple matrix exponential derivative approximation, with application to global SARS-CoV-2}
+\def\paperID{MS\# 2023-10809}
 
 %\newcommand{\bigo}[1]{\cal{O}\hspace{-.5mm}\left(#1\right)}
 \onehalfspacing
@@ -225,24 +225,24 @@ textfont=it]{caption}
 
 To the Editor and Reviewers:
 
-I appreciate the thoughtful comments and recommendations made by the AE and Reviewers and the opportunity to revise my manuscript ``\paperTitle" (\paperID).
-I have carefully considered these extremely helpful suggestions and have addressed them to the best of my abilities.  I believe that the manuscript is now significantly improved and am thankful for the time and energy put forth by the Editors and Reviewers.
+On behalf of my coauthors, I thank you for your thoughtful recommendations and the opportunity to revise our manuscript ``\paperTitle" (\paperID).
+We have carefully considered your helpful suggestions and have addressed them to the best of our abilities.  We believe that the manuscript is now significantly improved and are thankful for the time and energy you have put forth.
 
-In particular, I have:
+In particular, we have:
 \begin{itemize}
-	\item clarified how the present work compares to other quantum Monte Carlo methods;
+	\item clarified how the present work complements its companion paper \citet{magee2023random}, which presents scalability and simulation studies;
 	
-	\item expanded the scope of the methods to include discrete target distributions (Section \ref{sec:discrete});
+	\item implemented an additional simulation study which considers accuracy for multiple algorithms, different model sizes and different signal strength regimes;
 	
-	\item included an application to Bayesian image analysis (Section \ref{sec:bayesIm});
+    \item compared scalability of surrogate-trajectory HMC with the naive and affine-corrected approximations;
+    
+    \item improved upon the SARS-CoV-2 application, relating it to previously established results;
 	
-	\item included a short discussion around challenges reading classical data into quantum machines; and
-	
-	\item responded to all other Reviewer/AE questions and comments.
+	\item responded to all other Editor/Reviewer questions and comments.
 \end{itemize}
 
 
-The document below contains my replies (in \textbf{bold}) alongside the AE and Reviewers' comments (normal text).  I list changes to the text with indented normal text set off by quotation marks.
+The document below contains my replies (in \textbf{bold}) alongside the Editor's and Reviewers' comments (normal text).  I list changes to the text with indented normal text set off by quotation marks.
 
 With sincere gratitude,
 
@@ -263,27 +263,85 @@ If you think you can revise to overcome reviewer concerns, you are welcome to do
 
 Jim 
 
+\begin{reply}
+	Thank you for the opportunity to submit a revised manuscript. We have made ample additions to the manuscript in response to the suggestions made by both reviewers. Among the many improvements we have made to this manuscript, the simulation study suggested by Reviewer 2 helps the paper smoothly transition between theory and application.
+\end{reply}
+
 
 \section*{Reviewer 1}
 
-Phylogeography inference has been a very difficult problem in the sense of the tree size and the dimen- sionality of states. However, in this manuscript, the authors have shown that, based on the CTMC model, the first-order approximation of the gradient towards the rate matrix can improve the computational efficiency with acceptably bounded errors, which can be hugely confined with correction. The method is applied to SARS-CoV-2 transmission to infer the traveling factors across 33 regions, framed in a mixed-effects model. I am not an expert in Graph Theory and Random Matrix Theory but the manuscript is clear enough for me to understand. I, therefore, am strongly recommending for publication in PNAS, while there are still a few issues that the authors need to be addressed properly:
+Phylogeography inference has been a very difficult problem in the sense of the tree size and the dimensionality of states. However, in this manuscript, the authors have shown that, based on the CTMC model, the first-order approximation of the gradient towards the rate matrix can improve the computational efficiency with acceptably bounded errors, which can be hugely confined with correction. The method is applied to SARS-CoV-2 transmission to infer the traveling factors across 33 regions, framed in a mixed-effects model. I am not an expert in Graph Theory and Random Matrix Theory but the manuscript is clear enough for me to understand. I, therefore, am strongly recommending for publication in PNAS, while there are still a few issues that the authors need to be addressed properly.
+
+\begin{reply}
+	Thank you for taking the time to review our manuscript and for your positive reception of our work.  We have carefully addressed each of your helpful recommendations in our revised manuscript, which is now greatly improved as a result.  Please find our responses listed below.
+\end{reply}
 
 \begin{enumerate}
 	\item The authors spend 3 out of 7 pages in the main text and three corresponding sections in the Appendix discussing the refined error and the proof, while postpone the application with the affine-corrected error to future work. I would expect more than a relatively abstract error comparison figure for this issue. For example, a simple numerical simulation similar to the last paragraph in Application to compute the posterior likelihood ratio or posterior density ratio of the corrected and the uncorrected methods, because the authors eventually applied the method within a Bayesian framework.
-	
+\end{enumerate}
+
+\begin{reply}
+	content...
+\end{reply}
+
+\begin{enumerate}	
+	  \setcounter{enumi}{1}
 	\item I am curious about the selection of the extra two additional Chinese provinces and 11 additional countries when fitting the mixed-effects model and how the inclusion of the extra regions improve the fitting. Is there any criteria to determine the inclusion?
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{2}
 	
 	\item For the mixed-effects model, do the authors assume independent predictors for the fixed effects? It seems to me that, in Fig. 2, the air traffic proximity and the intracontinental proximity are highly correlated, which can be the reason why θ2 is not statistically significant. Then what’s the justification for the predictor selection?
-	
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{3}	
 	\item Am I correct that the total number of particles (i.e., samples) in the MCMC framework is 2,000? The ESS for τ is extremely small, do the authors have any explanations?
-	
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{4}	
 	\item What does the random effect matrix look like? The authors indicate that air traffic proximity is the only significant fixed-effect predict, then I would wonder how much does the random effect contribute to the model?
-	
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{5}	
 	\item The ranges for predictor matrices and posterior mean rate matrix are different. However, the color palettes are identical, which makes it extremely hard to compare the impact of each predictor. For example, I cannot see how the sentence “... but one may also see the influence of the Hubei asymmetry in, e.g., the squares corresponding to travel between Guangdong and Hubei provinces.” makes sense visually from Fig. 2 and 3. It also doesn’t make sense to me conceptually, because air traffic proximity is the only significant predictor.
-	
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{6}	
 	\item 
 	The color palette in Fig. 4 makes it really hard to distinguish Hubei, other provinces in China, and other countries. It will be great if the authors can highlight Hubei in one color, other provinces in another color with gradients, and other countries in a third color with gradients. And why there are only 29 regions?
-	
+\end{enumerate}
+
+\begin{reply}
+content...
+\end{reply}
+
+\begin{enumerate}	
+\setcounter{enumi}{7}	
 	\item 
 	The proposed method is able to include higher-dimension rate matrix compared with \citet{lemey2009bayesian,lemey2014unifying} [1, 2]. Can the authors then have an external comparison to the results in \citet{lemey2020accommodating} just visually to see whether the color pattern in the phylogenetic tree is matched?
 \end{enumerate}
