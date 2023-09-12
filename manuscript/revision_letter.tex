@@ -202,19 +202,41 @@ textfont=it]{caption}
 \newtheorem*{assumption}{Assumption}
 \newtheorem{clm}{Claim}
 
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\GD}[1]{#1}
+\newcommand{\GDcomment}[2][purple]{GD: \textcolor{#1}{#2}}
 
+
+\newcommand{\y}{\mathbf{y}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\LLambda}{\boldsymbol{\Lambda}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\JJ}{\mathbf{J}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\AAA}{\mathbf{A}}
+
+\newcommand{\Zero}{\boldsymbol{0}}
 \newcommand{\ttheta}{\boldsymbol{\theta}}
-\newcommand{\Ttheta}{\boldsymbol{\Theta}}
-\newcommand{\dd}{\mbox{d}}
-\newcommand{\ppsi}{\boldsymbol{\psi}}
-\newcommand{\U}{\mathbf{U}}
-\newcommand{\I}{\mathbf{I}}
-\renewcommand{\H}{\mathbf{H}}
-\newcommand{\A}{\mathbf{A}}
-\newcommand{\B}{\mathbf{B}}
-\newcommand{\G}{\mathbf{G}}
+\newcommand{\mom}{\boldsymbol{\xi}}
 \newcommand{\ppi}{\boldsymbol{\pi}}
-\newcommand{\llambda}{\boldsymbol{\lambda}}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\p}{\mathbf{p}}
+\newcommand{\q}{\mathbf{q}}
+\newcommand{\B}{\mathbf{B}}
+\newcommand{\Z}{\mathbf{E}}
+\newcommand{\T}{\mathbf{T}}
+\newcommand{\TT}{\mathbf{T}}
+\newcommand{\RM}{\mathbf{R}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+
+
+
 
 
 \begin{document}
@@ -230,9 +252,9 @@ We have carefully considered your helpful suggestions and have addressed them to
 
 In particular, we have:
 \begin{itemize}
-	\item clarified how the present work complements its companion paper \citet{magee2023random}, which presents scalability and simulation studies;
+	\item clarified how the present work complements its companion paper \citet{magee2023random}, which presents scaling and simulation studies;
 	
-	\item implemented an additional simulation study which considers accuracy for multiple algorithms, different model sizes and different signal strength regimes;
+	\item implemented an additional simulation study which compares accuracy for multiple algorithms, different model sizes and different signal strength regimes;
 	
     \item compared scalability of surrogate-trajectory HMC with the naive and affine-corrected approximations;
     
@@ -281,7 +303,7 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 \end{enumerate}
 
 \begin{reply}
-	content...
+TBD (Simulation related)
 \end{reply}
 
 \begin{enumerate}	
@@ -290,26 +312,27 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 \end{enumerate}
 
 \begin{reply}
-content...
+TBD (Simulation related)
+
+Recent work \citep{gotovos2021scaling} suggests that inclusion of auxiliary states can lead to improved model fit even when these additional states do not correspond to observed data.  In future analyses, we aim to include hundreds of global regions.  For the time being, we have incorporated this question into the simulation study...
 \end{reply}
 
 \begin{enumerate}	
 \setcounter{enumi}{2}
-	
-	\item For the mixed-effects model, do the authors assume independent predictors for the fixed effects? It seems to me that, in Fig. 2, the air traffic proximity and the intracontinental proximity are highly correlated, which can be the reason why θ2 is not statistically significant. Then what’s the justification for the predictor selection?
+	\item For the mixed-effects model, do the authors assume independent predictors for the fixed effects? It seems to me that, in Fig. 2, the air traffic proximity and the intracontinental proximity are highly correlated, which can be the reason why $\theta_2$ is not statistically significant. Then what’s the justification for the predictor selection?
 \end{enumerate}
 
 \begin{reply}
-content...
+Multiple regression models (and extensions) do not assume independence between fixed-effect predictors, but the interpretations of the individual regression coefficients do need to be adjusted accordingly. We must interpret each association holding all other predictors fixed.  Yes, intracontinental proximity is no longer statistically significant, but the positive association it does maintain has a stronger interpretation because we are accounting for the role played by air traffic proximity.    If anything, we would like to include larger numbers of fixed-effect predictors---such as google mobility flows \citep{lemey2021untangling}---in future analyses.
 \end{reply}
 
 \begin{enumerate}	
 \setcounter{enumi}{3}	
-	\item Am I correct that the total number of particles (i.e., samples) in the MCMC framework is 2,000? The ESS for τ is extremely small, do the authors have any explanations?
+	\item Am I correct that the total number of particles (i.e., samples) in the MCMC framework is 2,000? The ESS for $\tau$ is extremely small, do the authors have any explanations?
 \end{enumerate}
 
 \begin{reply}
-content...
+We generate 8 million samples but throw away the first 10\% (80,000) as burnin and save only 1 sample out of every 10,000.  Such thinning does not increase ESS, but it helps with memory constraints.  After removing burnin and thinning, we have 721 samples.   The ESS of 185 for $\tau$ is not wonderful but not bad.  Having fit these Bayesian bridge models in a number of different contexts, we have come to expect $\tau$ to be difficult.   Hierarchical hyperparameters mix more poorly than those that are close to the data, and $\tau$ is a global hyperparameter that dictates the distribution of a large number of random-effects that stand between it and the data.
 \end{reply}
 
 \begin{enumerate}	
@@ -318,7 +341,7 @@ content...
 \end{enumerate}
 
 \begin{reply}
-content...
+This is what 
 \end{reply}
 
 \begin{enumerate}	
