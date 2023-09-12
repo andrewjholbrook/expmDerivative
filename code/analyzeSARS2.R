@@ -266,3 +266,72 @@ system2(command = "pdfcrop",
         args    = c("~/expmDerivative/figures/postViz.pdf",
                     "~/expmDerivative/figures/postViz.pdf")
 )
+
+
+#
+####
+######### visualize random effects for the supplement
+####
+#
+df2 <- df[,12:1903]
+nSamps <- dim(df2)[1]
+randCoeffs <- list()
+
+for(n in 1:nSamps) {
+  k <- 1
+  rcMat <- matrix(0,44,44)
+  for(i in 1:43) {
+    for(j in (i+1):44) {
+      rcMat[i,j] <- unlist(df2[n,k])
+      k <- k+1
+    }
+  }
+  for(i in 1:43) {
+    for(j in (i+1):44) {
+      rcMat[j,i] <- unlist(df2[n,k])
+      k <- k+1
+    }
+  }
+  randCoeffs[[n]] <- rcMat
+}
+
+totalCoeffs <- list()
+for (n in 1:nSamps) {
+  totCoeffMat <- randCoeffs[[n]] +
+    atMat * 0 +
+    hubMat * 0 +
+    contMat * 0
+  
+  totalCoeffs[[n]] <- exp(totCoeffMat)
+  diag(totalCoeffs[[n]]) <- 0
+}
+
+meanMat <- matrix(0,44,44)
+for (n in ceiling(nSamps/10):nSamps) {
+  meanMat <- meanMat + totalCoeffs[[n]]
+}
+meanMat <- meanMat/length(ceiling(nSamps/10):nSamps)
+
+tC <- reshape2::melt(meanMat)
+colnames(tC) <- c("Var1","Var2","Rate")
+gg3 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=Rate)) + 
+  geom_tile() +
+  guides(x =  guide_axis(angle = 45)) +
+  xlab(NULL) + ylab(NULL) +
+  ggtitle("Posterior mean of random effects") +
+  scale_fill_gradientn(#breaks=c(-1,0,1),
+    colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
+  theme(plot.title = element_text(vjust = -1),
+        axis.text = element_text(size = 5),
+        legend.text = element_text(),
+        legend.margin=margin(0,0,0,0),
+        legend.box.spacing = unit(5, "pt"))
+gg3
+
+ggsave(gg3,
+       width = 5,height = 4,
+       file="figures/randEffects.pdf")
+system2(command = "pdfcrop",
+        args    = c("~/expmDerivative/figures/randEffects.pdf",
+                    "~/expmDerivative/figures/randEffects.pdf")
+)
