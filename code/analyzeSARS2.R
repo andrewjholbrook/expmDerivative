@@ -318,7 +318,7 @@ gg3 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=Rate)) +
   geom_tile() +
   guides(x =  guide_axis(angle = 45)) +
   xlab(NULL) + ylab(NULL) +
-  ggtitle("Posterior mean of random effects") +
+  ggtitle("Posterior mean of exponentiated random effects") +
   scale_fill_gradientn(#breaks=c(-1,0,1),
     colours = tableau_div_gradient_pal("Temperature Diverging")(seq(0, 1, length = 25))) +
   theme(plot.title = element_text(vjust = -1),
@@ -329,7 +329,7 @@ gg3 <- ggplot(data = tC, aes(x=Var1, y=Var2, fill=Rate)) +
 gg3
 
 ggsave(gg3,
-       width = 5,height = 4,
+       width = 6,height = 4,
        file="figures/randEffects.pdf")
 system2(command = "pdfcrop",
         args    = c("~/expmDerivative/figures/randEffects.pdf",
