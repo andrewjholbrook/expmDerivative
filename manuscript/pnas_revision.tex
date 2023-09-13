@@ -1987,15 +1987,15 @@ do the same using neural networks.  But an even simpler approach to
 surrogate HMC may be appropriate when gradients have series
 representations as we can leverage here in \eqref{eq:grad:series}.
 
-\section{Visualizing the posterior mean random effects}
+\section{Visualizing the posterior mean random effects}\label{sec:randomEffs}
 
 
-Figure 
+Figure \ref{fig:randEffs} displays posterior means of the exponentiated random effects, which one may interpret as multiplicative deviations from the fixed effects' contributions to the generator matrix.  Whereas the vast majority of exponentiated random effects have posterior means close to 1, indicating no deviation from the fixed-effect model, a few exhibit posterior means that are significantly greater than 1.  In particular, the rate element corresponding to transfer from the US to Hubei, CN, exhibits a 1.81-fold random-effect derived increase to the fixed-effect component.  This large multiplicative increase agrees with, but goes beyond, the influence that the Hubei asymmetry holds for the entire generator matrix model. 
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.8\linewidth]{figures/randEffects.pdf}
-	\caption{Posterior means for exponentiated random effects convey expected multiplicative deviations from the portion of the rate attributable to fixed effects for each corresponding element of the generator matrix.  Notably, we infer a roughly 1.8-fold posterior mean increase in the rate of transitions from the US to Hubei, CN, beyond that portion of the rate which may be explained by fixed effects.  Less pronounced are posterior mean multiplicative increases of 1.34 (US to Italy), 1.27 (US to UK), 1.44 (Netherlands to Italy) and 1.21 (Guangdong, CN, to Hubei, CN).}\label{fig:randEffs}
+	\caption{Posterior means for exponentiated random effects convey expected multiplicative deviations from the portion of the rate attributable to fixed effects for each corresponding element of the generator matrix.  Notably, we infer a roughly 1.81-fold posterior mean increase in the rate of transitions from the US to Hubei, CN, beyond that portion of the rate which may be explained by fixed effects.  Less pronounced are posterior mean multiplicative increases of 1.34 (US to Italy), 1.27 (US to UK), 1.44 (Netherlands to Italy) and 1.21 (Guangdong, CN, to Hubei, CN).}\label{fig:randEffs}
 \end{figure}
 
 %}
