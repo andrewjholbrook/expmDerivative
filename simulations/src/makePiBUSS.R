@@ -76,19 +76,28 @@ for (i in 1:3) {
     to_remove <- unlist(to_remove)
     this_xml <- this_xml[-to_remove]
     
-    # Replace fixed-effect values with posterior means
-    from <- '<parameter id="glmCoefficients" value="0.1 0.8 2.0"/>'
-    to <- '<parameter id="glmCoefficients" value="0.04 0.76 0.27"/>'
-    this_xml[grep(from,this_xml)] <- to
+    # We don't want the real patterns either, and don't need the coalescent
+    to_remove <- grep('<!-- Data pattern for discrete trait',this_xml):grep('</exponentialGrowth>',this_xml)
+    this_xml <- this_xml[-to_remove]
     
     # Replace clock rate with posterior mean
     from <- '<parameter id="sampleLoc.clock.rate" value="3.5" lower="0.0"/>'
-    to <- '<parameter id="sampleLoc.clock.rate" value="4.02" lower="0.0"/>'
+    to <- '\t\t<parameter id="sampleLoc.clock.rate" value="4.02" lower="0.0"/>'
+    this_xml[grep(from,this_xml)] <- to
+    
+    # Name the frequency model so we can reference it in the piBUSS block
+    from <- '<frequencyModel normalize="true">'
+    to <- '\t\t\t<frequencyModel id="frequencyModel" normalize="true">'
+    this_xml[grep(from,this_xml)] <- to
+
+    # Replace fixed-effect values with posterior means
+    from <- '<parameter id="glmCoefficients" value="0.1 0.8 2.0"/>'
+    to <- '\t\t\t<parameter id="glmCoefficients" value="0.04 0.76 0.27"/>'
     this_xml[grep(from,this_xml)] <- to
     
     # Replace random-effects
     from <- paste0('<parameter id="glmRandCoefficients" dimension="',refxdim,'" value="0.0"/>')
-    to <- paste0('<parameter id="glmRandCoefficients" dimension="',paste0(refx_drawn,collapse=""),'" value="0.0"/>')
+    to <- paste0('\t\t\t<parameter id="glmRandCoefficients" dimension="',refxdim,'" value="',paste0(refx_drawn,collapse=" "),'"/>')
     this_xml[grep(from,this_xml)] <- to
     
     # Remove detritus
@@ -99,7 +108,7 @@ for (i in 1:3) {
     this_pibuss_text <- gsub("sequences.xml",
                              paste0("sequences_",sim_name,".xml"),
                              pibuss_text,fixed=TRUE)
-    this_xml <- c(this_xml,this_pibuss_text)
+    this_xml <- c(this_xml,"",this_pibuss_text)
     
     # close the xml
     this_xml <- c(this_xml,'\n</beast>')
