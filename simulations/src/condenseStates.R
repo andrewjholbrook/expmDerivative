@@ -15,6 +15,8 @@ map_44_to_15 <- match(locations_15,locations_44)
 # The covariates 
 covariates <- c("intraContinent_distances","airTravel","Hubei_assymetry")
 
+### If adding more, make sure that the state space size is unique and the name matches this format exactly
+
 # Assemble
 location_list <- list(locations_31,locations_15)
 map_list <- list(map_44_to_31,map_44_to_15)
