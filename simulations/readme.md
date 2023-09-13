@@ -4,7 +4,7 @@ For file path sanity and such in the R scripts, use the Rproject for all R scrip
 ## Notes on generating the simulation XMLS
 Steps
 
-1. Choose states to condense (if any)
+1. Choose states to condense (if any) or discard
 2. Run condensing script to generate an XML capable of analyzing the original data on a condensed state-space and make sure it runs
 3. From (2), make piBUSS simulation XML
 4. Simulate from (3)
@@ -14,6 +14,9 @@ Steps
 
 ## Files and such
 `simulations/src` contains scripts to run the above steps.
+- `condenseStates.R` handles steps 1+2.
+- `makePiBUSS.R` handles step 3.
+
 `simulations/original` holds a slightly simplified copy of the main analysis XML to use as a template for generating analyses of simulated data.
 `simulations/condensed_original` holds versions of the XML in `simulations/original` with the state-spaces made smaller (these will not run, they are useful only as templates)
 

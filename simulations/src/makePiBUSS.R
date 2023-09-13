@@ -64,6 +64,18 @@ for (i in 1:3) {
     # Put things in the XML
     this_xml <- xmls[[i]]
     
+    # We want the taxa in the XML, but having the old data causes headaches
+    attribute_ends <- grep('</attr>',this_xml)
+    sample_loc_starts <- grep('<attr name="sampleLoc">',this_xml)
+    sample_ori_starts <- grep('<attr name="oriLoc">',this_xml)
+    attribute_starts <- c(sample_loc_starts,sample_ori_starts)
+    to_remove <- lapply(attribute_starts,function(as){
+      ae <- min(attribute_ends[attribute_ends > as])
+      return(as:ae)
+    })
+    to_remove <- unlist(to_remove)
+    this_xml <- this_xml[-to_remove]
+    
     # Replace fixed-effect values with posterior means
     from <- '<parameter id="glmCoefficients" value="0.1 0.8 2.0"/>'
     to <- '<parameter id="glmCoefficients" value="0.04 0.76 0.27"/>'
@@ -88,6 +100,9 @@ for (i in 1:3) {
                              paste0("sequences_",sim_name,".xml"),
                              pibuss_text,fixed=TRUE)
     this_xml <- c(this_xml,this_pibuss_text)
+    
+    # close the xml
+    this_xml <- c(this_xml,'\n</beast>')
     
     cat(this_xml,file=paste0("xml/piBUSS/",sim_name,".xml"),sep="\n")
   }
