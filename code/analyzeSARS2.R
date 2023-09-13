@@ -335,3 +335,8 @@ system2(command = "pdfcrop",
         args    = c("~/expmDerivative/figures/randEffects.pdf",
                     "~/expmDerivative/figures/randEffects.pdf")
 )
+
+# system2(command = "pdfcrop",
+#         args    = c("~/expmDerivative/manuscript/figures/summary2.tree.pdf",
+#                     "~/expmDerivative/manuscript/figures/summary2.tree.pdf")
+# )
