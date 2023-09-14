@@ -418,15 +418,28 @@ Unfortunately, the manuscript did not sit well with me, so to the negatives. The
 
 
 \begin{reply}
-	We thank you for sharing these concerns.  Before responding, let us point out that we have now added a simulation section (similar to that which you specify below) to the manuscript.   Now, we would like to argue that the decisions we made in structuring our manuscript are well-motivated based on our work in two other papers.
+	We thank you for sharing your concerns, which we take seriously.  Before responding, let us point out that we have now added a simulation section (similar to that which you specify below) to the manuscript.   Now, we would like to argue that the decisions we made in structuring our manuscript are well-motivated based on our other work.
 	\begin{enumerate}
-		\item First,
+		\item First, we have written a companion paper \citet{magee2023random} (minor revisions at Systematic Biology), which presents the basic approach, implements a thorough simulation study and applies the methodology to 3 real-world data analyses of varying dimensions and differing fixed-effect structures. 
+		
+		\item Second, when writing this paper, we had a clear understanding of the theoretical guarantees provided by surrogate-trajectory HMC.  Our paper \citet{glatt2020accept} (to appear at Annals of Applied Probability) proves that the surrogate-trajectory HMC transition kernel maintains detailed balance and that the algorithm samples from the target distribution with the same guarantees as vanilla HMC.  The results of \citet{glatt2020accept} hold for general state spaces, regardless of dimensionality.
 	\end{enumerate}
+
+Despite these theoretical guarantees, the method of \citet{magee2023random} performed even better than expected in terms of relatively high acceptance rates and relatively low autocorrelation between samples.  From our other previous work with surrogate-trajectory HMC \citep{li2019neural}, we knew this must suggest that the first-order matrix exponential gradient approximation must be pretty good.   
+As a result, our goal in this paper was to find out what makes the first-order approximation so good and provide a salient example that illustrates the efficacy of the approximation in higher dimensions.  
+
+In short, our original goal was not to prove validity of the general methodology, which we saw as already established through simulation studies, real-world analyses and measure theoretic probability.   
+
+Again, we thank you for sharing your concerns and hope that the broader context of our work helps explain the positioning of our manuscript.  Probably more importantly, we have updated our manuscript with a thorough simulation study (see below).
 \end{reply}
 
 
 2) To me, a huge barrier to accept that the approximations presented can be successful in aiding statistical inference is the lack of simulation studies to assess the quality of inference. (This is not about the type of simulations shown in Figure 1 as detailed below). For a work like this, before applying to real data, the first test would be to design a large simulation study, where the model and the parameters are known and to test whether the application of the approximation method when implemented within the Hamiltonian Monte Carlo has good statistical inference performance. MCMC makes its own approximations (mixing, convergence to stationarity, etc..) and errors introduced by an approximative method injected to an MCMC sampling might be exacerbated. Even the statistical performance of well-known MCMC algorithms can vary with different signal strengths (e.g., magnitude of the parameters relative to each other in a model), as well as the model size. It would be premature to think that a method is valid based solely on its computational performance (as it is presented in the manuscript) without first assessing its statistical performance of recovering an approximate joint posterior distribution of parameters and it passes rigorous tests. A way to check this is by simulating data from target distributions of interest under a variety of parameter value combinations and then apply the method to see whether the posterior distribution of parameters are recovered successfully (in the case of Bayesian inference for this manuscript). I am surprised that the authors did not see this as necessary especially because they are working with large mixed effect models where things can go awry pretty quickly. As an example, I would have liked to see a comparison of the statistical performance in say, a 3 x 3 simulation experiment design. Variable 1, The method with 3 levels: Standard Hamiltonian Monte Carlo, the naive method of reference (18), and the method of the manuscript; Variable 2, The model size with 3 levels: Small, Intermediate, Large; Variable 3, The number of parameters with considerable signal with 3 levels: 1 parameter, half of the parameters, all parameters in the model. 
 
+
+\begin{reply}
+Simulaiton. TBD.
+\end{reply}
 
 Specific Comments: 
 
