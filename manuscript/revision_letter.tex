@@ -478,16 +478,18 @@ tree.
 \begin{reply}
 	You are correct that the truncated Cauchy (at 0) and the folded Cauchy are the same, but this distribution is not sub-exponential as we have defined the term in Definition \ref{def:sub:exp:RV}:
 	\begin{quote}
+		
+\setcounter{equation}{39}
 \begin{definition}
 	\label{def:sub:exp:RV}
 	A random variable $X$ is called \textit{sub-exponential} if there
 	exists some constant $K > 0$ for which its tails satisfy
 	\begin{equation}\label{e:def_subexp_RV}
-		\bbP(|X|\geq t) \leq 2 \exp\{-t/K\}, \quad \forall t \geq 0.
+		\bbP(|X|\geq t) \leq 2 e^{-t/K}, \quad \forall t \geq 0.
 	\end{equation}
 	In this case, the \textit{sub-exponential norm} of $X$ is defined by
 	\begin{equation}\label{e:sub-exp_norm}
-		\|X\|_{\psi_1} = \inf\big\{s > 0: \bbE \exp(|X|/s) \leq 2\big\}.
+		\|X\|_{\psi_1} = \inf\big\{s > 0: \bbE e^{|X|/s} \leq 2\big\}.
 	\end{equation}
 	The \textit{class of sub-exponential distributions} is denoted by
 	\begin{align*}
@@ -505,13 +507,39 @@ Additionally, we have added the following sentence to Remark 4:
 \end{quote}
 \end{reply}	
 
-* Equations 12-19 seems to follow straightforwardly from the section where equation 2-7 are presented. I agree that writing them explicitly is better, but I felt that they disrupt the flow of the section "Deterministic bounds on approximation error in time". Please consider emulating them to somewhere in 2-7 or following, intermediate steps in 12-19 maybe put in an appendix. 
+* Equations 12-19 seems to follow straightforwardly from the section where equation 2-7 are presented. I agree that writing them explicitly is better, but I felt that they disrupt the flow of the section ``Deterministic bounds on approximation error in time''. Please consider emulating them to somewhere in 2-7 or following, intermediate steps in 12-19 maybe put in an appendix. 
+
+\begin{reply}
+We thank you for the suggestion, but we would really like to keep 12-19 where they are if it's alright.  We do not want to place them directly following 2-7 because we would prefer to keep the Introduction at a high level, and we do not want to put them in the Appendix because we think they communicate valuable insight into the dynamical systems view of our formal argument.  We hope you understand.
+\end{reply}
 
 * In presenting the subexponential families in formulae 40-41, notation "exp" is used instead of "e". Please change to "e" to be consistent with the rest of the manuscript. Also, I think this definition comes from Vershynin. There might be some regularity conditions attached to this specific definition, although I cannot remember exactly. Please check. There is a more fundamental definition of subexponential families using the cumulative distribution functions, maybe that serves better here. Your choice of course. 
 
+\begin{reply}
+	Thank you for catching our inconsistent use of $\exp$.  We have updated the manuscript accordingly.  You are also correct that Vershynin provides this definition.  We have re-checked and there are no additional regularity conditions attached.   We wish to proceed with this definition, but please note that there exists a definition of sub-exponential based on CDFs that actually means heavier-tailed than exponential \citep{goldie1998subexponential}.  We point this out again to help avoid confusion.
+\end{reply}
+
 * Remark 6. The sentence starting with "In general..." is not clear in which sense it is general. "Proxy" is also not clear. 
 
+\begin{reply}
+	We thank you for pointing this out. We have changed the sentence to the following:
+	\begin{quote}
+		There appears to be no
+		significant departure from the idea that the form
+		$t(\II -\QQ^+ \QQ) \JJ \QQ \QQ^{+}$ corresponds increasingly well to
+		the true approximation error \eqref{eq:true:diff} as the dimension
+		increases.
+	\end{quote}
+\end{reply}
+
 * The paragraph starting with "In addition..." on page 7 is too short for the reader to understand the implications of the analysis. Please consider expanding it. 
+
+\begin{reply}
+	Thank you for pointing this out.  We have added the following sentences to the paragraph:
+	\begin{quote}
+		Whereas we know that the surrogate-trajectory HMC transition kernel leaves its target distribution invariant regardless of the approximation quality \citep{glatt2020accept}, transitions that rely on poor gradient approximations result in small acceptance rates, more random walk behavior and high autocorrelation between samples.  Since ESS is inversely proportional to a Markov chain's asymptotic autocorrelation, larger ESS suggest a useful gradient approximation.
+	\end{quote}
+\end{reply}
 
 * Appendix D. Surrogate-trajectory Hamiltonian Monte Carlo is described quite detached from the work presented in the manuscript. Please consider describing it in the context of the work. 
 
