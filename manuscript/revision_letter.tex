@@ -235,7 +235,8 @@ textfont=it]{caption}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\NN}{\mathbb{N}}
 
-
+ \newtheorem{@definition}{\bf Definition}
+\newenvironment{definition}{\begin{@definition}\rm}{\end{@definition}}
 
 
 
@@ -471,6 +472,38 @@ tree.
 \end{reply}
 
 * Figure 1 is designed to show how the approximation behaves beyond the assumptions of theorems and corollaries, and support the claim that the results apply more generally by numerical evidence. I am not convinced that this constitutes strong evidence (as it is claimed in the manuscript), however. My feeling is that the claim holds, but it needs to be demonstrated with distributions that are not so docile. I think that deviations from the assumptions of theorems and corollary are not so large for cases a, b, and c. For Figure 1c, I have a specific comment: I am not sure about what the authors mean by "Cauchy entries truncated to be positive", but my understanding is that this is a folded Cauchy distribution at zero with the support of the probability density function defined on the non-negative real line (if this is not correct please add a sentence to describe). Cauchy distribution is a member of the subexponential family and I wonder whether the tail properties of the folded Cauchy are distinct from those of the subexponential family (I do not have an answer to this, so I suggest that the authors check and provide a brief explanation). 
+
+\newcommand{\bbP}{{\mathbb P}}
+\newcommand{\bbE}{{\mathbb E}}
+\begin{reply}
+	You are correct that the truncated Cauchy (at 0) and the folded Cauchy are the same, but this distribution is not sub-exponential as we have defined the term in Definition \ref{def:sub:exp:RV}:
+	\begin{quote}
+\begin{definition}
+	\label{def:sub:exp:RV}
+	A random variable $X$ is called \textit{sub-exponential} if there
+	exists some constant $K > 0$ for which its tails satisfy
+	\begin{equation}\label{e:def_subexp_RV}
+		\bbP(|X|\geq t) \leq 2 \exp\{-t/K\}, \quad \forall t \geq 0.
+	\end{equation}
+	In this case, the \textit{sub-exponential norm} of $X$ is defined by
+	\begin{equation}\label{e:sub-exp_norm}
+		\|X\|_{\psi_1} = \inf\big\{s > 0: \bbE \exp(|X|/s) \leq 2\big\}.
+	\end{equation}
+	The \textit{class of sub-exponential distributions} is denoted by
+	\begin{align*}
+		L_{\psi_1} = \big\{F_X(dx): \|X\|_{\psi_1} < \infty \big\}.
+	\end{align*}
+\end{definition}
+	\end{quote}
+Here, sub-exponential means the opposite of heavy-tailed.  The folded Cauchy distribution represents a distinct failure of the sub-exponential assumption.  In order to avoid further confusion, we have added the following sentence prior to Definition 1:
+\begin{quote}
+	To avoid confusion, note that the following definition uses the term in the same way as, e.g., \cite{vershynin:2018}, but that other definitions that mean quite the opposite (i.e., heavier than exponential tails) appear in the literature \citep{goldie1998subexponential}.
+\end{quote}
+Additionally, we have added the following sentence to Remark 4:
+\begin{quote}
+	The third plot involves folded Cauchy random variables, the heavy tails of which violate the sub-exponential assumption (Definition \ref{def:sub:exp:RV}).
+\end{quote}
+\end{reply}	
 
 * Equations 12-19 seems to follow straightforwardly from the section where equation 2-7 are presented. I agree that writing them explicitly is better, but I felt that they disrupt the flow of the section "Deterministic bounds on approximation error in time". Please consider emulating them to somewhere in 2-7 or following, intermediate steps in 12-19 maybe put in an appendix. 
 
