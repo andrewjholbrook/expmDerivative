@@ -17,244 +17,244 @@
 		<taxon id="Guangzhou/GZMU0019/2020|EPI_ISL_429080|China|Guangzhou|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Guangzhou/GZMU0037/2020|EPI_ISL_429089|China|Guangzhou|2020-02-08">
 			<date value="2020.103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Sichuan/SC-PHCC1-022/2020|EPI_ISL_451345|China|Sichuan|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				USA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat3-ChVir1020/2020|EPI_ISL_450200|Germany|Bavaria|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat2-ChVir984-ChVir1017/2020|EPI_ISL_450209|Germany|Bavaria|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat4-ChVir1019/2020|EPI_ISL_450199|Germany|Bavaria|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat7-ChVir1289/2020|EPI_ISL_450203|Germany|Bavaria|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat8-ChVir1356/2020|EPI_ISL_450204|Germany|Bavaria|2020-02-03">
 			<date value="2020.0901639344263" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat10-ChVir1482/2020|EPI_ISL_450207|Germany|Bavaria|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SPAIN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SPAIN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat14-ChVir1483/2020|EPI_ISL_450208|Germany|Bavaria|2020-02-08">
 			<date value="2020.103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SPAIN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SPAIN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY1-PV08001/2020|EPI_ISL_414476|USA|NewYork|NYC|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA-NY2-PV08100/2020|EPI_ISL_415151|USA|NewYork|NYC|NA|2020-03-04">
 			<date value="2020.172131147541" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08109/2020|EPI_ISL_421348|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				GERMANY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				GERMANY
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08121/2020|EPI_ISL_421350|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				MEXICO
+				FRANCE
 			</attr>
 			<attr name="oriLoc">
-				MEXICO
+				FRANCE
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08493/2020|EPI_ISL_421429|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08127/2020|EPI_ISL_421355|USA|NewYork|NYC|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08469/2020|EPI_ISL_421413|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHONGKONG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHONGKONG
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08413/2020|EPI_ISL_421376|USA|NewYork|NYC|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08481/2020|EPI_ISL_421421|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08412/2020|EPI_ISL_421375|USA|NewYork|NYC|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				GERMANY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				GERMANY
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08138/2020|EPI_ISL_421360|USA|NewYork|NYC|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08455/2020|EPI_ISL_421404|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08472/2020|EPI_ISL_421415|USA|NewYork|NYC|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08478/2020|EPI_ISL_421420|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08461/2020|EPI_ISL_421407|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08428/2020|EPI_ISL_421386|USA|NewYork|NYC|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08143/2020|EPI_ISL_421363|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08463/2020|EPI_ISL_421409|USA|NewYork|NYC|NA|2020-03-18">
@@ -269,514 +269,514 @@
 		<taxon id="USA-NY-PV08150/2020|EPI_ISL_421367|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08402/2020|EPI_ISL_421370|USA|NewYork|NYC|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08416/2020|EPI_ISL_421379|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08125/2020|EPI_ISL_421354|USA|NewYork|NYC|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08427/2020|EPI_ISL_421385|USA|NewYork|NYC|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				GERMANY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				GERMANY
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08444/2020|EPI_ISL_421395|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08452/2020|EPI_ISL_421402|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08453/2020|EPI_ISL_421403|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				UK
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08466/2020|EPI_ISL_421411|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				GERMANY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				GERMANY
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08474/2020|EPI_ISL_421417|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08492/2020|EPI_ISL_421428|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08445/2020|EPI_ISL_421396|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHONGKONG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHONGKONG
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08448/2020|EPI_ISL_421399|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08449/2020|EPI_ISL_421400|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08456/2020|EPI_ISL_421405|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08450/2020|EPI_ISL_421401|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				FINLAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				FINLAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08496/2020|EPI_ISL_421432|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASICHUAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				CHINASICHUAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08436/2020|EPI_ISL_421391|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				IRAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				IRAN
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08477/2020|EPI_ISL_421419|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				IRAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				IRAN
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08426/2020|EPI_ISL_421384|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08432/2020|EPI_ISL_421388|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08434/2020|EPI_ISL_421389|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08485/2020|EPI_ISL_421422|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08473/2020|EPI_ISL_421416|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08486/2020|EPI_ISL_421423|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08446/2020|EPI_ISL_421397|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08149/2020|EPI_ISL_421366|USA|NewYork|NYC|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08435/2020|EPI_ISL_421390|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08487/2020|EPI_ISL_421424|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUBEI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08500/2020|EPI_ISL_421434|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08425/2020|EPI_ISL_421383|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEPAL
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEPAL
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08459/2020|EPI_ISL_421406|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08491/2020|EPI_ISL_421427|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				GERMANY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				GERMANY
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08494/2020|EPI_ISL_421430|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08468/2020|EPI_ISL_421412|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08415/2020|EPI_ISL_421378|USA|NewYork|NYC|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08120/2020|EPI_ISL_421349|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				MEXICO
+				VIETNAM
 			</attr>
 			<attr name="oriLoc">
-				MEXICO
+				VIETNAM
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08122/2020|EPI_ISL_421351|USA|NewYork|NYC|NA|2020-03-11">
 			<date value="2020.191256830601" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08123/2020|EPI_ISL_421352|USA|NewYork|NYC|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08124/2020|EPI_ISL_421353|USA|NewYork|NYC|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08495/2020|EPI_ISL_421431|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				USA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				USA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08401/2020|EPI_ISL_421369|USA|NewYork|NYC|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				FINLAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				FINLAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08139/2020|EPI_ISL_421361|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SWITZERLAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SWITZERLAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08462/2020|EPI_ISL_421408|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08443/2020|EPI_ISL_421394|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08447/2020|EPI_ISL_421398|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08429/2020|EPI_ISL_421387|USA|NewYork|NYC|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08471/2020|EPI_ISL_421414|USA|NewYork|NYC|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08403/2020|EPI_ISL_421371|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08135/2020|EPI_ISL_421357|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.2076502733" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08137/2020|EPI_ISL_421359|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08136/2020|EPI_ISL_421358|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08146/2020|EPI_ISL_421364|USA|NewYork|NYC|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08148/2020|EPI_ISL_421365|USA|NewYork|NYC|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SINGAPORE
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				SINGAPORE
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08464/2020|EPI_ISL_421410|2020-03-18">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08489/2020|EPI_ISL_421425|2020-03-17">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				TAIWAN
 			</attr>
 			<attr name="oriLoc">
-				UK
+				TAIWAN
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08498/2020|EPI_ISL_421433|2020-03-17">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				TAIWAN
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				TAIWAN
 			</attr>
 		</taxon>
 		<taxon id="USA-NY-PV08490/2020|EPI_ISL_421426|2020-03-17">
@@ -792,127 +792,127 @@
 		<taxon id="Wuhan/IVDC-HB-01/2019|EPI_ISL_402119|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IVDC-HB-04/2020|EPI_ISL_402120|China|Hubei|Wuhan|NA|2020-01-01">
 			<date value="2020.0" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IVDC-HB-05/2019|EPI_ISL_402121|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IPBCAMS-WH-01/2019|EPI_ISL_402123|China|Hubei|Wuhan|NA|2019-12-24">
 			<date value="2019.978082191781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WIV04/2019|EPI_ISL_402124|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WIV02/2019|EPI_ISL_402127|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WIV05/2019|EPI_ISL_402128|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SOUTHKOREA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SOUTHKOREA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WIV06/2019|EPI_ISL_402129|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WIV07/2019|EPI_ISL_402130|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-01/2019|EPI_ISL_402132|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IPBCAMS-WH-05/2020|EPI_ISL_403928|China|Hubei|Wuhan|NA|2020-01-01">
 			<date value="2020.0" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IPBCAMS-WH-04/2019|EPI_ISL_403929|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IPBCAMS-WH-03/2019|EPI_ISL_403930|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IPBCAMS-WH-02/2019|EPI_ISL_403931|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Guangdong/20SF012/2020|EPI_ISL_403932|China|Guangdong|Shenzhen|Wuhan|2020-01-14">
@@ -927,19 +927,19 @@
 		<taxon id="Guangdong/20SF013/2020|EPI_ISL_403933|China|Guangdong|Shenzhen|NA|2020-01-15">
 			<date value="2020.0382513661202" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				TAIWAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				TAIWAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Guangdong/20SF014/2020|EPI_ISL_403934|China|Guangdong|Shenzhen|NA|2020-01-15">
 			<date value="2020.0382513661202" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Guangdong/20SF025/2020|EPI_ISL_403935|China|Guangdong|Shenzhen|NA|2020-01-15">
@@ -954,73 +954,73 @@
 		<taxon id="Guangdong/20SF028/2020|EPI_ISL_403936|China|Guangdong|Zhuhai|Wuhan|2020-01-17">
 			<date value="2020.0437158469945" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Guangdong/20SF040/2020|EPI_ISL_403937|China|Guangdong|Zhuhai|Wuhan|2020-01-18">
 			<date value="2020.0464480874316" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Nonthaburi/61/2020|EPI_ISL_403962|Thailand|Nonthaburi|NA|Wuhan|2020-01-08">
 			<date value="2020.01912568306" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Nonthaburi/74/2020|EPI_ISL_403963|Thailand|Nonthaburi|NA|Wuhan|2020-01-13">
 			<date value="2020.032786885246" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Zhejiang/WZ-01/2020|EPI_ISL_404227|China|Zhejiang|NA|Wuhan|2020-01-16">
 			<date value="2020.0409836065573" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Zhejiang/WZ-02/2020|EPI_ISL_404228|China|Zhejiang|NA|Wuhan|2020-01-17">
 			<date value="2020.0437158469945" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/IL1/2020|EPI_ISL_404253|USA|Illinois|Chicago|Wuhan|2020-01-21">
 			<date value="2020.0546448087432" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA-WA1/2020|EPI_ISL_404895|USA|Washington|Snohomish_County|Wuhan|2020-01-19">
 			<date value="2020.049180327869" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				VIETNAM
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				VIETNAM
 			</attr>
 		</taxon>
 		<taxon id="Shenzhen/HKU-SZ-005/2020|EPI_ISL_405839|China|Guangdong|Shenzhen|NA|2020-01-11">
@@ -1035,10 +1035,10 @@
 		<taxon id="Taiwan/2/2020|EPI_ISL_406031|Taiwan|Taiwan|Kaohsiung|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/CA1/2020|EPI_ISL_406034|USA|California|Los_Angeles|Wuhan|2020-01-23">
@@ -1053,10 +1053,10 @@
 		<taxon id="USA/CA2/2020|EPI_ISL_406036|USA|California|Orange_County|Wuhan|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/AZ1/2020|EPI_ISL_406223|USA|Arizona|Phoenix|Wuhan|2020-01-22">
@@ -1071,55 +1071,55 @@
 		<taxon id="Guangdong/20SF174/2020|EPI_ISL_406531|China|Guangdong|Zhuhai|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Guangzhou/20SF206/2020|EPI_ISL_406533|China|Guangdong|Guangzhou|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Foshan/20SF207/2020|EPI_ISL_406534|China|Guangdong|Foshan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				INDIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				INDIA
 			</attr>
 		</taxon>
 		<taxon id="Foshan/20SF210/2020|EPI_ISL_406535|China|Guangdong|Foshan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Foshan/20SF211/2020|EPI_ISL_406536|China|Guangdong|Foshan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Guangdong/20SF201/2020|EPI_ISL_406538|China|Guangdong|NA|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Shenzhen/SZTH-002/2020|EPI_ISL_406593|China|Guangdong|Shenzhen|NA|2020-01-13">
@@ -1134,361 +1134,361 @@
 		<taxon id="Shenzhen/SZTH-003/2020|EPI_ISL_406594|China|Guangdong|Shenzhen|NA|2020-01-16">
 			<date value="2020.0409836065573" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0372/2020|EPI_ISL_406596|France|Ile-de-France|Paris|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0373/2020|EPI_ISL_406597|France|Ile-de-France|Paris|Wuhan|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CHINAHUBEI
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CHINAHUBEI
 			</attr>
 		</taxon>
 		<taxon id="China/WHU01/2020|EPI_ISL_406716|China|Hubei|Wuhan|NA|2020-01-02">
 			<date value="2020.0027322404371" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="China/WHU02/2020|EPI_ISL_406717|China|Hubei|Wuhan|NA|2020-01-02">
 			<date value="2020.0027322404371" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				USA
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WH01/2019|EPI_ISL_406798|China|Hubei|Wuhan|NA|2019-12-26">
 			<date value="2019.9835616438356" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WH03/2020|EPI_ISL_406800|China|Hubei|Wuhan|NA|2020-01-01">
 			<date value="2020.0" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WH04/2020|EPI_ISL_406801|China|Hubei|Wuhan|NA|2020-01-05">
 			<date value="2020.0109289617487" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Australia/VIC01/2020|EPI_ISL_406844|Australia|Victoria|Clayton|Wuhan|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/BavPat1/2020|EPI_ISL_406862|Germany|Bavaria|Munich|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Zhejiang/Hangzhou-1/2020|EPI_ISL_406970|China|Zhejiang|Hangzhou|Wuhan|2020-01-20">
 			<date value="2020.051912568306" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/1/2020|EPI_ISL_406973|Singapore|NA|NA|Wuhan|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="England/01/2020|EPI_ISL_407071|UK|England|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="England/02/2020|EPI_ISL_407073|UK|England|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="Finland/1/2020|EPI_ISL_407079|Finland|Lapland|NA|Wuhan|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Japan/AI/I-004/2020|EPI_ISL_407084|Japan|NA|NA|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SINGAPORE
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SINGAPORE
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC03/2020|EPI_ISL_407193|South_Korea|Gyeonggi-do|NA|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Hangzhou/HZCDC0001/2020|EPI_ISL_407313|China|Zhejiang|Hangzhou|Wuhan|2020-01-19">
 			<date value="2020.049180327869" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW01/2020|EPI_ISL_407893|Australia|New_South_Wales|Sydney|Wuhan|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAJIANGXI
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAJIANGXI
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Australia/QLD01/2020|EPI_ISL_407894|Australia|Queensland|Gold_Coast|Wuhan|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Australia/QLD02/2020|EPI_ISL_407896|Australia|Queensland|Gold_Coast|Wuhan|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Belgium/GHB-03021/2020|EPI_ISL_407976|Belgium|Leuven|NA|Wuhan|2020-02-03">
 			<date value="2020.0901639344263" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				INDIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				INDIA
 			</attr>
 		</taxon>
 		<taxon id="Singapore/2/2020|EPI_ISL_407987|Singapore|NA|NA|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/3/2020|EPI_ISL_407988|Singapore|NA|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/CA3/2020|EPI_ISL_408008|USA|California|NA|Wuhan|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/CA4/2020|EPI_ISL_408009|USA|California|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/CA5/2020|EPI_ISL_408010|USA|California|NA|Wuhan|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0515/2020|EPI_ISL_408430|France|Ile-de-France|Paris|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0626/2020|EPI_ISL_408431|France|Ile-de-France|Paris|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Chongqing/YC01/2020|EPI_ISL_408478|China|Chongqing|Yongchuan|NA|2020-01-21">
 			<date value="2020.0546448087432" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				USA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Chongqing/ZX01/2020|EPI_ISL_408479|China|Chongqing|Zhongxian|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Yunnan/IVDC-YN-003/2020|EPI_ISL_408480|China|Yunnan|Kunming|NA|2020-01-17">
 			<date value="2020.0437158469945" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Chongqing/IVDC-CQ-001/2020|EPI_ISL_408481|China|Chongqing|NA|NA|2020-01-18">
 			<date value="2020.0464480874316" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Shandong/IVDC-SD-001/2020|EPI_ISL_408482|China|Shandong|Qingdao|NA|2020-01-19">
 			<date value="2020.049180327869" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Sichuan/IVDC-SC-001/2020|EPI_ISL_408484|China|Sichuan|Chengdu|NA|2020-01-15">
 			<date value="2020.0382513661202" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Jiangxi/IVDC-JX-002/2020|EPI_ISL_408486|China|Jiangxi|Pingxiang|NA|2020-01-11">
 			<date value="2020.0273224043715" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Jiangsu/IVDC-JS-001/2020|EPI_ISL_408488|China|Jiangsu|Huaian|NA|2020-01-19">
 			<date value="2020.049180327869" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SPAIN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SPAIN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Taiwan/NTU01/2020|EPI_ISL_408489|Taiwan|Taipei|NA|Wuhan|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IVDC-HB-envF13-20/2020|EPI_ISL_408514|China|Hubei|Wuhan|NA|2020-01-01">
 			<date value="2020.0" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/IVDC-HB-envF13-21/2020|EPI_ISL_408515|China|Hubei|Wuhan|NA|2020-01-01">
 			<date value="2020.0" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Japan/TY-WK-012/2020|EPI_ISL_408665|Japan|Tokyo|NA|NA|2020-01-29">
@@ -1503,10 +1503,10 @@
 		<taxon id="Japan/TY-WK-501/2020|EPI_ISL_408666|Japan|Tokyo|NA|NA|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CAMBODIA
+				CHINAYUNNAN
 			</attr>
 			<attr name="oriLoc">
-				CAMBODIA
+				CHINAYUNNAN
 			</attr>
 		</taxon>
 		<taxon id="Japan/TY-WK-521/2020|EPI_ISL_408667|Japan|Tokyo|NA|NA|2020-01-31">
@@ -1521,100 +1521,100 @@
 		<taxon id="Vietnam/VR03-38142/2020|EPI_ISL_408668|Vietnam|Thanh_Hoa|NA|Wuhan|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Japan/KY-V-029/2020|EPI_ISL_408669|Japan|Kyoto|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WI1/2020|EPI_ISL_408670|USA|Wisconsin|NA|Beijing|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Sydney/2/2020|EPI_ISL_408976|Australia|New_South_Wales|Sydney|Wuhan|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Sydney/3/2020|EPI_ISL_408977|Australia|New_South_Wales|Sydney|Wuhan|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WH05/2020|EPI_ISL_408978|China|Hubei|Wuhan|NA|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-MA1/2020|EPI_ISL_409067|USA|Massachusetts|Boston|Wuhan|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="USA/CA6/2020|EPI_ISL_410044|USA|California|NA|NA|2020-01-27">
 			<date value="2020.0710382513662" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				PORTUGAL
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				PORTUGAL
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/IL2/2020|EPI_ISL_410045|USA|Illinois|NA|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Taiwan/NTU02/2020|EPI_ISL_410218|Taiwan|Taipei|NA|Wuhan|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Nepal/61/2020|EPI_ISL_410301|Nepal|Kathmandu|NA|Wuhan|2020-01-13">
 			<date value="2020.032786885246" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="France/RA739/2020|EPI_ISL_410486|France|Rhone-Alpes|Contamines|NA|2020-02-08">
@@ -1629,1117 +1629,1117 @@
 		<taxon id="Japan/NA-20-05-1/2020|EPI_ISL_410531|Japan|Nara|NA|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Japan/OS-20-07-1/2020|EPI_ISL_410532|Japan|Osaka|NA|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/4/2020|EPI_ISL_410535|Singapore|NA|NA|NA|2020-02-03">
 			<date value="2020.0901639344263" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Singapore/5/2020|EPI_ISL_410536|Singapore|NA|NA|NA|2020-02-06">
 			<date value="2020.0983606557377" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/6/2020|EPI_ISL_410537|Singapore|NA|NA|NA|2020-02-09">
 			<date value="2020.1065573770493" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Italy/INMI1-isl/2020|EPI_ISL_410545|Italy|Rome|NA|Hubei|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="Singapore/7/2020|EPI_ISL_410713|Singapore|NA|NA|NA|2020-01-27">
 			<date value="2020.0710382513662" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/8/2020|EPI_ISL_410714|Singapore|NA|NA|NA|2020-02-03">
 			<date value="2020.0901639344263" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/9/2020|EPI_ISL_410715|Singapore|NA|NA|NA|2020-02-04">
 			<date value="2020.0928961748634" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Singapore/10/2020|EPI_ISL_410716|Singapore|NA|NA|NA|2020-02-04">
 			<date value="2020.0928961748634" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/QLD03/2020|EPI_ISL_410717|Australia|Queensland|Gold_Coast|Wuhan|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Australia/QLD04/2020|EPI_ISL_410718|Australia|Queensland|Gold_Coast|Wuhan|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Singapore/11/2020|EPI_ISL_410719|Singapore|NA|NA|NA|2020-02-02">
 			<date value="2020.0874316939892" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Fujian/8/2020|EPI_ISL_411060|China|Fujian|NA|NA|2020-01-21">
 			<date value="2020.0546448087432" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Fujian/13/2020|EPI_ISL_411066|China|Fujian|NA|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0571/2020|EPI_ISL_411218|France|Ile-de-France|Paris|NA|2020-02-02">
 			<date value="2020.0874316939892" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="France/IDF0386/2020|EPI_ISL_411219|France|Ile-de-France|Paris|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="Cambodia/0012/2020|EPI_ISL_411902|Cambodia|Sihanoukville|NA|Wuhan|2020-01-27">
 			<date value="2020.0710382513662" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Jiangsu/JS01/2020|EPI_ISL_411950|China|Jiangsu|NA|NA|2020-01-23">
 			<date value="2020.0601092896175" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Sweden/01/2020|EPI_ISL_411951|Sweden|NA|NA|Wuhan|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SPAIN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SPAIN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Jiangsu/JS02/2020|EPI_ISL_411952|China|Jiangsu|NA|NA|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Jiangsu/JS03/2020|EPI_ISL_411953|China|Jiangsu|NA|NA|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-CA7/2020|EPI_ISL_411954|USA|California|NA|Wuhan|2020-02-06">
 			<date value="2020.0983606557377" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA-CA8/2020|EPI_ISL_411955|USA|California|NA|Wuhan|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SOUTHKOREA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SOUTHKOREA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA-TX1/2020|EPI_ISL_411956|USA|Texas|NA|Wuhan|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="Hefei/2/2020|EPI_ISL_412026|China|Anhui|Hefei|NA|2020-02">
 			<date value="2020.0846994535518" direction="forwards" units="years" uncertainty="0.08333333333333333"/>
 			<attr name="sampleLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Hong_Kong/VM20001061/2020|EPI_ISL_412028|China|Hong_Kong|NA|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Hong_Kong/VM20001988/2020|EPI_ISL_412029|China|Hong_Kong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Hong_Kong/VB20026565/2020|EPI_ISL_412030|China|Hong_Kong|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="England/03/2020|EPI_ISL_412116|UK|England|NA|China|2020-02-09">
 			<date value="2020.1065573770493" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Jingzhou/HBCDC-HB-01/2020|EPI_ISL_412459|China|Hubei|Jingzhou|NA|2020-01-08">
 			<date value="2020.01912568306" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/CA9/2020|EPI_ISL_412862|USA|California|Solano|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC05/2020|EPI_ISL_412869|South_Korea|Seoul|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC06/2020|EPI_ISL_412870|South_Korea|Seoul|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC07/2020|EPI_ISL_412871|South_Korea|Seoul|NA|NA|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC12/2020|EPI_ISL_412872|South_Korea|Gyeonggi-do|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Korea/KCDC24/2020|EPI_ISL_412873|South_Korea|Chungcheongnam-do|NA|NA|2020-02-06">
 			<date value="2020.0983606557377" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-02/2019|EPI_ISL_412898|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAANHUI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAANHUI
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-03/2019|EPI_ISL_412899|China|Hubei|Wuhan|NA|2019-12-30">
 			<date value="2019.9945205479453" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Germany/Baden-Wuerttemberg-1/2020|EPI_ISL_412912|Germany|Baden-Wuerttemberg|NA|Italy|2020-02-25">
 			<date value="2020.1502732240438" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="Brazil/SPBR-01/2020|EPI_ISL_412964|Brazil|Sao_Paulo|Sao_Paulo|Italy|2020-02-25">
 			<date value="2020.1502732240438" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Canada/BC_37_0-2/2020|EPI_ISL_412965|Canada|British_Columbia|NA|Iran|2020-02-16">
 			<date value="2020.1256830601094" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				PORTUGAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				PORTUGAL
 			</attr>
 		</taxon>
 		<taxon id="China/IQTC01/2020|EPI_ISL_412966|China|Guangdong|Guangzhou|NA|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/IQTC02/2020|EPI_ISL_412967|China|Guangdong|Guangzhou|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEWZEALAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEWZEALAND
 			</attr>
 		</taxon>
 		<taxon id="Japan/Hu_DP_Kng_19-020/2020|EPI_ISL_412968|Japan|NA|NA|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHENAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHENAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Japan/Hu_DP_Kng_19-027/2020|EPI_ISL_412969|Japan|NA|NA|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHENAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHENAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/WA2/2020|EPI_ISL_412970|USA|Washington|Snohomish_County|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Finland/FIN-25/2020|EPI_ISL_412971|Finland|Helsinki|NA|Milan|2020-02-25">
 			<date value="2020.1502732240438" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				MEXICO
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				MEXICO
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Mexico/InDRE_01/2020|EPI_ISL_412972|Mexico|Mexico_City|NA|Italy|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				LUXEMBOURG
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				LUXEMBOURG
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Italy/CDG1/2020|EPI_ISL_412973|Italy|Lombardy|NA|NA|2020-02-20">
 			<date value="2020.136612021858" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Italy/SPL1/2020|EPI_ISL_412974|Italy|Rome|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW05/2020|EPI_ISL_412975|Australia|New_South_Wales|Sydney|Iran|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-02/2020|EPI_ISL_412978|China|Hubei|Wuhan|NA|2020-01-17">
 			<date value="2020.0437158469945" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				USA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-03/2020|EPI_ISL_412979|China|Hubei|Wuhan|NA|2020-01-18">
 			<date value="2020.0464480874316" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-04/2020|EPI_ISL_412980|China|Hubei|Wuhan|NA|2020-01-18">
 			<date value="2020.0464480874316" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-05/2020|EPI_ISL_412981|China|Hubei|Wuhan|NA|2020-01-18">
 			<date value="2020.0464480874316" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HBCDC-HB-06/2020|EPI_ISL_412982|China|Hubei|Wuhan|NA|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Tianmen/HBCDC-HB-07/2020|EPI_ISL_412983|China|Hubei|Wuhan|NA|2020-02-08">
 			<date value="2020.103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Canada/ON-PHL2445/2020|EPI_ISL_413014|Canada|Ontario|NA|Wuhan|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				LUXEMBOURG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Brazil/SPBR-02/2020|EPI_ISL_413016|Brazil|Sao_Paulo|Sao_Paulo|Italy|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Korea/KUMC02/2020|EPI_ISL_413018|South_Korea|NA|NA|NA|2020-02-06">
 			<date value="2020.0983606557377" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				MEXICO
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				MEXICO
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477102/2020|EPI_ISL_413019|Switzerland|Zurich|NA|NA|2020-02-26">
 			<date value="2020.1530054644809" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477377/2020|EPI_ISL_413020|Switzerland|Zurich|NA|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477757/2020|EPI_ISL_413021|Switzerland|Zurich|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CANADA
+				CHINASHANDONG
 			</attr>
 			<attr name="oriLoc">
-				CANADA
+				CHINASHANDONG
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477796/2020|EPI_ISL_413022|Switzerland|Zurich|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477797/2020|EPI_ISL_413023|Switzerland|Zurich|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Switzerland/1000477806/2020|EPI_ISL_413024|Switzerland|Zurich|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW06/2020|EPI_ISL_413213|Australia|New_South_Wales|Sydney|Iran|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW07/2020|EPI_ISL_413214|Australia|New_South_Wales|Sydney|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Scotland/CVR01/2020|EPI_ISL_413221|UK|Scotland|NA|Italy|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="USA/WA4-UW2/2020|EPI_ISL_413455|USA|Washington|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA-S2/2020|EPI_ISL_413456|USA|Washington|King_County|NA|2020-02-20">
 			<date value="2020.136612021858" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHENAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHENAN
 			</attr>
 		</taxon>
 		<taxon id="USA/WA6-UW3/2020|EPI_ISL_413457|USA|Washington|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA7-UW4/2020|EPI_ISL_413458|USA|Washington|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Anhui/SZ005/2020|EPI_ISL_413485|China|Anhui|Suzhou|NA|2020-01-24">
 			<date value="2020.0628415300546" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				VIETNAM
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				VIETNAM
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA8-UW5/2020|EPI_ISL_413486|USA|Washington|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA9-UW6/2020|EPI_ISL_413487|USA|Washington|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Germany/NRW-01/2020|EPI_ISL_413488|Germany|North_Rhine_Westphalia_Heinsberg_District|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Italy/UniSR1/2020|EPI_ISL_413489|Italy|Lombardy|Milan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="New_Zealand/01/2020|EPI_ISL_413490|New_Zealand|Auckland|NA|Iran|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Beijing/231/2020|EPI_ISL_413519|China|Beijing|NA|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="Beijing/233/2020|EPI_ISL_413520|China|Beijing|NA|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="Beijing/235/2020|EPI_ISL_413521|China|Beijing|NA|NA|2020-01-28">
 			<date value="2020.0737704918033" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="India/1-27/2020|EPI_ISL_413522|India|Kerala|NA|China|2020-01-27">
 			<date value="2020.0710382513662" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="India/1-31/2020|EPI_ISL_413523|India|Kerala|NA|China|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Nigeria/Lagos01/2020|EPI_ISL_413550|Nigeria|Lagos|NA|Italy|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Wales/PHW1/2020|EPI_ISL_413555|UK|Wales|NA|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wales/PHW2/2020|EPI_ISL_413556|UK|Wales|NA|NA|2020-03-04">
 			<date value="2020.172131147541" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/CA-CDPH-UC1/2020|EPI_ISL_413557|USA|California|Sonoma_County|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/CA-CDPH-UC2/2020|EPI_ISL_413558|USA|California|Solano_County|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/CA-CDPH-UC3/2020|EPI_ISL_413559|USA|California|Solano_County|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA-S3/2020|EPI_ISL_413560|USA|Washington|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAGUANGDONG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAGUANGDONG
 			</attr>
 		</taxon>
 		<taxon id="USA/CA-CDPH-UC4/2020|EPI_ISL_413561|USA|California|Solano_County|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA11-UW7/2020|EPI_ISL_413562|USA|Washington|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA12-UW8/2020|EPI_ISL_413563|USA|Washington|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Andel_1365066/2020|EPI_ISL_413564|Netherlands|Andel|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Berlicum_1363564/2020|EPI_ISL_413565|Netherlands|Berlicum|NA|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Blaricum_1364780/2020|EPI_ISL_413566|Netherlands|Blaricum|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Dalen_1363624/2020|EPI_ISL_413568|Netherlands|Dalen|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Delft_1363424/2020|EPI_ISL_413569|Netherlands|Delft|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Diemen_1363454/2020|EPI_ISL_413570|Netherlands|Diemen|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Eindhoven_1363782/2020|EPI_ISL_413571|Netherlands|Eindhoven|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				TAIWAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				TAIWAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Haarlem_1363688/2020|EPI_ISL_413572|Netherlands|Haarlem|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Hardinxveld_Giessendam_1364806/2020|EPI_ISL_413573|Netherlands|Hardinxveld|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Helmond_1363548/2020|EPI_ISL_413574|Netherlands|Helmond|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="NetherlandsL/Houten_1363498/2020|EPI_ISL_413575|Netherlands|Houten|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Loon_op_zand_1363512/2020|EPI_ISL_413576|Netherlands|Loon|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Naarden_1364774/2020|EPI_ISL_413577|Netherlands|Naarden|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Nieuwendijk_1363582/2020|EPI_ISL_413578|Netherlands|Nieuwendijk|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Nootdorp_1364222/2020|EPI_ISL_413579|Netherlands|Nootdorp|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Oisterwijk_1364072/2020|EPI_ISL_413580|Netherlands|Oisterwijk|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Oss_1363500/2020|EPI_ISL_413581|Netherlands|Oss|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Rotterdam_1363790/2020|EPI_ISL_413582|Netherlands|Rotterdam|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Rotterdam_1364040/2020|EPI_ISL_413583|Netherlands|Rotterdam|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Rotterdam_1364740/2020|EPI_ISL_413584|Netherlands|Rotterdam|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Tilburg_1363354/2020|EPI_ISL_413586|Netherlands|Tilburg|NA|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NETHERLANDS
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Tilburg_1364286/2020|EPI_ISL_413587|Netherlands|Tilburg|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Utrecht_1363564/2020|EPI_ISL_413588|Netherlands|Utrecht|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Utrecht_1363628/2020|EPI_ISL_413589|Netherlands|Utrecht|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Utrecht_1364066/2020|EPI_ISL_413590|Netherlands|Utrecht|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Netherlands/Zeewolde_1365080/2020|EPI_ISL_413591|Netherlands|Zeewolde|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Taiwan/NTU03/2020|EPI_ISL_413592|Taiwan|Taipei|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Luxembourg/Lux1/2020|EPI_ISL_413593|Luxembourg|NA|NA|NA|2020-02-29">
 			<date value="2020.1612021857923" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW08/2020|EPI_ISL_413594|Australia|New_South_Wales|Sydney|Singapore|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				PORTUGAL
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				PORTUGAL
+				SOUTHKOREA
 			</attr>
 		</taxon>
 <!-->
@@ -2756,262 +2756,262 @@
 		<taxon id="Australia/NSW10/2020|EPI_ISL_413596|Australia|New_South_Wales|Sydney|SEasia|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				PORTUGAL
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				PORTUGAL
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW11/2020|EPI_ISL_413597|Australia|New_South_Wales|Sydney|Iran|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW12/2020|EPI_ISL_413598|Australia|New_South_Wales|Sydney|Iran|2020-03-04">
 			<date value="2020.172131147541" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW13/2020|EPI_ISL_413599|Australia|New_South_Wales|Sydney|Iran|2020-03-04">
 			<date value="2020.172131147541" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Australia/NSW14/2020|EPI_ISL_413600|Australia|New_South_Wales|Sydney|Iran|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="USA/WA13-UW9/2020|EPI_ISL_413601|USA|Washington|NA|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINASHANDONG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINASHANDONG
 			</attr>
 		</taxon>
 		<taxon id="Finland/FIN03032020A/2020|EPI_ISL_413602|Finland|Helsinki|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Finland/FIN03032020B/2020|EPI_ISL_413603|Finland|Helsinki|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Finland/FIN03032020C/2020|EPI_ISL_413604|Finland|Helsinki|NA|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAHUNAN
 			</attr>
 		</taxon>
 		<taxon id="Finland/FIN01032020/2020|EPI_ISL_413605|Finland|Helsinki|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Portugal/CV62/2020|EPI_ISL_413647|Portugal|NA|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				TAIWAN
+				CHINAJIANGSU
 			</attr>
 			<attr name="oriLoc">
-				TAIWAN
+				CHINAJIANGSU
 			</attr>
 		</taxon>
 		<taxon id="Portugal/CV63/2020|EPI_ISL_413648|Portugal|NA|NA|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA14-UW10/2020|EPI_ISL_413649|USA|Washington|NA|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="USA/WA15-UW11/2020|EPI_ISL_413650|USA|Washington|NA|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CANADA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CANADA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA16-UW12/2020|EPI_ISL_413651|USA|Washington|NA|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA17-UW13/2020|EPI_ISL_413652|USA|Washington|NA|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CANADA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CANADA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="USA/WA18-UW14/2020|EPI_ISL_413653|USA|Washington|NA|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0001/2020|EPI_ISL_413691|China|Shandong|NA|NA|2020-01">
 			<date value="2020.06557377049" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				AUSTRALIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				AUSTRALIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0002/2020|EPI_ISL_413692|China|Shandong|NA|NA|2020-01">
 			<date value="2020.06830601093" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="China/WF0003/2020|EPI_ISL_413693|China|Shandong|NA|NA|2020-01">
 			<date value="2020.07103825137" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="China/WF0004/2020|EPI_ISL_413694|China|Shandong|NA|NA|2020-01">
 			<date value="2020.07103825137" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				SINGAPORE
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="China/WF0012/2020|EPI_ISL_413697|China|Shandong|NA|NA|2020-02">
 			<date value="2020.08743169399" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0014/2020|EPI_ISL_413711|China|Shandong|NA|NA|2020-02">
 			<date value="2020.09289617486" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0015/2020|EPI_ISL_413729|China|Shandong|NA|NA|2020-02">
 			<date value="2020.0956284153" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0016/2020|EPI_ISL_413746|China|Shandong|NA|NA|2020-02">
 			<date value="2020.0956284153" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0018/2020|EPI_ISL_413748|China|Shandong|NA|NA|2020-02">
 			<date value="2020.10109289617" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0019/2020|EPI_ISL_413749|China|Shandong|NA|NA|2020-02">
 			<date value="2020.10109289617" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0020/2020|EPI_ISL_413750|China|Shandong|NA|NA|2020-02">
 			<date value="2020.10109289617" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SWEDEN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				SWEDEN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0021/2020|EPI_ISL_413751|China|Shandong|NA|NA|2020-02">
 			<date value="2020.10109289617" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0023/2020|EPI_ISL_413752|China|Shandong|NA|NA|2020-02">
@@ -3026,28 +3026,28 @@
 		<taxon id="China/WF0024/2020|EPI_ISL_413753|China|Shandong|NA|NA|2020-02">
 			<date value="2020.10928961749" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/WF0026/2020|EPI_ISL_413761|China|Shandong|NA|NA|2020-02">
 			<date value="2020.09289617486" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0028/2020|EPI_ISL_413791|China|Shandong|NA|NA|2020-02">
 			<date value="2020.0956284153" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/WF0029/2020|EPI_ISL_413809|China|Shandong|NA|NA|2020-02">
@@ -3062,82 +3062,82 @@
 		<taxon id="China/GDFS2020054-P0005/2020|EPI_ISL_413850|China|Guangdong|NA|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4373-P0039/2020|EPI_ISL_413851|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				INDIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				INDIA
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4433-P0040/2020|EPI_ISL_413852|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4243-P0035/2020|EPI_ISL_413853|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4475-P0042/2020|EPI_ISL_413854|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020234-P0023/2020|EPI_ISL_413855|China|Guangdong|NA|NA|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020233-P0027/2020|EPI_ISL_413856|China|Guangdong|NA|NA|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SOUTHKOREA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				SOUTHKOREA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4448-P0002/2020|EPI_ISL_413857|China|Guangdong|NA|NA|2020-01-31">
 			<date value="2020.0819672131147" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4459-P0041/2020|EPI_ISL_413858|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SOUTHKOREA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				SOUTHKOREA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4276-P0037/2020|EPI_ISL_413859|China|Guangdong|NA|NA|2020-01-31">
@@ -3152,172 +3152,172 @@
 		<taxon id="China/2020XN4273-P0036/2020|EPI_ISL_413860|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020080-P0010/2020|EPI_ISL_413861|China|Guangdong|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020086-P0021/2020|EPI_ISL_413862|China|Guangdong|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020087-P0008/2020|EPI_ISL_413863|China|Guangdong|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020246-P0028/2020|EPI_ISL_413864|China|Guangdong|NA|NA|2020-02-09">
 			<date value="2020.1065573770493" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GDSZ202008-P0020/2020|EPI_ISL_413866|China|Guangdong|NA|NA|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GDSZ202015-P0019/2020|EPI_ISL_413867|China|Guangdong|NA|NA|2020-02-05">
 			<date value="2020.0956284153006" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SOUTHKOREA
+				IRAN
 			</attr>
 			<attr name="oriLoc">
-				SOUTHKOREA
+				IRAN
 			</attr>
 		</taxon>
 		<taxon id="China/DG-S9-P0045/2020|EPI_ISL_413868|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/FS-S42-P0046/2020|EPI_ISL_413869|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="China/FS-S48-P0047/2020|EPI_ISL_413870|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				PORTUGAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				PORTUGAL
 			</attr>
 		</taxon>
 		<taxon id="China/MM-S1-P0048/2020|EPI_ISL_413871|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/SZ-N59-P0049/2020|EPI_ISL_413872|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SPAIN
+				NEWZEALAND
 			</attr>
 			<attr name="oriLoc">
-				SPAIN
+				NEWZEALAND
 			</attr>
 		</taxon>
 		<taxon id="China/GZ-S6-P0050/2020|EPI_ISL_413873|China|Guangdong|NA|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="China/GDFS2020127-P0026/2020|EPI_ISL_413874|China|Guangdong|NA|NA|2020-02-12">
 			<date value="2020.1147540983607" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GDFS2020052-P0025/2020|EPI_ISL_413875|China|Guangdong|NA|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020139-P0007/2020|EPI_ISL_413882|China|Guangdong|NA|NA|2020-02-02">
 			<date value="2020.0874316939892" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020134-P0031/2020|EPI_ISL_413883|China|Guangdong|NA|NA|2020-02-02">
 			<date value="2020.0874316939892" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/GD2020115-P0009/2020|EPI_ISL_413884|China|Guangdong|NA|NA|2020-02-01">
 			<date value="2020.0846994535518" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4239-P0034/2020|EPI_ISL_413888|China|Guangdong|NA|NA|2020-01-30">
 			<date value="2020.0792349726776" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="China/2020XN4291-P0038/2020|EPI_ISL_413889|China|Guangdong|NA|NA|2020-01-30">
@@ -3332,570 +3332,570 @@
 		<taxon id="Wuhan-Hu-1|EPI_ISL_402125|China|Hubei|Wuhan|NA|2019-12-26">
 			<date value="2019.9835616438356" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAJIANGSU
+				BELGIUM
 			</attr>
 			<attr name="oriLoc">
-				CHINAJIANGSU
+				BELGIUM
 			</attr>
 		</taxon>
 
 		<taxon id="China/Hangzhou/ZJU-08/2020|EPI_ISL_416473|China|Zhejiang|Hangzhou|NA|2020-01-26">
 			<date value="2020.068306010929" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Malaysia/MKAK-CL-2020-6430/2020|EPI_ISL_416886|Malaysia|NA|NA|NA|2020-02-20">
 			<date value="2020.136612021858" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				SWEDEN
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				SWEDEN
 			</attr>
 		</taxon>
 		<taxon id="Singapore/20/2020|EPI_ISL_418993|Singapore|NA|NA|NA|2020-01-29">
 			<date value="2020.0765027322404" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 
 		<taxon id="Wuhan/WHUH001/2020|EPI_ISL_449476|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH002/2020|EPI_ISL_449477|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH003/2020|EPI_ISL_449478|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH004/2020|EPI_ISL_449479|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH005/2020|EPI_ISL_449480|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH006/2020|EPI_ISL_449481|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH007/2020|EPI_ISL_449482|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH008/2020|EPI_ISL_449483|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH011/2020|EPI_ISL_449484|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAJIANGXI
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAJIANGXI
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH012/2020|EPI_ISL_449485|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH020/2020|EPI_ISL_449486|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CHINAZHEJIANG
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/WHUH021/2020|EPI_ISL_449487|China|Hubei|Wuhan|NA|2020-01-22">
 			<date value="2020.0573770491803" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/YB012504/2020|EPI_ISL_450489|China|Hubei|Wuhan|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/OS52/2020|EPI_ISL_450500|China|Hubei|Wuhan|NA|2020-01-10">
 			<date value="2020.0245901639344" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				USA
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/YB012611/2020|EPI_ISL_450501|China|Hubei|Wuhan|NA|2020-01-26">
 			<date value="2020.068306010929" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/YB012605/2020|EPI_ISL_450502|China|Hubei|Wuhan|NA|2020-01-26">
 			<date value="2020.068306010929" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/YB012602/2020|EPI_ISL_450503|China|Hubei|Wuhan|NA|2020-01-26">
 			<date value="2020.068306010929" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/YB012506/2020|EPI_ISL_450504|China|Hubei|Wuhan|NA|2020-01-25">
 			<date value="2020.0655737704917" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-122/2020|EPI_ISL_454904|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				BELGIUM
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				BELGIUM
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-124/2020|EPI_ISL_454905|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-125/2020|EPI_ISL_454906|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				JAPAN
 			</attr>
 			<attr name="oriLoc">
-				UK
+				JAPAN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-126/2020|EPI_ISL_454907|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				THAILAND
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				THAILAND
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-127/2020|EPI_ISL_454908|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-130/2020|EPI_ISL_454909|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				JAPAN
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				JAPAN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-131/2020|EPI_ISL_454910|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-134/2020|EPI_ISL_454911|China|Hubei|Wuhan|NA|2020-02-22">
 			<date value="2020.1420765027322" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-135/2020|EPI_ISL_454912|China|Hubei|Wuhan|NA|2020-02-25">
 			<date value="2020.1502732240438" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-136/2020|EPI_ISL_454913|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-137/2020|EPI_ISL_454914|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-138/2020|EPI_ISL_454915|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SWITZERLAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SWITZERLAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-140/2020|EPI_ISL_454916|China|Hubei|Wuhan|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-141/2020|EPI_ISL_454917|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAYUNNAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAYUNNAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-142/2020|EPI_ISL_454918|China|Hubei|Wuhan|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-143/2020|EPI_ISL_454919|China|Hubei|Wuhan|NA|2020-02-03">
 			<date value="2020.0901639344263" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-148/2020|EPI_ISL_454920|China|Hubei|Wuhan|NA|2020-02-21">
 			<date value="2020.139344262295" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-149/2020|EPI_ISL_454921|China|Hubei|Wuhan|NA|2020-02-21">
 			<date value="2020.139344262295" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				SWEDEN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				SWEDEN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-152/2020|EPI_ISL_454922|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-155/2020|EPI_ISL_454923|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHUNAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				CHINAHUNAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-156/2020|EPI_ISL_454924|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-157/2020|EPI_ISL_454925|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-158/2020|EPI_ISL_454926|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-159/2020|EPI_ISL_454927|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-160/2020|EPI_ISL_454928|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-161/2020|EPI_ISL_454929|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				BELGIUM
+				CHINAHONGKONG
 			</attr>
 			<attr name="oriLoc">
-				BELGIUM
+				CHINAHONGKONG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-163/2020|EPI_ISL_454930|China|Hubei|Wuhan|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-164/2020|EPI_ISL_454931|China|Hubei|Wuhan|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-166/2020|EPI_ISL_454932|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASICHUAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASICHUAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-167/2020|EPI_ISL_454933|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-168/2020|EPI_ISL_454934|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-169/2020|EPI_ISL_454935|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-170/2020|EPI_ISL_454936|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-171/2020|EPI_ISL_454937|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-172/2020|EPI_ISL_454938|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-173/2020|EPI_ISL_454939|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-176/2020|EPI_ISL_454940|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SINGAPORE
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SINGAPORE
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-179/2020|EPI_ISL_454941|China|Hubei|Wuhan|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAYUNNAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAYUNNAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-181/2020|EPI_ISL_454942|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				AUSTRALIA
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				AUSTRALIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-182/2020|EPI_ISL_454943|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-183/2020|EPI_ISL_454944|China|Hubei|Wuhan|NA|2020-03-12">
 			<date value="2020.1939890710382" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-185/2020|EPI_ISL_454945|China|Hubei|Wuhan|NA|2020-03-15">
@@ -3910,982 +3910,982 @@
 		<taxon id="Wuhan/HB-WH3-189/2020|EPI_ISL_454946|China|Hubei|Wuhan|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-191/2020|EPI_ISL_454947|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-200/2020|EPI_ISL_454952|China|Hubei|Wuhan|NA|2020-02-19">
 			<date value="2020.1338797814208" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				THAILAND
+				SPAIN
 			</attr>
 			<attr name="oriLoc">
-				THAILAND
+				SPAIN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-201/2020|EPI_ISL_454953|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				CHINASHANDONG
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				CHINASHANDONG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-204/2020|EPI_ISL_454954|China|Hubei|Wuhan|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-205/2020|EPI_ISL_454955|China|Hubei|Wuhan|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-208/2020|EPI_ISL_454957|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-209/2020|EPI_ISL_454958|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SPAIN
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SPAIN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-210/2020|EPI_ISL_454959|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAYUNNAN
+				CHINAGUANGDONG
 			</attr>
 			<attr name="oriLoc">
-				CHINAYUNNAN
+				CHINAGUANGDONG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-211/2020|EPI_ISL_454960|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-212/2020|EPI_ISL_454961|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-213/2020|EPI_ISL_454962|China|Hubei|Wuhan|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-216/2020|EPI_ISL_454964|China|Hubei|Wuhan|NA|2020-02-06">
 			<date value="2020.0983606557377" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-220/2020|EPI_ISL_454965|China|Hubei|Wuhan|NA|2020-02-20">
 			<date value="2020.136612021858" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-221/2020|EPI_ISL_454966|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-223/2020|EPI_ISL_454968|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-224/2020|EPI_ISL_454969|China|Hubei|Wuhan|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-225/2020|EPI_ISL_454970|China|Hubei|Wuhan|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-226/2020|EPI_ISL_454971|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-227/2020|EPI_ISL_454972|China|Hubei|Wuhan|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				CHINAFUJIAN
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				CHINAFUJIAN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-229/2020|EPI_ISL_454973|China|Hubei|Wuhan|NA|2020-02-22">
 			<date value="2020.1420765027322" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-231/2020|EPI_ISL_454974|China|Hubei|Wuhan|NA|2020-02-17">
 			<date value="2020.1284153005465" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-232/2020|EPI_ISL_454975|China|Hubei|Wuhan|NA|2020-03-01">
 			<date value="2020.1639344262296" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-233/2020|EPI_ISL_454976|China|Hubei|Wuhan|NA|2020-03-04">
 			<date value="2020.172131147541" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-236/2020|EPI_ISL_454977|China|Hubei|Wuhan|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-237/2020|EPI_ISL_454978|China|Hubei|Wuhan|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-238/2020|EPI_ISL_454979|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				THAILAND
+				CHINAHUBEI
 			</attr>
 			<attr name="oriLoc">
-				THAILAND
+				CHINAHUBEI
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-239/2020|EPI_ISL_454980|China|Hubei|Wuhan|NA|2020-02-09">
 			<date value="2020.1065573770493" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-240/2020|EPI_ISL_454981|China|Hubei|Wuhan|NA|2020-02-04">
 			<date value="2020.0928961748634" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-242/2020|EPI_ISL_454982|China|Hubei|Wuhan|NA|2020-03-14">
 			<date value="2020.1994535519125" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				SWITZERLAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-246/2020|EPI_ISL_454983|China|Hubei|Wuhan|NA|2020-03-12">
 			<date value="2020.1939890710382" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CANADA
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				CANADA
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-247/2020|EPI_ISL_454984|China|Hubei|Wuhan|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAANHUI
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAANHUI
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-098/2020|EPI_ISL_454985|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				AUSTRALIA
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-099/2020|EPI_ISL_454986|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-100/2020|EPI_ISL_454987|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				USA
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				USA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-102/2020|EPI_ISL_454988|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-104/2020|EPI_ISL_454989|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-107/2020|EPI_ISL_454990|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-108/2020|EPI_ISL_454991|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-109/2020|EPI_ISL_454992|China|Hubei|Wuhan|NA|2020-02-27">
 			<date value="2020.155737704918" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-113/2020|EPI_ISL_454993|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 			<attr name="oriLoc">
-				NEWZEALAND
+				ITALY
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-114/2020|EPI_ISL_454994|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-115/2020|EPI_ISL_454995|China|Hubei|Wuhan|NA|2020-02-21">
 			<date value="2020.139344262295" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				SWEDEN
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				SWEDEN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-116/2020|EPI_ISL_454996|China|Hubei|Wuhan|NA|2020-02-26">
 			<date value="2020.1530054644809" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-117/2020|EPI_ISL_454997|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				CHINAHONGKONG
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-120/2020|EPI_ISL_454998|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CAMBODIA
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CAMBODIA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-264/2020|EPI_ISL_454999|China|Hubei|Wuhan|NA|2020-02-13">
 			<date value="2020.1174863387978" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-265/2020|EPI_ISL_455000|China|Hubei|Wuhan|NA|2020-02-14">
 			<date value="2020.120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-266/2020|EPI_ISL_455001|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-267/2020|EPI_ISL_455002|China|Hubei|Wuhan|NA|2020-02-17">
 			<date value="2020.1284153005465" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-268/2020|EPI_ISL_455003|China|Hubei|Wuhan|NA|2020-02-15">
 			<date value="2020.122950819672" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-269/2020|EPI_ISL_455004|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-270/2020|EPI_ISL_455005|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-271/2020|EPI_ISL_455006|China|Hubei|Wuhan|NA|2020-02-17">
 			<date value="2020.1284153005465" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-272/2020|EPI_ISL_455007|China|Hubei|Wuhan|NA|2020-02-26">
 			<date value="2020.1530054644809" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-274/2020|EPI_ISL_455008|China|Hubei|Wuhan|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				NEPAL
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				NEPAL
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-276/2020|EPI_ISL_455009|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-278/2020|EPI_ISL_455010|China|Hubei|Wuhan|NA|2020-02-22">
 			<date value="2020.1420765027322" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-279/2020|EPI_ISL_455011|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAGUANGDONG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAGUANGDONG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-280/2020|EPI_ISL_455012|China|Hubei|Wuhan|NA|2020-02-25">
 			<date value="2020.1502732240438" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-282/2020|EPI_ISL_455013|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-283/2020|EPI_ISL_455014|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				BELGIUM
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				BELGIUM
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-123/2020|EPI_ISL_455363|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-129/2020|EPI_ISL_455364|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-132/2020|EPI_ISL_455365|China|Hubei|Wuhan|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-133/2020|EPI_ISL_455366|China|Hubei|Wuhan|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-139/2020|EPI_ISL_455367|China|Hubei|Wuhan|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH1-144/2020|EPI_ISL_455368|China|Hubei|Wuhan|NA|2020-02-23">
 			<date value="2020.1448087431695" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-145/2020|EPI_ISL_455369|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-146/2020|EPI_ISL_455370|China|Hubei|Wuhan|NA|2020-02-24">
 			<date value="2020.1475409836066" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-147/2020|EPI_ISL_455371|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINACHONGQING
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINACHONGQING
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-151/2020|EPI_ISL_455372|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				SOUTHKOREA
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				SOUTHKOREA
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-154/2020|EPI_ISL_455373|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-162/2020|EPI_ISL_455374|China|Hubei|Wuhan|NA|2020-02-10">
 			<date value="2020.1092896174864" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				UK
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH2-165/2020|EPI_ISL_455375|China|Hubei|Wuhan|NA|2020-02-11">
 			<date value="2020.1120218579235" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-174/2020|EPI_ISL_455376|China|Hubei|Wuhan|NA|2020-02-28">
 			<date value="2020.1584699453551" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-177/2020|EPI_ISL_455377|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-178/2020|EPI_ISL_455378|China|Hubei|Wuhan|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-180/2020|EPI_ISL_455379|China|Hubei|Wuhan|NA|2020-03-13">
 			<date value="2020.1967213114754" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				TAIWAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				TAIWAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-184/2020|EPI_ISL_455380|China|Hubei|Wuhan|NA|2020-03-12">
 			<date value="2020.1939890710382" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-186/2020|EPI_ISL_455381|China|Hubei|Wuhan|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				TAIWAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				TAIWAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-187/2020|EPI_ISL_455382|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-188/2020|EPI_ISL_455383|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				ITALY
+				CHINAYUNNAN
 			</attr>
 			<attr name="oriLoc">
-				ITALY
+				CHINAYUNNAN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH3-190/2020|EPI_ISL_455384|China|Hubei|Wuhan|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAJIANGXI
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				CHINAJIANGXI
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-193/2020|EPI_ISL_455385|China|Hubei|Wuhan|NA|2020-02-07">
 			<date value="2020.1010928961748" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-198/2020|EPI_ISL_455386|China|Hubei|Wuhan|NA|2020-02-12">
 			<date value="2020.1147540983607" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-199/2020|EPI_ISL_455387|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAANHUI
+				SWEDEN
 			</attr>
 			<attr name="oriLoc">
-				CHINAANHUI
+				SWEDEN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH4-202/2020|EPI_ISL_455388|China|Hubei|Wuhan|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAGUANGDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-218/2020|EPI_ISL_455390|China|Hubei|Wuhan|NA|2020-03-19">
 			<date value="2020.2131147540983" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				VIETNAM
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				VIETNAM
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-228/2020|EPI_ISL_455391|China|Hubei|Wuhan|NA|2020-02-04">
 			<date value="2020.0928961748634" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				FRANCE
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				FRANCE
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-230/2020|EPI_ISL_455392|China|Hubei|Wuhan|NA|2020-03-17">
 			<date value="2020.207650273224" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAJIANGSU
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAJIANGSU
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-234/2020|EPI_ISL_455393|China|Hubei|Wuhan|NA|2020-03-18">
 			<date value="2020.2103825136612" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAJIANGXI
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAJIANGXI
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH5-235/2020|EPI_ISL_455394|China|Hubei|Wuhan|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-241/2020|EPI_ISL_455395|China|Hubei|Wuhan|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				IRAN
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				IRAN
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-244/2020|EPI_ISL_455397|China|Hubei|Wuhan|NA|2020-03-16">
 			<date value="2020.204918032787" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINASHANDONG
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WH6-245/2020|EPI_ISL_455398|China|Hubei|Wuhan|NA|2020-03-15">
 			<date value="2020.2021857923498" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINAFUJIAN
+				THAILAND
 			</attr>
 			<attr name="oriLoc">
-				CHINAFUJIAN
+				THAILAND
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-101/2020|EPI_ISL_455399|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				VIETNAM
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				VIETNAM
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-103/2020|EPI_ISL_455400|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-105/2020|EPI_ISL_455401|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-106/2020|EPI_ISL_455402|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINABEIJING
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-110/2020|EPI_ISL_455403|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-111/2020|EPI_ISL_455404|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				USA
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				USA
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-112/2020|EPI_ISL_455405|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-118/2020|EPI_ISL_455406|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 			<attr name="oriLoc">
-				CAMBODIA
+				CHINAJIANGXI
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-119/2020|EPI_ISL_455407|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM-121/2020|EPI_ISL_455408|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				CHINABEIJING
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				CHINABEIJING
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-273/2020|EPI_ISL_455409|China|Hubei|Wuhan|NA|2020-03-05">
 			<date value="2020.1748633879781" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-275/2020|EPI_ISL_455410|China|Hubei|Wuhan|NA|2020-03-03">
 			<date value="2020.1693989071039" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<taxon id="Wuhan/HB-WHCM2-277/2020|EPI_ISL_455411|China|Hubei|Wuhan|NA|2020-03-02">
 			<date value="2020.1666666666667" direction="forwards" units="years"/>
 			<attr name="sampleLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 			<attr name="oriLoc">
-				JAPAN
+				CHINAZHEJIANG
 			</attr>
 		</taxon>
 		<!-- <taxon id="USA/WA-S566/2020|EPI_ISL_434326|USA|Washington|NA|NA|2020-03-29">
@@ -4948,9 +4948,6 @@
 		<state code="UK"/>
 		<state code="USA"/>
 		<state code="VIETNAM"/>
-		<ambiguity code="SEASIA" states="Cambodia Singapore Thailand Vietnam"/>
-		<ambiguity code="CHINA" states="ChinaAnhui ChinaBeijing ChinaChongqing ChinaFujian ChinaGuangdong ChinaHenan ChinaHongKong ChinaHubei ChinaHunan ChinaJiangsu ChinaJiangxi ChinaShandong ChinaSichuan ChinaYunnan ChinaZhejiang"/>
-		<ambiguity code="HUBEIUSA" states="ChinaHubei USA"/>
 	</generalDataType>
 
 

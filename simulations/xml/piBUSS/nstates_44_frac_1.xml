@@ -1696,9 +1696,6 @@
 		<state code="UK"/>
 		<state code="USA"/>
 		<state code="Vietnam"/>
-		<ambiguity code="SEasia" states="Cambodia Singapore Thailand Vietnam"/>
-		<ambiguity code="China" states="ChinaAnhui ChinaBeijing ChinaChongqing ChinaFujian ChinaGuangdong ChinaHenan ChinaHongKong ChinaHubei ChinaHunan ChinaJiangsu ChinaJiangxi ChinaShandong ChinaSichuan ChinaYunnan ChinaZhejiang"/>
-		<ambiguity code="HubeiUSA" states="ChinaHubei USA"/>
 	</generalDataType>
 
 
