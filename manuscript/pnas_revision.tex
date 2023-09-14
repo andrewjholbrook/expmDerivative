@@ -175,7 +175,7 @@
  \newenvironment{example}{\begin{@example}\rm}{\end{@example}}
 
 
-
+% \newtheorem{remark}{\bf Remark}
  \newtheorem{theorem}{\bf Theorem}
  \newtheorem{lemma}{\bf Lemma}
  \newtheorem{fact}{\bf Fact}
@@ -577,7 +577,7 @@ form of a time-affine correction term.
 
 These observations lead to the following theorem, the proof of which appears
 in the supplement as \cref{sec:Thm:det:main}.
-\begin{Theorem}\label{thm:ass:error}
+\begin{theorem}\label{thm:ass:error}
   Suppose that $\QQ, \JJ \in \mathcal{M}(d)$ for some $d \geq 1$.  We
   assume that we can find an element $\QQ^+ \in \mathcal{M}(d)$ such that
   $\QQ$ is a generalized inverse of $\QQ^+$, namely,
@@ -619,9 +619,9 @@ constant which is given explicitly as
     &+ C_0^2 \| \QQ^+  \JJ  \QQ^{+} \|.
       \label{eq:exp:error:ass:er}
   \end{align}
-\end{Theorem}
+\end{theorem}
 
-\begin{Remark}\label{rmk:mat:class:dcy}
+\begin{remark}\label{rmk:mat:class:dcy}
   To illuminate the scope of \cref{thm:ass:error}, we have the
   following three classes of matrices maintaining the conditions
   \eqref{eq:GI:prop}--\eqref{eq:qetq:exp:decay} as follows.
@@ -684,7 +684,7 @@ constant which is given explicitly as
    \end{align}
     where $\LLambda^+$ is as in \eqref{eq:gen:inv:diag}.   
   \end{itemize}
-\end{Remark}
+\end{remark}
 In anticipation of \cref{t:lambda_n-1(Q)->-infty_non-symm_a.s.} below
 and our desired application in \cref{sec:sars:cov:app} we are
 preoccupied with the dimensional dependence of the constants in
@@ -700,7 +700,7 @@ structure of $\M$ in \eqref{e:Q=Jordan_decomp} or
 of a broader scope for dimensionally improving approximations beyond
 the symmetric case, at least for certain classes of randomly drawn
 matrices.
-\begin{Theorem}\label{thm:bride:of:frankinstein}
+\begin{theorem}\label{thm:bride:of:frankinstein}
   Let $\QQ \in \mathcal{S}(d)$ be non-positive, i.e.,  suppose that
   \eqref{eq:ev:d:cond:sym:case} holds.  Take $\QQ^+$ as in
   \eqref{eq:MP:inv:sym:case} and define
@@ -757,7 +757,7 @@ matrices.
              (1+t)e^{-t \mu_1 d} + \frac{2}{\mu_1 d}\Big)
             \|\JJ\|_{\op}.\notag
   \end{align}
-\end{Theorem}
+\end{theorem}
 
 
 \subsection*{High-dimensional asymptotics
@@ -798,7 +798,7 @@ L_{\psi_1} = \big\{F_X(dx): \|X\|_{\psi_1} < \infty \big\}.
 \end{remark}
 
 We formulate our second major result as follows. 
-\begin{Theorem}\label{t:lambda_n-1(Q)->-infty_non-symm_a.s.}
+\begin{theorem}\label{t:lambda_n-1(Q)->-infty_non-symm_a.s.}
   Let $F_X \in L_{\psi_1}$ be a distribution such that $X \geq 0$
   a.s., $\bbE X = \mu > 0$ and $\Var X = \sigma^2 > 0$. We consider a
   sequence of random matrices
@@ -835,7 +835,7 @@ We formulate our second major result as follows.
       almost surely. In \eqref{e:lambda_n-1(Q)->-infty_non-symm},
       $O_{\textnormal{a.s.}}$ is as in
       \eqref{e:X=O_a.s.(1)_Y=o_a.s.(1)}.
-\end{Theorem}
+\end{theorem}
 
 \begin{remark}
   The bounds constructed in Theorem
@@ -896,7 +896,7 @@ combine to produce the following immediate corollary.
     \label{fig:app}
 \end{figure*}
 
-\begin{Remark}\label{rmk:non:sym:num:ev}
+\begin{remark}\label{rmk:non:sym:num:ev}
   Our rigorous formulation of \cref{cor:rig:det:rand:wrapup} is
   limited to symmetric random rate matrices whose above diagonal
   elements are independent and identically distributed draws from a
@@ -912,9 +912,9 @@ combine to produce the following immediate corollary.
   $t(\II -\QQ^+ \QQ) \JJ \QQ \QQ^{+}$ corresponds increasingly well to
   the true approximation error (\eqref{eq:true:diff}) as the dimension
   increases.
-\end{Remark}
+\end{remark}
 
-\begin{Remark}\label{rmk:better:approx}
+\begin{remark}\label{rmk:better:approx}
   Calculation of
   $\widetilde{\nabla}_{\JJ} e^{t\QQ} := t e^{t\QQ} \JJ$ requires
   $\order{d^3}$ operations by, e.g., computing the spectral
@@ -930,7 +930,7 @@ combine to produce the following immediate corollary.
   asymptotically for large $d$. Thus, we anticipate further computational improvements when fitting
   large, gold-standard models using this
   refined approximation.  That said, we leave the efficient and scalable application of $\widehat{\nabla}_{\JJ} e^{t\QQ}$ to future work.
-\end{Remark}
+\end{remark}
 
 \section{Application: global spread of SARS-CoV-2}
 \label{sec:sars:cov:app}

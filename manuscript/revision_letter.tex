@@ -392,17 +392,37 @@ We have updated Figure \ref{fig:tree} to the best of our ability to make the mai
 
 \section*{Reviewer 2}
 
-This is a review for the manuscript "On the surprising effectiveness of a simple matrix exponential derivative approximation, with application to global SARS-CoV-2". 
+This is a review for the manuscript ``On the surprising effectiveness of a simple matrix exponential derivative approximation, with application to global SARS-CoV-2''. 
 For the benefit of the authors on how they interpret my review, I am a theoretical/computational statistician with background on theoretical population genetics, interested in Markov chains and its implementations in Monte Carlo methods. 
 
+\begin{reply}
+	We thank you for lending your effort and expertise in reviewing our manuscript and for your helpful recommendations.  We have thoroughly implemented your suggestions and believe that the manuscript is greatly improved.  
+\end{reply}
+
 Before content-specific comments let me first clarify that there are issues with the numbering of theorems and remarks in the manuscript that I have received (e.g., theorem 2 is missing, and there are two remarks labeled as Remark 2), and below I stick to the numbering used in the manuscript that I have received for review to avoid any confusion. 
+
+\begin{reply}
+	We thank you for catching this numbering error, which we have addressed.  Now there are 3 theorems (1,2,3) and 5 remarks (1,2,3,4,5).
+\end{reply}
 
 The main idea in the manuscript revolves around the three theorems presented and how the approximations provided by these theorems improve computational efficiency in large matrices involved in the continuous time markov chains. The positives are: 1) The theorems are stated well as in solid applied mathematical work, 2) Their proofs seem to hold as far as I can tell. 
 To me it is clear that if there are any gaps or minor incorrect statements they can be remedied with little effort and the theorems and corollaries will hold. It is also clear that a lot of effort and thought was put into these theorems and corollaries and I appreciate that, along with the clear exposition which made following the mathematical reasoning easy. 
 
+\begin{reply}
+	We thank you for your positive reception of our mathematical work.
+\end{reply}
+
 Unfortunately, the manuscript did not sit well with me, so to the negatives. There are two major negatives for me. The second item is the more important one, but the first motivates the second, and it deeply troubled me. 
 
 1) I think the way the manuscript is positioned with respect to the interpretation of the scope of the work is inaccurate. After a first read of the manuscript, I was left with the impression that the work was originally conceived and intended as an applied mathematics or a stochastic process paper, which --for example-- with the omission of opening paragraph of the manuscript would stop before section 2. Presented this way, I think its scope is ideal for a specific technical subject-matter journal (e.g., applied math, stochastic process, statistics). With the inclusion of the first paragraph (which I do not find clear, see below specific comments on this), and section 2, I felt that there was an effort to make the paper appealing to a broader audience. I think this effort falls short of its aim and the integration of theoretical results with data looks ad-hoc. In particular, the example data set chosen to demonstrate the results does not have much information about the parameters, and it is as if it was included just because its dimensionality is large. This tells us nothing about the quality of inference (see 2 below) and also misleads us to believe that the approximation method presented is successful as a statistical computational --in the sense of methods that facilitate inference but they are not inferential methods themselves-- tool. I note that the example consists of a real data set in which we do not know whether the assumed probability model generating the data is true, let alone the true parameter values of that model. Even if there was a signal in the data, I would still be hesitant to accept the approximation method presented as a valid statistical computational tool in the context of MCMC, before it was well established with some simulation studies (again, see 2 below). Therefore, there is no way to assess the quality of inference about parameters with this example. The only use of this data set can be in supporting the claim that the approximation presented through the theorems provides a computational advantage at higher dimensions. But then, why use SARS-Cov-2 data for this goal, whereas it can be better established by a simulated data set? 
+
+
+\begin{reply}
+	We thank you for sharing these concerns.  Before responding, let us point out that we have now added a simulation section (similar to that which you specify below) to the manuscript.   Now, we would like to argue that the decisions we made in structuring our manuscript are well-motivated based on our work in two other papers.
+	\begin{enumerate}
+		\item First,
+	\end{enumerate}
+\end{reply}
 
 
 2) To me, a huge barrier to accept that the approximations presented can be successful in aiding statistical inference is the lack of simulation studies to assess the quality of inference. (This is not about the type of simulations shown in Figure 1 as detailed below). For a work like this, before applying to real data, the first test would be to design a large simulation study, where the model and the parameters are known and to test whether the application of the approximation method when implemented within the Hamiltonian Monte Carlo has good statistical inference performance. MCMC makes its own approximations (mixing, convergence to stationarity, etc..) and errors introduced by an approximative method injected to an MCMC sampling might be exacerbated. Even the statistical performance of well-known MCMC algorithms can vary with different signal strengths (e.g., magnitude of the parameters relative to each other in a model), as well as the model size. It would be premature to think that a method is valid based solely on its computational performance (as it is presented in the manuscript) without first assessing its statistical performance of recovering an approximate joint posterior distribution of parameters and it passes rigorous tests. A way to check this is by simulating data from target distributions of interest under a variety of parameter value combinations and then apply the method to see whether the posterior distribution of parameters are recovered successfully (in the case of Bayesian inference for this manuscript). I am surprised that the authors did not see this as necessary especially because they are working with large mixed effect models where things can go awry pretty quickly. As an example, I would have liked to see a comparison of the statistical performance in say, a 3 x 3 simulation experiment design. Variable 1, The method with 3 levels: Standard Hamiltonian Monte Carlo, the naive method of reference (18), and the method of the manuscript; Variable 2, The model size with 3 levels: Small, Intermediate, Large; Variable 3, The number of parameters with considerable signal with 3 levels: 1 parameter, half of the parameters, all parameters in the model. 
