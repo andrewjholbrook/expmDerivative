@@ -23,6 +23,24 @@ for (i in 1:length(pibuss_xml)) {
   }
   template <- scan(template_file,sep="\n",what=character(),blank.lines.skip=FALSE)
   
+  # Make datatype codes upper-case because they come out of piBUSS that way
+  dt_open <- grep('<generalDataType id="sampleLoc.dataType">',template)
+  dt_close <- grep('</generalDataType>',template)
+  for (l in (dt_open+1):(dt_close-1)) {
+    line <- template[l]
+    has_code <- grepl("code",line)
+    has_alias <- grepl("alias",line)
+    line <- strsplit(line,'"')[[1]]
+    if (has_code) {
+      line[grep("code",line)+1] <- toupper(line[grep("code",line)+1])
+    }
+    if (has_alias) {
+      line[grep("alias",line)+1] <- toupper(line[grep("code",line)+1])
+    }
+    template[l] <- paste0(line,collapse='"')
+  }
+  
+  # Locate where we need to put simulated data and add it
   attribute_ends <- grep('</attr>',template)
   sample_loc_starts <- grep('<attr name="sampleLoc">',template)
   sample_ori_starts <- grep('<attr name="oriLoc">',template)
@@ -47,5 +65,5 @@ for (i in 1:length(pibuss_xml)) {
   }
   
   cat(template,sep="\n",file=paste0("xml/simulated_datasets_to_analyze/",basename(pibuss_xml[i])))
-  
+  system(paste0("rm ",seq_xml))
 }
