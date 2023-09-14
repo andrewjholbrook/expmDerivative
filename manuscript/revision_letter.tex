@@ -252,13 +252,11 @@ We have carefully considered your helpful suggestions and have addressed them to
 
 In particular, we have:
 \begin{itemize}
-	\item clarified how the present work complements its companion paper \citet{magee2023random}, which presents scaling and simulation studies;
+	\item clarified how the present work relates to our other work that includes thorough simulation studies \citet{magee2023random} and provides strong theoretical guarantees for surrogate-trajectory HMC \citet{glatt2020accept};
 	
 	\item implemented an additional simulation study which compares accuracy for multiple algorithms, different model sizes and different signal strength regimes;
-	
-    \item compared scalability of surrogate-trajectory HMC with the naive and affine-corrected approximations;
     
-    \item improved upon the SARS-CoV-2 application, relating it to previously established results;
+    \item expanded upon the SARS-CoV-2 application, relating it to previously established results and improving a key figure;
 	
 	\item responded to all other Editor/Reviewer questions and comments.
 \end{itemize}
@@ -428,7 +426,7 @@ Unfortunately, the manuscript did not sit well with me, so to the negatives. The
 Despite these theoretical guarantees, the method of \citet{magee2023random} performed even better than expected in terms of relatively high acceptance rates and relatively low autocorrelation between samples.  From our other previous work with surrogate-trajectory HMC \citep{li2019neural}, we knew this must suggest that the first-order matrix exponential gradient approximation must be pretty good.   
 As a result, our goal in this paper was to find out what makes the first-order approximation so good and provide a salient example that illustrates the efficacy of the approximation in higher dimensions.  
 
-In short, our original goal was not to prove validity of the general methodology, which we saw as already established through simulation studies, real-world analyses and measure theoretic probability.   
+In short, our original goal was not to prove validity of the general methodology, which we saw as already established through simulation studies, real-world analyses and measure theoretic arguments.   
 
 Again, we thank you for sharing your concerns and hope that the broader context of our work helps explain the positioning of our manuscript.  Probably more importantly, we have updated our manuscript with a thorough simulation study (see below).
 \end{reply}
@@ -445,7 +443,32 @@ Specific Comments:
 
 * Please check numbering of theorems and remarks. 
 
+\begin{reply}
+	Again, we thank you for catching this error and have fixed the numbering accordingly. 
+\end{reply}
+
 * Regarding the opening paragraph. The first sentence did not make sense to me. What is big data (why is it in double quotes, anyways?), what is modeling schemes, what is structures. The whole paragraph is written vaguely and I felt dismissive of the applications of the work being presented. 
+
+\begin{reply}
+	It is clear that the opening sentence missed its mark.  We have edited the first paragraph to read:
+	\begin{quote}
+		Phylogeographic methods
+	\cite{lemey2009bayesian, lemey2014unifying, holbrook2021massive,
+	holbrook2022viral} model large-scale viral transmission between
+human populations as a function of the shared evolutionary history of
+the viral population of interest.  Data take the form of dates,
+locations and genome sequences associated to individual viral
+samples. Spatiotemporal structure interfaces with network structure
+given by the phylogeny, or family tree, describing the viruses'
+collective history beginning with the most recent common ancestor.
+While one cannot directly observe this history, one may statistically
+reconstruct the phylogenetic tree by positing that changes in the
+viral genome happen randomly at regular intervals, thereby capturing
+the intuition that viral samples with more differences between their
+(aligned) sequences should find themselves further apart on the family
+tree.
+	\end{quote}
+\end{reply}
 
 * Figure 1 is designed to show how the approximation behaves beyond the assumptions of theorems and corollaries, and support the claim that the results apply more generally by numerical evidence. I am not convinced that this constitutes strong evidence (as it is claimed in the manuscript), however. My feeling is that the claim holds, but it needs to be demonstrated with distributions that are not so docile. I think that deviations from the assumptions of theorems and corollary are not so large for cases a, b, and c. For Figure 1c, I have a specific comment: I am not sure about what the authors mean by "Cauchy entries truncated to be positive", but my understanding is that this is a folded Cauchy distribution at zero with the support of the probability density function defined on the non-negative real line (if this is not correct please add a sentence to describe). Cauchy distribution is a member of the subexponential family and I wonder whether the tail properties of the folded Cauchy are distinct from those of the subexponential family (I do not have an answer to this, so I suggest that the authors check and provide a brief explanation). 
 
