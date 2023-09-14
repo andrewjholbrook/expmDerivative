@@ -19,5 +19,6 @@ Running the analyses of simulated data requires a number of steps.
 - `makeAnalysisXMLs.R` handles steps 4+5.
 
 `simulations/original` holds a slightly simplified copy of the main analysis XML to use as a template for generating analyses of simulated data.
+Note that all MCMC output settings, including filenames, are inherited directly from whatever is specified here.
 
 `simulations/condensed_original` holds versions of the XML in `simulations/original` with the state-spaces made smaller (these will not run, they are useful only as templates)
