@@ -35,7 +35,7 @@ for (i in 1:length(pibuss_xml)) {
       line[grep("code",line)+1] <- toupper(line[grep("code",line)+1])
     }
     if (has_alias) {
-      line[grep("alias",line)+1] <- toupper(line[grep("code",line)+1])
+      line[grep("state",line)+1] <- toupper(line[grep("state",line)+1])
     }
     template[l] <- paste0(line,collapse='"')
   }
