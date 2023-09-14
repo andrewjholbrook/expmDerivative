@@ -543,12 +543,39 @@ We thank you for the suggestion, but we would really like to keep 12-19 where th
 
 * Appendix D. Surrogate-trajectory Hamiltonian Monte Carlo is described quite detached from the work presented in the manuscript. Please consider describing it in the context of the work. 
 
+\newcommand{\Y}{\mathbf{Y}}
+\begin{reply}
+	We would prefer to keep this section the same, but we do relate the general statement to Bayesian inference in a footnote:
+	\begin{quote}
+		In the Bayesian inference context, we are typically
+		considering the posterior density function
+		$\pi(\ttheta):=p(\ttheta|\Y)$ for the parameter
+		$\ttheta\in\mathbb{R}^K$ given observed data $\Y$.
+	\end{quote}
+\end{reply}
+
 * For completeness, it is worth restating that Q is symmetric in Theorem 3. (Or is it not?) 
+
+\begin{reply}
+TBD	
+\end{reply}
 
 * Remark 2 (iii). "eigenvalue" should be "eigenvalues". 
 
+\begin{reply}
+Thanks for catching this!  We have amended accordingly. 
+\end{reply}
+
 * References (5) is a book, but there is no section or page.
 
+\begin{reply}
+	Again, thanks for catching this.  We have updated the citation to reference the specific chapter \cite{norris_1997}.
+\end{reply}
+
+
+\begin{reply}
+	Again, we wish to thank you for putting so much time and effort in to your review of our manuscript.  It is greatly appreciated.  We have addressed and implemented your suggestions to the best of our abilities and are confident that the manuscript is now much improved.
+\end{reply}
 
 %This paper presented an interesting framework for large-scale MCMC. It leverages the quantum speedup of Grover's searching algorithm to accelerate the treatment of multi-proposals in MCMC. However, an implementation of a quantum algorithm involves nontrivial steps, which need to be explained before this paper can be accepted.
 %
