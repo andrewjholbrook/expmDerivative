@@ -7,11 +7,6 @@ for (i in 1:length(pibuss_xml)) {
   # Simulate
   system(paste0("java  -Djava.library.path=",beaglepath," -jar ",beastjar," -working -overwrite ",pibuss_xml[i]))
   
-  # Get simulated data
-  seq_xml <- list.files("xml/piBUSS",full.names=TRUE)
-  seq_xml <- seq_xml[grepl("sequence",seq_xml)]
-  simulated_data <- scan(seq_xml,sep="\n",what=character(),blank.lines.skip=TRUE)
-  
   # Get XML template for analysis
   id <- basename(pibuss_xml[i])
   id <- strsplit(id,"_frac")[[1]][1]
@@ -22,6 +17,11 @@ for (i in 1:length(pibuss_xml)) {
     template_file <- template_file[grepl(gsub("nstates_","",id),template_file)]
   }
   template <- scan(template_file,sep="\n",what=character(),blank.lines.skip=FALSE)
+  
+  # Get simulated data
+  seq_xml <- list.files("xml/piBUSS",full.names=TRUE)
+  seq_xml <- seq_xml[grepl("sequence",seq_xml) & grepl(gsub(".xml","",basename(pibuss_xml[i])),seq_xml)]
+  simulated_data <- scan(seq_xml,sep="\n",what=character(),blank.lines.skip=TRUE)
   
   # Make datatype codes upper-case because they come out of piBUSS that way
   dt_open <- grep('<generalDataType id="sampleLoc.dataType">',template)
@@ -65,5 +65,6 @@ for (i in 1:length(pibuss_xml)) {
   }
   
   cat(template,sep="\n",file=paste0("xml/simulated_datasets_to_analyze/",basename(pibuss_xml[i])))
-  system(paste0("rm ",seq_xml))
 }
+
+system("rm xml/piBUSS/sequences*")

@@ -5208,7 +5208,7 @@
 		<operators idref="operators"/>
 
 		<!-- write log to screen                                                     -->
-		<log id="screenLog" logEvery="50">
+		<log id="screenLog" logEvery="10000">
 			<column label="Joint" dp="4" width="12">
 				<joint idref="joint"/>
 			</column>
@@ -5231,7 +5231,7 @@
 
 		<!-- write log to file                                                       -->
 		<!-- <log id="fileLog" logEvery="50000" fileName="covid10Mar_285plusNYC.Ed.log" overwrite="false"> -->
-		<log id="fileLog" logEvery="10000" fileName="output/covid10Mar_285plusNYC.Ed.log" overwrite="false">
+		<log id="fileLog" logEvery="10000" fileName="simulated_analysis.log" overwrite="false">
 			<joint idref="joint"/>
 			<prior idref="prior"/>
 			<likelihood idref="likelihood"/>
@@ -5261,7 +5261,7 @@
 			<sumStatistic idref="sampleLoc.nonZeroRates"/>
 		</log>
 -->
-		<log id="completeJumpHistory" logEvery="100000" fileName="output/covid10Mar_285plusNYC.Ed.jumpHistory.log">
+		<log id="completeJumpHistory" logEvery="100000" fileName="simulated_analysis.jumpHistory.log">
 			<completeHistoryLogger>
 				<markovJumpsTreeLikelihood idref="sampleLoc.anc.treeLikelihood"/>
 			</completeHistoryLogger>
@@ -5272,7 +5272,7 @@
 
 		<!-- write tree log to file                                                  -->
 
-		<logTree id="treeFileLog" logEvery="50000" nexusFormat="true" fileName="output/covid10Mar_285plusNYC.Ed.trees" sortTranslationTable="true">
+		<logTree id="treeFileLog" logEvery="50000" nexusFormat="true" fileName="simulated_analysis.trees" sortTranslationTable="true">
 			<treeModel idref="treeModel"/>
 			<markovJumpsTreeLikelihood idref="sampleLoc.anc.treeLikelihood"/>
 			<joint idref="joint"/>
