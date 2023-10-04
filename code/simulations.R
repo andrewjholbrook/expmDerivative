@@ -51,6 +51,12 @@ lg_lklhd <- function(Q,input,output,time) {
     tptStt[output[n]] <- 1
     lklhd <- lklhd + log(t(tptStt) %*% t(transMat) %*% ntlStt)
   }
+  # ntlStts <- matrix(0,N,S)
+  # tptStts <- matrix(0,N,S)
+  # ntlStts[cbind(1:N,input)] <- 1
+  # tptStts[cbind(1:N,output)] <- 1
+  # lklhd <- log(sum(diag(tptStts %*% t(transMat) %*% t(ntlStts))))
+  
   return(as.numeric(lklhd))
 }
 
@@ -118,17 +124,26 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
   for(i in 1:S) {
     Eii <- matrix(0,S,S)
     Eii[i,i] <- 1
+    # get diagonal contributions
+    if (method=="exact") {
+      diagContrib <- - blockwise(t,Q,Eii) * Q[i,i]
+    } else if (method=="approx") {
+      diagContrib <- - frstRdr(t,Q,Eii) * Q[i,i]
+    } else {
+      diagContrib <- - frstRdrCrrctd(t,Q,Eii) * Q[i,i]
+    }
+    
     for(j in 1:S) {
       if(i != j) {
         patty <- matrix(0,S,S)
         E <- matrix(0,S,S)
         E[i,j] <- 1
         if (method=="exact") {
-          patty <- patty + blockwise(t,Q,E) * Q[i,j] - blockwise(t,Q,Eii) * Q[i,i]
+          patty <- patty + blockwise(t,Q,E) * Q[i,j] + diagContrib
         } else if (method=="approx") {
-          patty <- patty + frstRdr(t,Q,E) * Q[i,j] - frstRdr(t,Q,Eii) * Q[i,i]
+          patty <- patty + frstRdr(t,Q,E) * Q[i,j] + diagContrib
         } else {
-          patty <- patty + frstRdrCrrctd(t,Q,E) * Q[i,j] - frstRdrCrrctd(t,Q,Eii) * Q[i,i]
+          patty <- patty + frstRdrCrrctd(t,Q,E) * Q[i,j] + diagContrib
         }
         for(n in 1:N) {
           ntlStt <- rep(0,S)
@@ -307,3 +322,41 @@ for(i in 1:maxIts) {
 plot(variable,type="l")
 abline(h=log(Q[5,1]),col="red")
 
+# approx
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+plot(hmcOut[[2]],type="l")
+chain <- hmcOut[[1]]
+
+variable <- rep(0,maxIts)
+for(i in 1:maxIts) {
+  variable[i] <- chain[[i]][5,1]
+}
+plot(variable,type="l")
+abline(h=log(Q[5,1]),col="red")
+
+# corrected
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+              method="corrected",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+plot(hmcOut[[2]],type="l")
+chain <- hmcOut[[1]]
+
+variable <- rep(0,maxIts)
+for(i in 1:maxIts) {
+  variable[i] <- chain[[i]][5,1]
+}
+plot(variable,type="l")
+abline(h=log(Q[5,1]),col="red")
+
+
+# scaling to higher numbers
+S <- 15
+maxIts <- 2000
+initialStates <- sample(x=1:S,size=5,replace=TRUE)
+Q       <- matrix(rexp(S^2),S,S)
+diag(Q) <- 0
+diag(Q) <- - rowSums(Q)
+output <- simCTMC(Q,initialStates,1)
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+plot(hmcOut[[2]],type="l")
