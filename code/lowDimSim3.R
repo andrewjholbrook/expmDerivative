@@ -303,60 +303,72 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 }
 
 # test
+set.seed(1)
 S <- 5
-maxIts <- 2000
-initialStates <- sample(x=1:S,size=5,replace=TRUE)
-Q       <- matrix(rexp(S^2),S,S)
+maxIts <- 100000
+initialStates <- sample(x=1:S,size=20,replace=TRUE)
+Q       <- matrix(exp(rnorm(S^2)),S,S)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 output <- simCTMC(Q,initialStates,1)
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
-             method="exact",maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
-plot(hmcOut[[2]],type="l")
-chain <- hmcOut[[1]]
-
-variable <- rep(0,maxIts)
-for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][5,1]
-}
-plot(variable,type="l")
-abline(h=log(Q[5,1]),col="red")
-
-# approx
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
-              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
-plot(hmcOut[[2]],type="l")
-chain <- hmcOut[[1]]
-
-variable <- rep(0,maxIts)
-for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][5,1]
-}
-plot(variable,type="l")
-abline(h=log(Q[5,1]),col="red")
+# hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+#              method="exact",maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+# plot(hmcOut[[2]],type="l")
+# chain <- hmcOut[[1]]
+# 
+# variable <- rep(0,maxIts)
+# for(i in 1:maxIts) {
+#   variable[i] <- chain[[i]][2,3]
+# }
+# plot(variable,type="l")
+# abline(h=log(Q[2,3]),col="red")
+# 
+# # approx
+# hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+#               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+# plot(hmcOut[[2]],type="l")
+# chain <- hmcOut[[1]]
+# 
+# variable <- rep(0,maxIts)
+# for(i in 1:maxIts) {
+#   variable[i] <- chain[[i]][5,1]
+# }
+# plot(variable,type="l")
+# abline(h=log(Q[5,1]),col="red")
 
 # corrected
 hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
               method="corrected",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
-plot(hmcOut[[2]],type="l")
-chain <- hmcOut[[1]]
-
-variable <- rep(0,maxIts)
-for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][5,1]
-}
-plot(variable,type="l")
-abline(h=log(Q[5,1]),col="red")
+saveRDS(hmcOut,file="data/lowDimSimCorrected.rds")
 
 
-# scaling to higher numbers
-S <- 15
-maxIts <- 2000
-initialStates <- sample(x=1:S,size=5,replace=TRUE)
-Q       <- matrix(rexp(S^2),S,S)
-diag(Q) <- 0
-diag(Q) <- - rowSums(Q)
-output <- simCTMC(Q,initialStates,1)
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
-              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
-plot(hmcOut[[2]],type="l")
+# plot(hmcOut[[2]],type="l")
+# chain <- hmcOut[[1]]
+# 
+# variable <- rep(0,maxIts)
+# for(i in 1:maxIts) {
+#   variable[i] <- chain[[i]][5,1]
+# }
+# plot(variable,type="l")
+# abline(h=log(Q[5,1]),col="red")
+
+
+# # scaling to higher numbers
+# S <- 15
+# maxIts <- 2000
+# initialStates <- sample(x=1:S,size=5,replace=TRUE)
+# Q       <- matrix(rexp(S^2),S,S)
+# diag(Q) <- 0
+# diag(Q) <- - rowSums(Q)
+# output <- simCTMC(Q,initialStates,1)
+# hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+#               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+# plot(hmcOut[[2]],type="l")
+# chain <- hmcOut[[1]]
+# 
+# variable <- rep(0,maxIts)
+# for(i in 1:maxIts) {
+#   variable[i] <- chain[[i]][2,1]
+# }
+# plot(variable,type="l")
+# abline(h=log(Q[2,1]),col="red")
