@@ -93,11 +93,17 @@ frstRdrCrrctd <- function(t,Q,E) {
 }
 
 lg_prr <- function(Q) {
-  return(0) # TODO: add bayesian bridge log prior
+  priors <- dnorm(log(Q),log = TRUE)
+  diag(priors) <- 0
+  return(sum(priors)) # TODO: add bayesian bridge log prior
 }
 
 lg_prr_grd <- function(Q) {
-  return(0) # TODO: add bayesian bridge log prior gradient
+  # start with gaussian prior
+  gradient <- - log(Q)
+  diag(gradient) <- 0
+  
+  return(gradient) # TODO: add bayesian bridge log prior gradient
 }
 
 lg_lklhd_grd <- function(t,Q,input,output,method) {
@@ -118,11 +124,11 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
         E <- matrix(0,S,S)
         E[i,j] <- 1
         if (method=="exact") {
-          patty <- patty + blockwise(t,Q,E) * Q[i,j] + blockwise(t,Q,Eii) * Q[i,i]
+          patty <- patty + blockwise(t,Q,E) * Q[i,j] - blockwise(t,Q,Eii) * Q[i,i]
         } else if (method=="approx") {
-          patty <- patty + frstRdr(t,Q,E) * Q[i,j] + frstRdr(t,Q,Eii) * Q[i,i]
+          patty <- patty + frstRdr(t,Q,E) * Q[i,j] - frstRdr(t,Q,Eii) * Q[i,i]
         } else {
-          patty <- patty + frstRdrCrrctd(t,Q,E) * Q[i,j] + frstRdrCrrctd(t,Q,Eii) * Q[i,i]
+          patty <- patty + frstRdrCrrctd(t,Q,E) * Q[i,j] - frstRdrCrrctd(t,Q,Eii) * Q[i,i]
         }
         for(n in 1:N) {
           ntlStt <- rep(0,S)
@@ -197,54 +203,65 @@ grad <- function(t,Q,input,output,method) {
 
 delta <- function(n) {
   #return( min(0.01,n^(-0.5)) )
-  return(n^(-0.5))
+  return(n^(-0.1))
+}
+
+lg_Q_to_Q <- function(lg_Q) {
+  Q <- exp(lg_Q)
+  diag(Q) <- 0
+  diag(Q) <- - rowSums(Q)
+  return(Q)
 }
 
 hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
-                targetAccept=0.8) {
+                targetAccept=0.8, Q_init=NULL) {
   
-  Qs <- list()
-  Qs[[1]] <- matrix(rexp(S^2),S,S)
-  diag(Qs[[1]]) <- 0
-  diag(Qs[[1]]) <- - rowSums(Qs[[1]])
+  lg_Q <- list()
+  if(is.null(Q_init)) {
+    Q_init <- matrix(rexp(S^2),S,S)
+    diag(Q_init) <- 0
+    diag(Q_init) <- - rowSums(Q_init) 
+  }
+  lg_Q[[1]] <- log(Q_init)
+  diag(lg_Q[[1]]) <- 0
 
   totalAccept <- rep(0,maxIts)
   Acceptances = 0 # total acceptances within adaptation run (<= SampBound)
   SampBound = 50   # current total samples before adapting radius
   SampCount = 0   # number of samples collected (adapt when = SampBound)
   
-  currentU  <- - target(Qs[[1]],input,output,t)
+  currentU  <- - target(Q_init,input,output,t)
   log_probs <- rep(0,maxIts)
   log_probs[1] <- currentU
   
   for (i in 2:maxIts) {
-    proposalState    <- Qs[[i-1]]
+    proposalState    <- lg_Q[[i-1]]
     momentum         <- matrix(rnorm(S^2),S,S)
     diag(momentum)   <- 0
     currentK         <- sum(momentum^2)/2
     
     # leapfrog steps
-    momentum <- momentum + 0.5 * stepSize * grad(t,proposalState,input,output,method)
+    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method)
     for (l in 1:L) {
       proposalState <- proposalState + stepSize * momentum
-      diag(proposalState) <- 0
-      diag(proposalState) <- - rowSums(proposalState) 
-      if (l!=L) momentum <- momentum + stepSize * grad(t,proposalState,input,output,method)
+      # diag(proposalState) <- 0
+      # diag(proposalState) <- - rowSums(proposalState) 
+      if (l!=L) momentum <- momentum + stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method)
     }
-    momentum <- momentum + 0.5 * stepSize * grad(t,proposalState,input,output,method)
+    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method)
     
     # quantities for accept/reject
-    proposedU = - target(proposalState,input,output,t)
+    proposedU = - target(lg_Q_to_Q(proposalState),input,output,t)
     proposedK = sum(momentum^2)/2
     u <- runif(1)
     
     if (log(u) < currentU + currentK - proposedU - proposedK) {
-      Qs[[i]]     <- proposalState
+      lg_Q[[i]]     <- proposalState
       currentU    <- proposedU
       totalAccept[i] <- 1
       Acceptances = Acceptances + 1
     } else {
-      Qs[[i]] <- Qs[[i-1]]
+      lg_Q[[i]] <- lg_Q[[i-1]]
     }
     
     SampCount <- SampCount + 1
@@ -267,26 +284,26 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
   }
   
   cat("Acceptance rate: ", sum(totalAccept)/(maxIts-1))
-  return(list(Qs,-log_probs))
+  return(list(samples=lg_Q,log_probs=-log_probs))
 }
 
 # test
 S <- 5
-maxIts <- 1000
-initialStates <- sample(x=1:S,size=100,replace=TRUE)
+maxIts <- 2000
+initialStates <- sample(x=1:S,size=5,replace=TRUE)
 Q       <- matrix(rexp(S^2),S,S)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 output <- simCTMC(Q,initialStates,1)
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.005,
-             method="exact",maxIts = maxIts, targetAccept = 0.65)
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
+             method="exact",maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
 plot(hmcOut[[2]],type="l")
 chain <- hmcOut[[1]]
 
 variable <- rep(0,maxIts)
 for(i in 1:maxIts) {
-  variable[i] <- log(chain[[i]][2,1])
+  variable[i] <- chain[[i]][5,1]
 }
 plot(variable,type="l")
-abline(h=log(Q[2,1]),col="red")
+abline(h=log(Q[5,1]),col="red")
 
