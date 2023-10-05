@@ -77,7 +77,9 @@ gg <- ggplot(df,aes(x=value,fill=Gradient,color=Gradient)) +
   #ylim(c(0,0.5)) +
   coord_cartesian(ylim=c(0,0.5),xlim=c(0,25)) +
   xlab("Value") + ylab("Density") + #+ ggtitle("Empirical posterior distributions") +
-  theme_minimal()
+  theme_minimal() +
+  theme(legend.margin=margin(0,0,0,0),
+        legend.box.spacing = unit(5, "pt"))
 gg
 
 ggsave(filename="figures/lowDimVis.pdf",plot=gg,device="pdf",width = 7,height=6)
