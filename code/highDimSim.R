@@ -320,7 +320,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     #taus[i] <- nu^(-4)
     taus[i] <- 1/sqrt(rgamma(n=1,
                       shape=1+(S*(S-1))*0.5,
-                      rate=2+sum((lg_Q[[i]])^(2))/2) ) 
+                      rate=2+sum(abs(lg_Q[[i]])^(2),na.rm = TRUE)/2) ) 
     currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i])
     
     if (i %% 100 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
