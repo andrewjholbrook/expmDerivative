@@ -317,12 +317,13 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     # nu <- rgamma(n=1,
     #              shape=1+(S*(S-1))*4,
     #              rate=2+sum(abs(lg_Q[[i]])^(1/4)))
+    #taus[i] <- nu^(-4)
     taus[i] <- 1/sqrt(rgamma(n=1,
                       shape=1+(S*(S-1))*0.5,
-                      rate=2+sum(abs(lg_Q[[i]])^(2))) ) #nu^(-4)
+                      rate=2+sum((lg_Q[[i]])^(2))/2) ) 
     currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i])
     
-    if (i %% 10 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
+    if (i %% 100 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
   }
   
   cat("Acceptance rate: ", sum(totalAccept)/(maxIts-1))
@@ -332,7 +333,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 # test
 #set.seed(1)
 S <- 5
-maxIts <- 2000
+maxIts <- 10000
 initialStates <- sample(x=1:S,size=20,replace=TRUE)
 Q       <- matrix(rnorm(S^2,sd=1),S,S)
 Q       <- exp(Q)
@@ -349,10 +350,10 @@ chain <- hmcOut[[1]]
 
 variable <- rep(0,maxIts)
 for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][2,1]
+  variable[i] <- chain[[i]][3,1]
 }
 plot(variable,type="l")
-abline(h=log(Q[2,1]),col="red")
+abline(h=log(Q[3,1]),col="red")
 
 plot(hmcOut[[3]][2:maxIts])
 # 
