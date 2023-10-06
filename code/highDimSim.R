@@ -107,20 +107,20 @@ frstRdrCrrctd <- function(t,Q,E) {
 }
 
 lg_prr <- function(Q,tau) {
-  priors <- - abs(log(Q)/tau)^(1/4) #dnorm(log(Q),log = TRUE)
+  priors <- dnorm(log(Q),sd=tau,log = TRUE) #- abs(log(Q)/tau)^(1/4) #dnorm(log(Q),log = TRUE)
   diag(priors) <- 0
   return(sum(priors)) # TODO: add bayesian bridge log prior
 }
 
 lg_prr_grd <- function(Q,tau) {
   # start with gaussian prior
-  # gradient <- - log(Q)
-  # diag(gradient) <- 0
+  gradient <- - log(Q)/tau^2
+  diag(gradient) <- 0
   
   # BB fixing a = 0.25
-  lg_Q <- log(Q)
-  gradient <- - lg_Q / ((4*tau^2) * abs(lg_Q/tau)^(7/4))
-  diag(gradient) <- 0
+  # lg_Q <- log(Q)
+  # gradient <- - lg_Q / ((4*tau^2) * abs(lg_Q/tau)^(7/4))
+  # diag(gradient) <- 0
 
   return(gradient) 
 }
@@ -226,13 +226,11 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
 # HMC
 target <- function(Q,input,output,time,tau) {
   out <- lg_lklhd(Q,input,output,time) + lg_prr(Q,tau)
-  browser()
   return(out)
 }
 
 grad <- function(t,Q,input,output,method,tau) {
   out <- lg_lklhd_grd(t,Q,input,output,method) + lg_prr_grd(Q,tau)
-  browser()
   return(out)
 }
 
@@ -295,7 +293,6 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     
     if (log(u) < currentU + currentK - proposedU - proposedK) {
       lg_Q[[i]]     <- proposalState
-      currentU    <- proposedU
       totalAccept[i] <- 1
       Acceptances = Acceptances + 1
     } else {
@@ -317,10 +314,13 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
       Acceptances <- 0
     }
     
-    nu <- rgamma(n=1,
-                 shape=1+(S*(S-1))*4,
-                 rate=2+sum(abs(lg_Q[[i]])^(1/4)))
-    taus[i] <- nu^(-4)
+    # nu <- rgamma(n=1,
+    #              shape=1+(S*(S-1))*4,
+    #              rate=2+sum(abs(lg_Q[[i]])^(1/4)))
+    taus[i] <- 1/sqrt(rgamma(n=1,
+                      shape=1+(S*(S-1))*0.5,
+                      rate=2+sum(abs(lg_Q[[i]])^(2))) ) #nu^(-4)
+    currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i])
     
     if (i %% 10 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
   }
@@ -330,7 +330,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 }
 
 # test
-set.seed(1)
+#set.seed(1)
 S <- 5
 maxIts <- 2000
 initialStates <- sample(x=1:S,size=20,replace=TRUE)
@@ -340,7 +340,7 @@ diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 output <- simCTMC(Q,initialStates,1)
 
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.001,
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
