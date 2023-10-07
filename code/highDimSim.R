@@ -106,21 +106,21 @@ frstRdrCrrctd <- function(t,Q,E) {
   return(out)
 }
 
-lg_prr <- function(Q,tau) {
-  priors <- dnorm(log(Q),sd=tau,log = TRUE) #- abs(log(Q)/tau)^(1/4) #dnorm(log(Q),log = TRUE)
+lg_prr <- function(Q,tau,alpha) {
+  priors <- - abs(log(Q)/tau)^alpha #dnorm(log(Q),log = TRUE)
   diag(priors) <- 0
   return(sum(priors)) # TODO: add bayesian bridge log prior
 }
 
-lg_prr_grd <- function(Q,tau) {
+lg_prr_grd <- function(Q,tau,alpha) {
   # start with gaussian prior
-  gradient <- - log(Q)/tau^2
-  diag(gradient) <- 0
+  # gradient <- - log(Q)/tau^2
+  # diag(gradient) <- 0
   
   # BB fixing a = 0.25
-  # lg_Q <- log(Q)
-  # gradient <- - lg_Q / ((4*tau^2) * abs(lg_Q/tau)^(7/4))
-  # diag(gradient) <- 0
+  lg_Q <- log(Q)
+  gradient <- -  alpha * lg_Q / (tau^2) * abs(lg_Q/tau)^(alpha-2)
+  diag(gradient) <- 0
 
   return(gradient) 
 }
@@ -224,13 +224,13 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
 
 ##########################################################
 # HMC
-target <- function(Q,input,output,time,tau) {
-  out <- lg_lklhd(Q,input,output,time) + lg_prr(Q,tau)
+target <- function(Q,input,output,time,tau,alpha) {
+  out <- lg_lklhd(Q,input,output,time) + lg_prr(Q,tau,alpha)
   return(out)
 }
 
-grad <- function(t,Q,input,output,method,tau) {
-  out <- lg_lklhd_grd(t,Q,input,output,method) + lg_prr_grd(Q,tau)
+grad <- function(t,Q,input,output,method,tau,alpha) {
+  out <- lg_lklhd_grd(t,Q,input,output,method) + lg_prr_grd(Q,tau,alpha)
   return(out)
 }
 
@@ -247,7 +247,7 @@ lg_Q_to_Q <- function(lg_Q) {
 }
 
 hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
-                targetAccept=0.8, Q_init=NULL) {
+                targetAccept=0.8, Q_init=NULL, alpha=2) {
   
   lg_Q <- list()
   if(is.null(Q_init)) {
@@ -266,7 +266,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
   SampBound = 50   # current total samples before adapting radius
   SampCount = 0   # number of samples collected (adapt when = SampBound)
   
-  currentU  <- - target(Q_init,input,output,t,taus[1])
+  currentU  <- - target(Q_init,input,output,t,taus[1],alpha)
   log_probs <- rep(0,maxIts)
   log_probs[1] <- currentU
   
@@ -277,17 +277,17 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     currentK         <- sum(momentum^2)/2
     
     # leapfrog steps
-    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1])
+    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1],alpha)
     for (l in 1:L) {
       proposalState <- proposalState + stepSize * momentum
       # diag(proposalState) <- 0
       # diag(proposalState) <- - rowSums(proposalState) 
-      if (l!=L) momentum <- momentum + stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1])
+      if (l!=L) momentum <- momentum + stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1],alpha)
     }
-    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1])
+    momentum <- momentum + 0.5 * stepSize * grad(t,lg_Q_to_Q(proposalState),input,output,method,taus[i-1],alpha)
     
     # quantities for accept/reject
-    proposedU = - target(lg_Q_to_Q(proposalState),input,output,t,taus[i-1])
+    proposedU = - target(lg_Q_to_Q(proposalState),input,output,t,taus[i-1],alpha)
     proposedK = sum(momentum^2)/2
     u <- runif(1)
     
@@ -318,10 +318,11 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     #              shape=1+(S*(S-1))*4,
     #              rate=2+sum(abs(lg_Q[[i]])^(1/4)))
     #taus[i] <- nu^(-4)
-    taus[i] <- 1/sqrt(rgamma(n=1,
-                      shape=1+(S*(S-1))*0.5,
-                      rate=2+sum(abs(lg_Q[[i]])^(2),na.rm = TRUE)/2) ) 
-    currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i])
+    taus[i] <-rgamma(n=1,
+                      shape=1+(S*(S-1))/alpha,
+                      rate=2+sum(abs(lg_Q[[i]])^(alpha),na.rm = TRUE))
+    taus[i] <- taus[i]^(-1/alpha)
+    currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i],alpha)
     
     if (i %% 100 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
   }
@@ -331,8 +332,8 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 }
 
 # test
-#set.seed(1)
-S <- 5
+set.seed(1)
+S <- 20
 maxIts <- 10000
 initialStates <- sample(x=1:S,size=20,replace=TRUE)
 Q       <- matrix(rnorm(S^2,sd=1),S,S)
@@ -341,8 +342,9 @@ diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 output <- simCTMC(Q,initialStates,1)
 
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
-              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q)
+hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.01,
+              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q,
+              alpha=0.25)
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
 plot(hmcOut[[2]],type="l")
