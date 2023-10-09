@@ -6,6 +6,7 @@ setwd("~/expmDerivative/")
 # 3) 3 state space sizes: 15, 30, 45
 
 library(expm)
+library(profvis)
 
 ################################################################################
 # code for simulating data
@@ -36,25 +37,27 @@ simCTMC <- function(Q, initialStates, time) {
 # simCTMC(Q,initialStates,1)
 
 lg_lklhd <- function(Q,input,output,time,etQ=NULL) {
-  if(! length(input)==length(output)) stop("Input and output must have same length.")
+  #if(! length(input)==length(output)) stop("Input and output must have same length.")
   S <- dim(Q)[1]
-  if(any(input>S)) stop("Input states cannot be larger than state space.")
-  if(any(output>S)) stop("Output states cannot be larger than state space.")
-  N <- length(input)
+  #if(any(input>S)) stop("Input states cannot be larger than state space.")
+  #if(any(output>S)) stop("Output states cannot be larger than state space.")
+  N <- dim(input)[1]
   if(is.null(etQ)) {
     transMat <- expm::expm(time*Q)
   } else {
     transMat <- etQ
   }
 
-  lklhd <- 0
-  for(n in 1:N) {
-    ntlStt <- rep(0,S)
-    tptStt <- rep(0,S)
-    ntlStt[input[n]] <- 1
-    tptStt[output[n]] <- 1
-    lklhd <- lklhd + log(t(tptStt) %*% t(transMat) %*% ntlStt)
-  }
+  #lklhd <- 0
+  #transMat <- t(transMat)
+  # for(n in 1:N) {
+  #   ntlStt <- rep(0,S)
+  #   tptStt <- rep(0,S)
+  #   ntlStt[input[n]] <- 1
+  #   tptStt[output[n]] <- 1
+   # lklhd <- lklhd + log(t(tptStt) %*% transMat %*% ntlStt)
+  lklhd <- log(sum(diag(input%*%transMat%*%output)))
+  # }
   # ntlStts <- matrix(0,N,S)
   # tptStts <- matrix(0,N,S)
   # ntlStts[cbind(1:N,input)] <- 1
@@ -72,7 +75,7 @@ lg_lklhd <- function(Q,input,output,time,etQ=NULL) {
 # initialStates <- sample(x=1:S,size=100,replace=TRUE)
 # output <- simCTMC(Q,initialStates,1)
 # 
-# ll <- lg_lklhd(Q,initialStates,output,1)
+# ll <- lg_lklhd(Q,initialStates,t(output),1)
 # ll
 
 blockwise <- function(t,Q,E) {
@@ -126,31 +129,33 @@ lg_prr_grd <- function(Q,tau,alpha) {
 }
 
 lg_lklhd_grd <- function(t,Q,input,output,method) {
-  if(! length(input)==length(output)) stop("Input and output must have same length.")
+  #if(! dim(input)[[==length(output)) stop("Input and output must have same length.")
   S <- dim(Q)[1]
-  if(any(input>S)) stop("Input states cannot be larger than state space.")
-  if(any(output>S)) stop("Output states cannot be larger than state space.")
-  N <- length(input)
+  #if(any(input>S)) stop("Input states cannot be larger than state space.")
+  #if(any(output>S)) stop("Output states cannot be larger than state space.")
+  N <- dim(input)[[1]]
   if(! method %in% c("exact","approx","corrected")) stop("Use prescribed gradient method!")
-  gradient <- matrix(0,S,S)
+  gradient <- Q * 0
+  E <- Q*0
+  patty <- Q*0
   
   for(i in 1:S) {
-    Eii <- matrix(0,S,S)
-    Eii[i,i] <- 1
+    E <- E*0
+    E[i,i] <- 1
     # get diagonal contributions
     if (method=="exact") {
-      diagContrib <- - blockwise(t,Q,Eii) * Q[i,i]
+      diagContrib <- - blockwise(t,Q,E) * Q[i,i]
     } else if (method=="approx") {
       etQ <- expm::expm(Q*t)
-      diagContrib <- - frstRdr(t,Q,Eii,etQ) * Q[i,i]
+      diagContrib <- - frstRdr(t,Q,E,etQ) * Q[i,i]
     } else {
-      diagContrib <- - frstRdrCrrctd(t,Q,Eii) * Q[i,i]
-    }
-    
+      diagContrib <- - frstRdrCrrctd(t,Q,E) * Q[i,i]
+    } 
+
     for(j in 1:S) {
       if(i != j) {
-        patty <- matrix(0,S,S)
-        E <- matrix(0,S,S)
+        patty <- patty * 0
+        E <- E * 0
         E[i,j] <- 1
         if (method=="exact") {
           patty <- patty + blockwise(t,Q,E) * Q[i,j] + diagContrib
@@ -159,13 +164,14 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
         } else {
           patty <- patty + frstRdrCrrctd(t,Q,E) * Q[i,j] + diagContrib
         }
-        for(n in 1:N) {
-          ntlStt <- rep(0,S)
-          tptStt <- rep(0,S)
-          ntlStt[input[n]] <- 1
-          tptStt[output[n]] <- 1
-          gradient[i,j] <- gradient[i,j] + t(tptStt) %*% t(patty) %*% ntlStt
-        }
+        #patty <- t(patty)
+        #for(n in 1:N) {
+          # ntlStt <- rep(0,S)
+          # tptStt <- rep(0,S)
+          # ntlStt[input[n]] <- 1
+          # tptStt[output[n]] <- 1
+          gradient[i,j] <- gradient[i,j] + sum(diag(input %*% patty %*% output))   # gradient[i,j] + t(tptStt) %*% patty %*% ntlStt
+          #}
       }
     }
   }
@@ -333,18 +339,27 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 
 # test
 set.seed(1)
-S <- 20
+S <- 5
 maxIts <- 10000
-initialStates <- sample(x=1:S,size=20,replace=TRUE)
+N <- 100
+initialStates <- sample(x=1:S,size=N,replace=TRUE)
 Q       <- matrix(rnorm(S^2,sd=1),S,S)
 Q       <- exp(Q)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
 output <- simCTMC(Q,initialStates,1)
 
-hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.01,
+ntlStts <- matrix(0,N,S)
+tptStts <- matrix(0,N,S)
+ntlStts[cbind(1:N,initialStates)] <- 1
+tptStts[cbind(1:N,output)] <- 1
+tptStts <- t(tptStts)
+
+#profvis({
+hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.01,
               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q,
-              alpha=0.25)
+              alpha=2)
+#})
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
 plot(hmcOut[[2]],type="l")
@@ -352,12 +367,12 @@ chain <- hmcOut[[1]]
 
 variable <- rep(0,maxIts)
 for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][3,1]
+  variable[i] <- chain[[i]][5,1]
 }
 plot(variable,type="l")
-abline(h=log(Q[3,1]),col="red")
+abline(h=log(Q[5,1]),col="red")
 
-plot(hmcOut[[3]][2:maxIts])
+plot(hmcOut[[3]][2:maxIts],type="l")
 # 
 # # corrected
 # hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
