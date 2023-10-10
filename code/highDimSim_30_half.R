@@ -341,6 +341,22 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
   return(list(log_probs=-log_probs,taus=taus))
 }
 
+sim_bridge <- function(n=100,tau=1,alpha=1) {
+  # gibbs sampler for sampling bridge variates
+  omegas <- (1+alpha)/2*rgamma(n=n,shape=2+1/alpha,rate=1) + (1-alpha)/2*rgamma(n=n,shape=1+1/alpha,rate=1)
+  betas  <- runif(n=n,min=-0.1,max=0.1) #rnorm(n=n,sd=1)
+  us     <- runif(n=n, max=1-abs(betas/tau)*omegas^(-1/alpha))
+  
+  #bs     <- 1/tau * (1-us) * omegas ^
+  for(i in 1:1000) {
+    omegas <- (1+alpha)/2*rgamma(n=n,shape=2+1/alpha,rate=1) + (1-alpha)/2*rgamma(n=n,shape=1+1/alpha,rate=1)
+    bs     <-  1/tau * (1-us) * omegas^(1/alpha)
+    betas  <- runif(n=n,min=-bs,max=bs)
+    us     <- runif(n=n, max=1-abs(betas/tau)*omegas^(-1/alpha))
+  }
+  return(betas)
+}
+
 # test
 set.seed(1)
 S <- 30
