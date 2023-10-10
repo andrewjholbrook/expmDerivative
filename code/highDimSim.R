@@ -7,6 +7,7 @@ setwd("~/expmDerivative/")
 
 library(expm)
 library(profvis)
+library(coda)
 
 ################################################################################
 # code for simulating data
@@ -48,16 +49,16 @@ lg_lklhd <- function(Q,input,output,time,etQ=NULL) {
     transMat <- etQ
   }
 
-  #lklhd <- 0
+  lklhd <- 0
   #transMat <- t(transMat)
-  # for(n in 1:N) {
+  for(n in 1:N) {
   #   ntlStt <- rep(0,S)
   #   tptStt <- rep(0,S)
   #   ntlStt[input[n]] <- 1
   #   tptStt[output[n]] <- 1
    # lklhd <- lklhd + log(t(tptStt) %*% transMat %*% ntlStt)
-  lklhd <- log(sum(diag(input%*%transMat%*%output)))
-  # }
+  lklhd <- lklhd + log(input[n,] %*% transMat %*% output[,n])
+  }
   # ntlStts <- matrix(0,N,S)
   # tptStts <- matrix(0,N,S)
   # ntlStts[cbind(1:N,input)] <- 1
@@ -136,8 +137,8 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
   N <- dim(input)[[1]]
   if(! method %in% c("exact","approx","corrected")) stop("Use prescribed gradient method!")
   gradient <- Q * 0
-  E <- Q*0
-  patty <- Q*0
+  E <- Q * 0
+  patty <- Q * 0
   
   for(i in 1:S) {
     E <- E*0
@@ -340,7 +341,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 # test
 set.seed(1)
 S <- 5
-maxIts <- 10000
+maxIts <- 100000
 N <- 100
 initialStates <- sample(x=1:S,size=N,replace=TRUE)
 Q       <- matrix(rnorm(S^2,sd=1),S,S)
@@ -363,16 +364,30 @@ hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.01,
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
 plot(hmcOut[[2]],type="l")
+effectiveSize(hmcOut[[2]]) # 11865.41
+
 chain <- hmcOut[[1]]
 
 variable <- rep(0,maxIts)
 for(i in 1:maxIts) {
-  variable[i] <- chain[[i]][5,1]
+  variable[i] <- chain[[i]][2,1]
 }
 plot(variable,type="l")
-abline(h=log(Q[5,1]),col="red")
+abline(h=log(Q[2,1]),col="red")
+effectiveSize(variable) #231.2789
+
+variable <- rep(0,maxIts)
+for(i in 1:maxIts) {
+  variable[i] <- chain[[i]][5,3]
+}
+plot(variable,type="l")
+abline(h=log(Q[5,3]),col="red")
+effectiveSize(variable) #301
 
 plot(hmcOut[[3]][2:maxIts],type="l")
+abline(h=1*sqrt(2),col="red")
+effectiveSize(hmcOut[[3]][2:maxIts]) # 79
+
 # 
 # # corrected
 # hmcOut <- hmc(t=1,S=S,input=initialStates,output=output,stepSize=0.1,
