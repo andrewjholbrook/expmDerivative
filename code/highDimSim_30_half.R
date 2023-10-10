@@ -256,14 +256,17 @@ lg_Q_to_Q <- function(lg_Q) {
 hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
                 targetAccept=0.8, Q_init=NULL, alpha=2) {
   
-  lg_Q <- list()
+  #lg_Q <- list()
   if(is.null(Q_init)) {
     Q_init <- matrix(rexp(S^2),S,S)
     diag(Q_init) <- 0
     diag(Q_init) <- - rowSums(Q_init) 
   }
-  lg_Q[[1]] <- log(Q_init)
-  diag(lg_Q[[1]]) <- 0
+  lg_Q <- log(Q_init)
+  diag(lg_Q) <- 0
+  cat(lg_Q, "\n", file="data/highDimSim_30_half.txt",append=TRUE)
+  
+  #diag(lg_Q) <- 0
   
   taus <- rep(0,maxIts) # global parameters on bayesian bridge prior
   taus[1] <- 1 #0.0001 # tau^(-0.25) ~ Gamma(shape=1,rate=2) prior
@@ -278,7 +281,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
   log_probs[1] <- currentU
   
   for (i in 2:maxIts) {
-    proposalState    <- lg_Q[[i-1]]
+    proposalState    <- lg_Q
     momentum         <- matrix(rnorm(S^2),S,S)
     diag(momentum)   <- 0
     currentK         <- sum(momentum^2)/2
@@ -299,12 +302,10 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     u <- runif(1)
     
     if (log(u) < currentU + currentK - proposedU - proposedK) {
-      lg_Q[[i]]     <- proposalState
+      lg_Q    <- proposalState
       totalAccept[i] <- 1
       Acceptances = Acceptances + 1
-    } else {
-      lg_Q[[i]] <- lg_Q[[i-1]]
-    }
+    } 
     
     SampCount <- SampCount + 1
     log_probs[i] <- currentU
@@ -327,24 +328,28 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
     #taus[i] <- nu^(-4)
     taus[i] <-rgamma(n=1,
                       shape=1+(S*(S-1))/alpha,
-                      rate=2+sum(abs(lg_Q[[i]])^(alpha),na.rm = TRUE))
+                      rate=2+sum(abs(lg_Q)^(alpha),na.rm = TRUE))
     taus[i] <- taus[i]^(-1/alpha)
-    currentU <- - target(lg_Q_to_Q(lg_Q[[i]]),input,output,t,taus[i],alpha)
+    currentU <- - target(lg_Q_to_Q(lg_Q),input,output,t,taus[i],alpha)
     
     if (i %% 100 == 0) cat("Iteration ", i,"\n","stepSize: ", stepSize, "\n") 
+    
+    if(i %% 100 == 0) cat(lg_Q, "\n", file="data/highDimSim_30_half.txt",append=TRUE)
   }
   
   cat("Acceptance rate: ", sum(totalAccept)/(maxIts-1))
-  return(list(samples=lg_Q,log_probs=-log_probs,taus=taus))
+  return(list(log_probs=-log_probs,taus=taus))
 }
 
 # test
 set.seed(1)
-S <- 10
+S <- 30
 maxIts <- 1000000
 N <- 100
+entries <- sim_bridge(n=S^2,tau=1,alpha=0.5) 
+entries <- entries / max(abs(entries))
 initialStates <- sample(x=1:S,size=N,replace=TRUE)
-Q       <- matrix(rnorm(S^2,sd=1),S,S)
+Q       <- matrix(entries,S,S)
 Q       <- exp(Q)
 diag(Q) <- 0
 diag(Q) <- - rowSums(Q)
@@ -357,9 +362,9 @@ tptStts[cbind(1:N,output)] <- 1
 tptStts <- t(tptStts)
 
 #profvis({
-hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.01,
+hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.001,
               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q,
-              alpha=2)
+              alpha=0.5)
 #})
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
