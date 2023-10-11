@@ -140,6 +140,8 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
   E <- Q * 0
   patty <- Q * 0
   
+  outIn <- output %*% input
+  
   for(i in 1:S) {
     E <- E*0
     E[i,i] <- 1
@@ -152,7 +154,7 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
     } else {
       diagContrib <- - frstRdrCrrctd(t,Q,E) * Q[i,i]
     } 
-
+    
     for(j in 1:S) {
       if(i != j) {
         patty <- patty * 0
@@ -167,12 +169,12 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
         }
         #patty <- t(patty)
         #for(n in 1:N) {
-          # ntlStt <- rep(0,S)
-          # tptStt <- rep(0,S)
-          # ntlStt[input[n]] <- 1
-          # tptStt[output[n]] <- 1
-          gradient[i,j] <- gradient[i,j] + sum(diag(input %*% patty %*% output))   # gradient[i,j] + t(tptStt) %*% patty %*% ntlStt
-          #}
+        # ntlStt <- rep(0,S)
+        # tptStt <- rep(0,S)
+        # ntlStt[input[n]] <- 1
+        # tptStt[output[n]] <- 1
+        gradient[i,j] <- gradient[i,j] + sum(patty*outIn)   # gradient[i,j] + t(tptStt) %*% patty %*% ntlStt
+        #}
       }
     }
   }
@@ -186,7 +188,7 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
   diag(gradient) <- 0
   
   return(gradient)
- }
+}
 
 # test
 # S <- 5

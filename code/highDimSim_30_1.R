@@ -140,6 +140,8 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
   E <- Q * 0
   patty <- Q * 0
   
+  outIn <- output %*% input
+  
   for(i in 1:S) {
     E <- E*0
     E[i,i] <- 1
@@ -171,7 +173,7 @@ lg_lklhd_grd <- function(t,Q,input,output,method) {
           # tptStt <- rep(0,S)
           # ntlStt[input[n]] <- 1
           # tptStt[output[n]] <- 1
-          gradient[i,j] <- gradient[i,j] + sum(diag(input %*% patty %*% output))   # gradient[i,j] + t(tptStt) %*% patty %*% ntlStt
+          gradient[i,j] <- gradient[i,j] + sum(patty*outIn)   # gradient[i,j] + t(tptStt) %*% patty %*% ntlStt
           #}
       }
     }
@@ -362,9 +364,11 @@ tptStts[cbind(1:N,output)] <- 1
 tptStts <- t(tptStts)
 
 #profvis({
+#ptm <- proc.time()
 hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.001,
               method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q,
               alpha=1)
+#time <- proc.time() - ptm #85
 #})
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
 
