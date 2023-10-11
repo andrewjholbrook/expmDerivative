@@ -345,7 +345,7 @@ hmc <- function(t,S,input,output,method,stepSize=0.01,L=20,maxIts=1000,
 set.seed(1)
 S <- 20
 maxIts <- 1000000
-N <- 100
+N <- 300
 initialStates <- sample(x=1:S,size=N,replace=TRUE)
 entries <- rnorm(S^2,sd=1)
 entries <- entries / max(abs(entries))

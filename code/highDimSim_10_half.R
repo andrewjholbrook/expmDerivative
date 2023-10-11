@@ -365,7 +365,7 @@ sim_bridge <- function(n=100,tau=1,alpha=1) {
 set.seed(1)
 S <- 10
 maxIts <- 1000000
-N <- 100
+N <- 300
 entries <- sim_bridge(n=S^2,tau=1,alpha=0.5) 
 entries <- entries / max(abs(entries))
 initialStates <- sample(x=1:S,size=N,replace=TRUE)
