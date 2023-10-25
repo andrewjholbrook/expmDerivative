@@ -297,20 +297,35 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 	Thank you for taking the time to review our manuscript and for your positive reception of our work.  We have carefully addressed each of your helpful recommendations in our revised manuscript, which is now greatly improved as a result.  Please find our responses listed below.
 \end{reply}
 
+\setcounter{figure}{1}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/lowDimVis.pdf}
+	\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (Section \ref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
+\end{figure}
+
 1. The authors spend 3 out of 7 pages in the main text and three corresponding sections in the Appendix discussing the refined error and the proof, while postpone the application with the affine-corrected error to future work. I would expect more than a relatively abstract error comparison figure for this issue. For example, a simple numerical simulation similar to the last paragraph in Application to compute the posterior likelihood ratio or posterior density ratio of the corrected and the uncorrected methods, because the authors eventually applied the method within a Bayesian framework.
 
 
+
 \begin{reply}
-TBD (Simulation related)
+  It is important to note that surrogate-trajectory HMC using approximate gradients provides the exact same theoretical guarantees as regular HMC.  The two algorithms generate transition kernels that leave the targeted posterior distribution invariant.  \cite{glatt2020accept} provides a deep measure theoretic rationale for why this is the case.  Perhaps because of these theoretical guarantees, we did not emphasize this in the original manuscript.
+  
+  That said, we thank you for pointing out your concern.  In response, we have added a new figure (Figure \ref{fig:lowDim}) in the new section ``Empirical Studies'' that helps illustrate the fact that all three algorithms sample from the same distribution.  In order to aid comparison to the exact gradient algorithm (which scales very poorly in state space dimension) we consider a $5$-dimensional state space.  We have also added a second new figure (Figure \ref{fig:truthMean}) to the same section that illustrates how certain Bayesian bridge priors help identify parameters even in small sample settings. Importantly, we use the surrogate-trajectory HMC with the naive derivative in this example.  Finally, we note that the scalable implementation of the affine corrected approximation into BEAST phylogenetic inference software is a matter of ongoing research since it might prevent the efficient outer product coding of the approximate derivative given in Equation 18 of \citet{magee2023random}.
 \end{reply}
+
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/truthMeanFig.pdf}
+	\caption{Posterior means versus truth for CTMC generator matrix elements within differing sparsity regimes and with different dimensionalities $d$, holding observation count fixed at 300. We generate posteriors using surrogate-trajectory Hamiltonian Monte Carlo with the naive matrix exponential derivative.  To affect sparsity levels, we generate generator matrix entries according to the Bayesian bridge distribution \citep{polson2014bayesian} with different exponents ($\alpha \in \{1,1/2,1/4\}$), normalizing by the largest absolute values to ease comparison. Smaller $\alpha$ values encode more peaked distributions with heavier tails and thus enforce greater sparsity.   Plot \textbf{c} reflects the fact that the Bayesian bridge prior with exponent $\alpha=1/4$ helps identify non-null parameters in small sample contexts \citep{magee2023random}.  With this intuition in mind, we specify such a prior on generator random effects in Section \ref{sec:sars:cov:app}.}
+	\label{fig:truthMean}
+\end{figure*}
 
 2. I am curious about the selection of the extra two additional Chinese provinces and 11 additional countries when fitting the mixed-effects model and how the inclusion of the extra regions improve the fitting. Is there any criteria to determine the inclusion?
 
 
 \begin{reply}
-TBD (Simulation related)
-
-Recent work \citep{gotovos2021scaling} suggests that inclusion of auxiliary states can lead to improved model fit even when these additional states do not correspond to observed data.  In future analyses, we aim to include hundreds of global regions.  For the time being, we have incorporated this question into the simulation study...
+Recent work \citep{gotovos2021scaling} suggests that inclusion of auxiliary states can lead to improved model fit even when these additional states do not correspond to observed data.  Inclusion here does not change inference in any appreciable way for the generator elements that do not correspond to these extra states, but it does allow for estimating generator elements that \emph{do} correspond to them.      
 \end{reply}
 
 3. For the mixed-effects model, do the authors assume independent predictors for the fixed effects? It seems to me that, in Fig. 2, the air traffic proximity and the intracontinental proximity are highly correlated, which can be the reason why $\theta_2$ is not statistically significant. Then what’s the justification for the predictor selection?
@@ -340,7 +355,7 @@ We generate 8 million samples but throw away the first 10\% (80,000) as burnin a
 \end{figure}
 
 \begin{reply}
-This is a good question.  Figure \ref{fig:randEffs} show posterior means of the exponentiated random effects, which amount to multiplicative deviations from the fixed-effect model.  As one might expect, only a small number of random effects deviate from 0, but those that do deviate are highly suggestive.  We stop short of interpreting exactly why the transition from the US to Hubei, CN, exhibits largest deviation (a 1.81-fold increase).  We have added this figure and the following short discussion to the appendix:
+This is a good question.  Figure \ref{fig:randEffs} show posterior means of the exponentiated random effects, which amount to multiplicative deviations from the fixed-effect model.  As one might expect from the Bayesian bridge prior with $\alpha=1/4$ we use (Figure \ref{fig:truthMean}), only a small number of random effects deviate from 0, but those that do deviate are highly suggestive.  We stop short of interpreting exactly why the transition from the US to Hubei, CN, exhibits largest deviation (a 1.81-fold increase).  We have added this figure and the following short discussion to the appendix:
 	\begin{quote}
 		Figure \ref{fig:randEffs} displays posterior means of the exponentiated random effects, which one may interpret as multiplicative deviations from the fixed effects' contributions to the generator matrix.  Whereas the vast majority of exponentiated random effects have posterior means close to 1, indicating no deviation from the fixed-effect model, a few exhibit posterior means that are significantly greater than 1.  In particular, the rate element corresponding to transfer from the US to Hubei, CN, exhibits a 1.81-fold random-effect derived increase to the fixed-effect component.  This large multiplicative increase agrees with, but goes beyond, the influence that the Hubei asymmetry holds for the entire generator matrix model. 
 	\end{quote}	
@@ -417,7 +432,7 @@ Unfortunately, the manuscript did not sit well with me, so to the negatives. The
 
 
 \begin{reply}
-	We thank you for sharing your concerns, which we take seriously.  Before responding, let us point out that we have now added a simulation section (similar to that which you specify below) to the manuscript.   Now, we would like to argue that the decisions we made in structuring our manuscript are well-motivated based on our other work.
+	We thank you for sharing your concerns, which we take seriously.  Before responding, let us point out that we have now added a simulation section (similar to that which you specify below) to the manuscript.   Respectfully, we would like to suggest that the decisions we made in structuring our manuscript are well-motivated based on our other work.
 	\begin{enumerate}
 		\item First, we have written a companion paper \citet{magee2023random} (minor revisions at Systematic Biology), which presents the basic approach, implements a thorough simulation study and applies the methodology to 3 real-world data analyses of varying dimensions and differing fixed-effect structures. 
 		
@@ -429,16 +444,64 @@ As a result, our goal in this paper was to find out what makes the first-order a
 
 In short, our original goal was not to prove validity of the general methodology, which we saw as already established through simulation studies, real-world analyses and measure theoretic arguments.   
 
-Again, we thank you for sharing your concerns and hope that the broader context of our work helps explain the positioning of our manuscript.  Probably more importantly, we have updated our manuscript with a thorough simulation study (see below).
+Again, we thank you for sharing your concerns and hope that the broader context of our work helps explain the positioning of our manuscript.  Probably more importantly, we have updated our manuscript with two empirical studies in response to your valid questions (see below).
 \end{reply}
 
 
 2) To me, a huge barrier to accept that the approximations presented can be successful in aiding statistical inference is the lack of simulation studies to assess the quality of inference. (This is not about the type of simulations shown in Figure 1 as detailed below). For a work like this, before applying to real data, the first test would be to design a large simulation study, where the model and the parameters are known and to test whether the application of the approximation method when implemented within the Hamiltonian Monte Carlo has good statistical inference performance. MCMC makes its own approximations (mixing, convergence to stationarity, etc..) and errors introduced by an approximative method injected to an MCMC sampling might be exacerbated. Even the statistical performance of well-known MCMC algorithms can vary with different signal strengths (e.g., magnitude of the parameters relative to each other in a model), as well as the model size. It would be premature to think that a method is valid based solely on its computational performance (as it is presented in the manuscript) without first assessing its statistical performance of recovering an approximate joint posterior distribution of parameters and it passes rigorous tests. A way to check this is by simulating data from target distributions of interest under a variety of parameter value combinations and then apply the method to see whether the posterior distribution of parameters are recovered successfully (in the case of Bayesian inference for this manuscript). I am surprised that the authors did not see this as necessary especially because they are working with large mixed effect models where things can go awry pretty quickly. As an example, I would have liked to see a comparison of the statistical performance in say, a 3 x 3 simulation experiment design. Variable 1, The method with 3 levels: Standard Hamiltonian Monte Carlo, the naive method of reference (18), and the method of the manuscript; Variable 2, The model size with 3 levels: Small, Intermediate, Large; Variable 3, The number of parameters with considerable signal with 3 levels: 1 parameter, half of the parameters, all parameters in the model. 
 
+\setcounter{figure}{0}
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/appendixFig3.pdf}
+	\caption{Frobenius norm errors obtained by first-order approximation $te^{t\QQ}\JJ$ and by affine-corrected first-order approximation
+		$te^{t\QQ}\JJ - t(\II -\QQ^+ \QQ) \JJ \QQ \QQ^{+}$
+		(Theorem \ref{thm:bride:of:frankinstein}) under increasingly relaxed
+		assumptions.  Within each assumption set, we average over 20
+		independent Monte Carlo simulations of random generator matrices
+		for each dimension. Plot \textbf{a} corresponds to asymmetric
+		generators with off-diagonal elements having independent and
+		identically distributed (iid) standard exponential random
+		variables that correspond to the sub-exponential distribution
+		hypothesis. Plot \textbf{b} drops the identical distribution
+		assumption by allowing each row and column of the generator
+		matrix to additively contribute its own mean---itself given by a
+		standard exponential---to its corresponding exponentially
+		distributed entries. Plot \textbf{c} features rate
+		matrices with iid Cauchy entries truncated to be
+		positive. Empirically, the results of
+		Corollary \ref{cor:rig:det:rand:wrapup} extend beyond the symmetric,
+		iid and sub-exponential hypotheses, suggesting scope of future work.}
+	\label{fig:app}
+\end{figure*}
+
+\setcounter{figure}{1}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/lowDimVis.pdf}
+	\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (Section \ref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
+\end{figure}
+
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/truthMeanFig.pdf}
+	\caption{Posterior means versus truth for CTMC generator matrix elements within differing sparsity regimes and with different dimensionalities $d$, holding observation count fixed at 300. We generate posteriors using surrogate-trajectory Hamiltonian Monte Carlo with the naive matrix exponential derivative.  To affect sparsity levels, we generate generator matrix entries according to the Bayesian bridge distribution \citep{polson2014bayesian} with different exponents ($\alpha \in \{1,1/2,1/4\}$), normalizing by the largest absolute values to ease comparison. Smaller $\alpha$ values encode more peaked distributions with heavier tails and thus enforce greater sparsity.   Plot \textbf{c} reflects the fact that the Bayesian bridge prior with exponent $\alpha=1/4$ helps identify non-null parameters in small sample contexts \citep{magee2023random}.  With this intuition in mind, we specify such a prior on generator random effects in Section \ref{sec:sars:cov:app}.}
+	\label{fig:truthMean}
+\end{figure*}
+
+
 
 \begin{reply}
-Simulaiton. TBD.
+We thank you for sharing your concerns.  In response, we have added a new section, ``Empirical Studies'' to the manuscript.   The section contains three figures, two of which are new and are intended to respond to your concerns.   We include the section text and figures in this letter.
+
+\begin{quote}
+	Before applying the naive matrix exponential derivative approximation to the phylogeographic analysis of SARS-CoV-2, we carry out a few targeted studies that illustrate: the empirical performance of the approximate derivative and its affine correction \eqref{eq:better:help:on:sale} (Figure \ref{fig:app}); agreement between CTMC generator matrix empirical posterior distributions generated by surrogate-trajectory Hamiltonian Monte Carlo (HMC) algorithms using approximate derivatives and the truth (Figure \ref{fig:lowDim}); and point estimation of generator matrix element values under different sparsity regimes and different CTMC state space dimensionalities $d$ (Figure \ref{fig:truthMean}). 
+	
+	Here, we fill in remaining simulation details not included in figure captions. In the simulations contributing to Figure \ref{fig:app}, we randomly generate new, independent direction matrices $\JJ$ at each time step within each of the 20 independent runs. The results are not sensitive to $\JJ$ in general.  We also note that under Definition \ref{def:sub:exp:RV} the Cauchy distribution is \emph{not} sub-exponential and therefore represents a deviation from core assumptions of Section \ref{sec:rig:results}.  Using varying distributions on the elements of generator matrices $\QQ$, the simulations contributing to Figure \ref{fig:lowDim} and Figure \ref{fig:truthMean} both randomly generate $N$ independent initial states $\y^0_1,\dots,\y^0_N$ according to uniform distributions over their respective CTMC state spaces. For each of these initial states $\y_0$, we then simulate from the CTMC for time interval $t=1$ to obtain samples $\y^1_1,\dots,\y^1_N$.  The likelihood then takes the form $\prod_n (\y^{0}_n)^T e^{\QQ} \y^{1}_n$.  For the simulation contributing to Figure \ref{fig:lowDim}, we specify standard normal priors and sample from the posterior by generating 100,000 iterations from each algorithm.  For the simulation contributing to Figure \ref{fig:truthMean}, we generate 500,000 MCMC samples using surrogate-trajectory HMC with the naive matrix exponential derivative and calculate the posterior mean of each generator matrix element using the final 100,000 samples.  
+\end{quote} 
 \end{reply}
+
+
 
 Specific Comments: 
 
