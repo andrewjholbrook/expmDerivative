@@ -246,16 +246,16 @@ textfont=it]{caption}
 
 \centerline{\large \bf Reponse to Editor and Reviewer Comments}
 
-To the Editor and Reviewers:
+Dear Editor and Reviewers:
 
 On behalf of my coauthors, I thank you for your thoughtful recommendations and the opportunity to revise our manuscript ``\paperTitle" (\paperID).
 We have carefully considered your helpful suggestions and have addressed them to the best of our abilities.  We believe that the manuscript is now significantly improved and are thankful for the time and energy you have put forth.
 
 In particular, we have:
 \begin{itemize}
-	\item clarified how the present work relates to our other work that includes thorough simulation studies \citet{magee2023random} and provides strong theoretical guarantees for surrogate-trajectory HMC \citet{glatt2020accept};
+	\item clarified how the present work relates to our other work that includes thorough simulation studies \citep{magee2023random} and provides strong theoretical guarantees for surrogate-trajectory HMC \citep{glatt2020accept};
 	
-	\item implemented an additional simulation study which compares accuracy for multiple algorithms, different model sizes and different signal strength regimes;
+	\item implemented two additional simulation studies which compare posteriors obtained for multiple algorithms and illustrate parameter identification  for different model sizes and different sparsity regimes;
     
     \item expanded upon the SARS-CoV-2 application, relating it to previously established results and improving a key figure;
 	
@@ -285,7 +285,7 @@ If you think you can revise to overcome reviewer concerns, you are welcome to do
 Jim 
 
 \begin{reply}
-	Thank you for the opportunity to submit a revised manuscript. We have made ample additions to the manuscript in response to the suggestions made by both reviewers. Among the many improvements we have made to this manuscript, the simulation study suggested by Reviewer 2 helps the paper smoothly transition between theory and application.
+	Thank you for the opportunity to submit a revised manuscript. We have made ample additions to the manuscript in response to the helpful suggestions made by both reviewers. Among the many improvements we have made to this manuscript, the simulation studies suggested by Reviewer 2 help the paper smoothly transition between theory and application.
 \end{reply}
 
 
@@ -309,7 +309,7 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 
 
 \begin{reply}
-  It is important to note that surrogate-trajectory HMC using approximate gradients provides the exact same theoretical guarantees as regular HMC.  The two algorithms generate transition kernels that leave the targeted posterior distribution invariant.  \cite{glatt2020accept} provides a deep measure theoretic rationale for why this is the case.  Perhaps because of these theoretical guarantees, we did not emphasize this in the original manuscript.
+  It is important to note that surrogate-trajectory HMC using approximate gradients provides the exact same theoretical guarantees as regular HMC.  The two algorithms generate transition kernels that leave the targeted posterior distribution invariant.  \cite{glatt2020accept} provides a deep measure theoretic rationale for why this is the case.  Perhaps because of these theoretical guarantees, we did not emphasize such a comparison in the original manuscript.
   
   That said, we thank you for pointing out your concern.  In response, we have added a new figure (Figure \ref{fig:lowDim}) in the new section ``Empirical Studies'' that helps illustrate the fact that all three algorithms sample from the same distribution.  In order to aid comparison to the exact gradient algorithm (which scales very poorly in state space dimension) we consider a $5$-dimensional state space.  We have also added a second new figure (Figure \ref{fig:truthMean}) to the same section that illustrates how certain Bayesian bridge priors help identify parameters even in small sample settings. Importantly, we use the surrogate-trajectory HMC with the naive derivative in this example.  Finally, we note that the scalable implementation of the affine corrected approximation into BEAST phylogenetic inference software is a matter of ongoing research since it might prevent the efficient outer product coding of the approximate derivative given in Equation 18 of \citet{magee2023random}.
 \end{reply}
