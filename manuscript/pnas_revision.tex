@@ -936,30 +936,13 @@ combine to produce the following immediate corollary.
 	\centering
 \includegraphics[width=\linewidth]{lowDimVis.pdf}
 \vspace{-2em}
-\caption{All methods agree.}\label{fig:lowDim}
+\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (\cref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
 \end{figure}
 
 \begin{figure*}[!t]
 	\centering
 	\includegraphics[width=\linewidth]{truthMeanFig.pdf}
-	\caption{Frobenius norm errors obtained by first-order approximation $te^{t\QQ}\JJ$ and by affine-corrected first-order approximation
-		$te^{t\QQ}\JJ - t(\II -\QQ^+ \QQ) \JJ \QQ \QQ^{+}$
-		(\cref{thm:bride:of:frankinstein}) under increasingly relaxed
-		assumptions.  Within each assumption set, we average over 20
-		independent Monte Carlo simulations of random generator matrices
-		for each dimension. Plot \textbf{a} corresponds to asymmetric
-		generators with off-diagonal elements having independent and
-		identically distributed (iid) standard exponential random
-		variables that correspond to the sub-exponential distribution
-		hypothesis. Plot \textbf{b} drops the identical distribution
-		assumption by allowing each row and column of the generator
-		matrix to additively contribute its own mean---itself given by a
-		standard exponential---to its corresponding exponentially
-		distributed entries. Plot \textbf{c} features rate
-		matrices with iid Cauchy entries truncated to be
-		positive. Empirically, the results of
-		\cref{cor:rig:det:rand:wrapup} extend beyond the symmetric,
-		iid and sub-exponential hypotheses, suggesting scope of future work.}
+	\caption{Posterior means versus truth for CTMC generator matrix elements under differing sparsity regimes and different dimensionalities $d$ holding the number of observations fixed at 300.  To affect sparsity levels, we generate generator matrix entries according to the Bayesian bridge distribution \cite{polson2014bayesian} with different exponents ($\alpha \in \{1,1/2,1/4\}$), normalizing by the largest absolute values to ease comparison. Smaller $\alpha$ values encode more peaked distributions with heavier tails and thus enforce greater sparsity.   Plot \textbf{c} reflects the fact that the Bayesian bridge prior with exponent $\alpha=1/4$ helps identify non-null parameters in small sample contexts \cite{magee2023random}.  With this intuition in mind, we specify such a prior on generator random effects in \cref{sec:sars:cov:app}.}
 	\label{fig:truthMean}
 \end{figure*}
 
