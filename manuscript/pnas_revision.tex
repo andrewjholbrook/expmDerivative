@@ -939,6 +939,31 @@ combine to produce the following immediate corollary.
 \caption{All methods agree.}
 \end{figure}
 
+\begin{figure*}[!t]
+	\centering
+	\includegraphics[width=\linewidth]{truthMeanFig.pdf}
+	\caption{Frobenius norm errors obtained by first-order approximation $te^{t\QQ}\JJ$ and by affine-corrected first-order approximation
+		$te^{t\QQ}\JJ - t(\II -\QQ^+ \QQ) \JJ \QQ \QQ^{+}$
+		(\cref{thm:bride:of:frankinstein}) under increasingly relaxed
+		assumptions.  Within each assumption set, we average over 20
+		independent Monte Carlo simulations of random generator matrices
+		for each dimension. Plot \textbf{a} corresponds to asymmetric
+		generators with off-diagonal elements having independent and
+		identically distributed (iid) standard exponential random
+		variables that correspond to the sub-exponential distribution
+		hypothesis. Plot \textbf{b} drops the identical distribution
+		assumption by allowing each row and column of the generator
+		matrix to additively contribute its own mean---itself given by a
+		standard exponential---to its corresponding exponentially
+		distributed entries. Plot \textbf{c} features rate
+		matrices with iid Cauchy entries truncated to be
+		positive. Empirically, the results of
+		\cref{cor:rig:det:rand:wrapup} extend beyond the symmetric,
+		iid and sub-exponential hypotheses, suggesting scope of future work.}
+	\label{fig:truthMean}
+\end{figure*}
+
+
 \section{Application: global spread of SARS-CoV-2}
 \label{sec:sars:cov:app}
 
