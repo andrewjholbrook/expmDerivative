@@ -120,6 +120,7 @@ lg_prr_grd <- function(Q,tau,alpha) {
   # start with gaussian prior
   # gradient <- - log(Q)/tau^2
   # diag(gradient) <- 0
+  alpha <- 0.5
   
   # BB fixing a = 0.25
   lg_Q <- log(Q)
@@ -380,8 +381,8 @@ tptStts[cbind(1:N,output)] <- 1
 tptStts <- t(tptStts)
 
 #profvis({
-hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.001,
-              method="approx",L=8,maxIts = maxIts, targetAccept = 0.65, Q_init=Q,
+hmcOut <- hmc(t=1,S=S,input=ntlStts,output=tptStts,stepSize=0.0001,
+              method="approx",L=8,maxIts = 1000, targetAccept = 0.65, Q_init=Q,
               alpha=0.25)
 #})
 #saveRDS(hmcOut,file="data/lowDimSimApprox.rds")
