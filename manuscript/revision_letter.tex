@@ -297,12 +297,7 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 	Thank you for taking the time to review our manuscript and for your positive reception of our work.  We have carefully addressed each of your helpful recommendations in our revised manuscript, which is now greatly improved as a result.  Please find our responses listed below.
 \end{reply}
 
-\setcounter{figure}{1}
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.6\linewidth]{figures/lowDimVis.pdf}
-	\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (Section \ref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
-\end{figure}
+
 
 1. The authors spend 3 out of 7 pages in the main text and three corresponding sections in the Appendix discussing the refined error and the proof, while postpone the application with the affine-corrected error to future work. I would expect more than a relatively abstract error comparison figure for this issue. For example, a simple numerical simulation similar to the last paragraph in Application to compute the posterior likelihood ratio or posterior density ratio of the corrected and the uncorrected methods, because the authors eventually applied the method within a Bayesian framework.
 
@@ -311,8 +306,15 @@ Phylogeography inference has been a very difficult problem in the sense of the t
 \begin{reply}
   It is important to note that surrogate-trajectory HMC using approximate gradients provides the exact same theoretical guarantees as regular HMC.  The two algorithms generate transition kernels that leave the targeted posterior distribution invariant.  \cite{glatt2020accept} provides a deep measure theoretic rationale for why this is the case.  Perhaps because of these theoretical guarantees, we did not emphasize such a comparison in the original manuscript.
   
-  That said, we thank you for pointing out your concern.  In response, we have added a new figure (Figure \ref{fig:lowDim}) in the new section ``Empirical Studies'' that helps illustrate the fact that all three algorithms sample from the same distribution.  In order to aid comparison to the exact gradient algorithm (which scales very poorly in state space dimension) we consider a $5$-dimensional state space.  We have also added a second new figure (Figure \ref{fig:truthMean}) to the same section that illustrates how certain Bayesian bridge priors help identify parameters even in small sample settings. Importantly, we use the surrogate-trajectory HMC with the naive derivative in this example.  Finally, we note that the scalable implementation of the affine corrected approximation into BEAST phylogenetic inference software is a matter of ongoing research since it might prevent the efficient outer product coding of the approximate derivative given in Equation 18 of \citet{magee2023random}.
+  That said, we thank you for pointing out your concern.  In response, we have added a new figure (Figure \ref{fig:lowDim}) in the new section ``Empirical Studies'' that helps illustrate the fact that all three algorithms sample from the same distribution.  In order to aid comparison to the exact gradient algorithm (which scales very poorly in state space dimension) we consider a $5$-dimensional state space.  We have also added a second new figure (Figure \ref{fig:truthMean}) to the same section that illustrates how certain Bayesian bridge priors help identify parameters even in small sample settings. Importantly, we use the surrogate-trajectory HMC with the naive derivative in this example.
 \end{reply}
+
+\setcounter{figure}{1}
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/lowDimVis.pdf}
+	\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (Section \ref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
+\end{figure}
 
 \begin{figure*}[!t]
 	\centering
@@ -347,7 +349,7 @@ We generate 8 million samples but throw away the first 10\% (80,000) as burnin a
 
 
 
-\setcounter{figure}{4}
+\setcounter{figure}{6}
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.7\linewidth]{figures/randEffects.pdf}
@@ -371,7 +373,7 @@ The ranges are different because the predictors are defined on the log scale, wh
 7.	The color palette in Fig. 4 makes it really hard to distinguish Hubei, other provinces in China, and other countries. It will be great if the authors can highlight Hubei in one color, other provinces in another color with gradients, and other countries in a third color with gradients. And why there are only 29 regions?
 
 
-\setcounter{figure}{3}
+\setcounter{figure}{5}
 \begin{figure*}[!t]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/summary2.tree.pdf}
@@ -442,7 +444,7 @@ Unfortunately, the manuscript did not sit well with me, so to the negatives. The
 Despite these theoretical guarantees, the method of \citet{magee2023random} performed even better than expected in terms of relatively high acceptance rates and relatively low autocorrelation between samples.  From our other previous work with surrogate-trajectory HMC \citep{li2019neural}, we knew this must suggest that the first-order matrix exponential gradient approximation must be pretty good.   
 As a result, our goal in this paper was to find out what makes the first-order approximation so good and provide a salient example that illustrates the efficacy of the approximation in higher dimensions.  
 
-In short, our original goal was not to prove validity of the general methodology, which we saw as already established through simulation studies, real-world analyses and measure theoretic arguments.   
+In short, our original goal was not to prove validity of surrogate-trajectory HMC, which we saw as already established through simulation studies, real-world analyses and measure theoretic arguments.   
 
 Again, we thank you for sharing your concerns and hope that the broader context of our work helps explain the positioning of our manuscript.  Probably more importantly, we have updated our manuscript with two empirical studies in response to your valid questions (see below).
 \end{reply}
