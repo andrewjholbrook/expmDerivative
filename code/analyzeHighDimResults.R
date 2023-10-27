@@ -12,7 +12,7 @@ Truth <- unlist(df[1,])
 df <- df[complete.cases(df),]
 N <- dim(df)[1]
 df2 <- data.frame(Truth=Truth,
-                  Mean=unlist(colMeans(df[ceiling(N/2):N,])),
+                  Mean=unlist(colMeans(df[4001:5000,])),
                   Dimension=10,
                   Exponent=2)
 
@@ -37,7 +37,7 @@ for (Dimension in c(10,20,30) ) {
     }
     
     df_temp <- data.frame(Truth=Truth,
-                      Mean=unlist(colMeans(df[ceiling(N/2):N,])),
+                      Mean=unlist(colMeans(df[4001:5000,])),
                       Dimension=Dimension,
                       Exponent=Exponent)
     
@@ -51,6 +51,7 @@ remove(df2)
 df$Dimension <- factor(df$Dimension)
 df$Exponent  <- factor(df$Exponent)
 
+set.seed(1)
 df <- df[sample(1:dim(df)[1]),]
 
 gg <- ggplot(df[df$Exponent==0.25,],aes(x=Truth,y=Mean,color=Dimension)) +
