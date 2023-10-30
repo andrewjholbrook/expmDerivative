@@ -446,7 +446,9 @@ leading to an asymptotically temporally uniformly accurate
 approximation of $\nabla_{\JJ} e^{t \QQ}$.  See
 \cref{rmk:better:approx} and \eqref{eq:better:help:on:sale} below.
 
-In \cref{sec:sars:cov:app} we follow these theoretical investigations
+ \cref{sec:emp}, contains simulation studies comparing: accuracy of matrix exponential derivative approximations for different distributional assumptions on the generator matrix; the posterior distributions obtained using surrogate-trajectory Hamiltonian Monte Carlo \cref{sec:Sur:trad:HMC} and traditional Hamiltonian Monte Carlo; and parameter identification under different priors on generator matrix elements.
+
+In \cref{sec:sars:cov:app} we follow these theoretical and empirical investigations
 with an application of the naive, first-order gradient approximation
 \eqref{eq:firstOrder} to a challenge in phylogeography requiring
 Bayesian inference of a rate-matrix of unprecedented dimensionality.
@@ -810,7 +812,7 @@ We formulate our second major result as follows.
   i=1,\hdots,d
   \end{aligned}
   \end{align}
-  or we impose that $\QQ \in \mathcal{R}(d) \cap \mathcal{S}(d, \RR)$ as 
+  or we impose that $\QQ \in \mathcal{R}(d) \cap \mathcal{S}(d)$ as 
     \begin{align}
     \begin{aligned}\label{e:RM_theorem_symmetry_condition}
   &\{q_{ij}\}_{i , j =1, \hdots, d, \hspace{0.75mm}i > j}
@@ -900,7 +902,7 @@ combine to produce the following immediate corollary.
   sub-exponential distribution. However, strong numerical evidence
   suggest that the scope of the approximations
   \eqref{eq:bride:of:frankinstein:1:rm:app},
-  \eqref{eq:bride:of:frankinstein:0:rm:app} reach far beyond
+  \eqref{eq:bride:of:frankinstein:0:rm:app} reach far beyond the
   limitations of \cref{cor:rig:det:rand:wrapup} in several different
   ways. \cref{fig:app} explores the
   consequences of relaxing various assumptions of
@@ -937,7 +939,7 @@ combine to produce the following immediate corollary.
 	\caption{Posterior density plots for surrogate-trajectory Hamiltonian Monte Carlo (HMC) (\cref{sec:Sur:trad:HMC}) using the naive approximate derivative, the corrected approximation \eqref{eq:better:help:on:sale} and the exact matrix exponential derivative for elements of a $5\times 5$ generator matrix. The near perfect overlap reflects the fact that each algorithm's transition kernel leaves the posterior distribution invariant \cite{glatt2020accept}.  To generate data, we randomly draw standard normal generator entries once and simulate 20 independent initial/final position pairs from a CTMC with time interval $t=1$.  We show the true value in red and negate diagonal elements to simplify presentation.  }\label{fig:lowDim}
 \end{figure}
 
-\section{Empirical Studies}
+\section{Empirical Studies}\label{sec:emp}
 
 
 
@@ -985,7 +987,7 @@ Given $\phylogeny$, we model the evolution of $d$ characters along
 each branch of the tree according to a CTMC model with $d\times d$
 generator matrix $\QQ$ and stationary distribution
 $\ppi=(\pi_1,\dots,\pi_d)=\lim_{t\rightarrow
-  \infty}\widetilde{\ppi}e^{t\QQ}$, for $\widetilde{\ppi}$ for any
+  \infty}\widetilde{\ppi}e^{t\QQ}$, for $\widetilde{\ppi}$ any
 arbitrary probability vector.  Examples of characters are the $d=4$
 nucleotides within a set of aligned genome sequences
 \cite{jukes1969evolution} and the set of $d=15$ geographic regions
@@ -1940,9 +1942,9 @@ interest.\footnote{In the Bayesian inference context, we are typically
   considering the posterior density function
   $\pi(\ttheta):=p(\ttheta|\Y)$ for the parameter
   $\ttheta\in\mathbb{R}^K$ given observed data $\Y$.}  We proceed by
-considering a `potential energy' of the form
+considering a potential energy of the form
 $U(\ttheta):=-\log \pi(\ttheta)$.  We then select an associated
-potential energy $V(\mom) := | \G^{-1/2} \mom|^2$ for an appropriately
+kinetic energy $V(\mom) := | \G^{-1/2} \mom|^2$ for an appropriately
 chosen symmetric-positive-definite mass matrix $\G$ (which is often
 taken as the identity for simplicity).  One then observes that the
 Gibbs measure, proportional to $e^{-H(\ttheta, \mom)}$ where
